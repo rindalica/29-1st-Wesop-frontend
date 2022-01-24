@@ -1,3 +1,22 @@
 * {
   box-sizing: border-box;
 }
+
+html {
+  color: #333;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
