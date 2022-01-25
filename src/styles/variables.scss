@@ -1,0 +1,9 @@
+$darkgray: #333;
+$ivory: #fffef2;
+$beige: #ebeade;
+
+@mixin flex-justify-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
