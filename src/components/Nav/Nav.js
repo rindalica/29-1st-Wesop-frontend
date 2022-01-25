@@ -1,21 +1,10 @@
 import React, { useState } from 'react';
+import CategoryModal from './CategoryModal';
 import './Nav.scss';
 
 // import { FiSearch } from 'react-icons/fi';
 
 function Nav() {
-  const categoryData = [
-    { name: '스킨케어' },
-    { name: '바디&헨드' },
-    { name: '헤어' },
-    { name: '향수' },
-    { name: '홈' },
-    { name: '키트&여행 제품' },
-    { name: '기프트 가이드' },
-    { name: '읽기' },
-    { name: '스토어' },
-  ];
-
   const [isClick, setIsClick] = useState(false);
   const [navClassName, setNavClassName] = useState('nav');
   const handleClick = () => {
@@ -27,22 +16,49 @@ function Nav() {
     <div className={navClassName}>
       <nav className="primaryMenu">
         <ul className="mainCategories">
-          {categoryData.map(data => {
-            return (
-              <li className="mainCategory">
-                <button onClick={handleClick} className="mainCategoryBtn">
-                  {data.name}
-                </button>
-              </li>
-            );
-          })}
           <li className="mainCategory">
-            <button className="mainCategoryBtn">
-              검색{/* <FiSearch /> */}
+            <button
+              onClick={handleClick}
+              className={!isClick ? 'mainCategoryBtn' : 'mainCategoryBtnClick'}
+            >
+              스킨케어
+            </button>
+          </li>
+          <li className="mainCategory">
+            <button
+              onClick={handleClick}
+              className={!isClick ? 'mainCategoryBtn' : 'mainCategoryBtnClick'}
+            >
+              바디&핸드
+            </button>
+          </li>
+          <li className="mainCategory">
+            <button
+              onClick={handleClick}
+              className={!isClick ? 'mainCategoryBtn' : 'mainCategoryBtnClick'}
+            >
+              헤어
+            </button>
+          </li>
+          <li className="mainCategory">
+            <button
+              onClick={handleClick}
+              className={!isClick ? 'mainCategoryBtn' : 'mainCategoryBtnClick'}
+            >
+              향수
+            </button>
+          </li>
+          <li className="mainCategory">
+            <button
+              onClick={handleClick}
+              className={!isClick ? 'mainCategoryBtn' : 'mainCategoryBtnClick'}
+            >
+              홈
             </button>
           </li>
         </ul>
       </nav>
+
       <nav className="secondaryMenu">
         <ul className="secondaryMenuList">
           <li className="loginMenu">
@@ -53,6 +69,7 @@ function Nav() {
           </li>
         </ul>
       </nav>
+      <CategoryModal />
     </div>
   );
 }
