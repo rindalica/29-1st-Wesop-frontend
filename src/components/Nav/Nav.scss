@@ -1,0 +1,79 @@
+@import '../../styles/variables.scss';
+
+.nav {
+  @include flex-justify-between;
+  background-color: #333;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+  padding-left: 40px;
+  padding-right: 40px;
+
+  .mainCategories,
+  .secondaryMenuList {
+    @include flex-justify-between;
+
+    .mainCategory,
+    .loginMenu {
+      @include flex-justify-between;
+      height: 80px;
+      margin: 0 14px 0 0;
+      //border-bottom: 2px solid #333;
+
+      .mainCategoryBtn,
+      .loginBtn {
+        font-size: 13.3px;
+        font-weight: 300;
+        color: #fffef0;
+        padding: 4px;
+      }
+    }
+    .cartMenu {
+      @include flex-justify-between;
+      height: 80px;
+      .cartBtn {
+        font-size: 13.3px;
+        font-weight: 300;
+        color: #fffef0;
+        padding: 4px;
+      }
+    }
+  }
+}
+
+.navClick {
+  @include flex-justify-between;
+  background-color: #fffef0;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+  padding-left: 40px;
+  padding-right: 40px;
+
+  .mainCategories,
+  .secondaryMenuList {
+    @include flex-justify-between;
+
+    .mainCategory,
+    .loginMenu {
+      @include flex-justify-between;
+      height: 80px;
+      margin: 0 14px 0 0;
+      //border-bottom: 2px solid #333;
+
+      .mainCategoryBtn,
+      .loginBtn {
+        font-size: 13.3px;
+        font-weight: 300;
+        color: #333;
+        padding: 4px;
+      }
+    }
+    .cartMenu {
+      @include flex-justify-between;
+      height: 80px;
+      .cartBtn {
+        font-size: 13.3px;
+        font-weight: 300;
+        color: #333;
+        padding: 4px;
+      }
+    }
+  }
+}
