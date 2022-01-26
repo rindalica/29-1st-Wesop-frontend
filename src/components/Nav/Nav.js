@@ -6,7 +6,6 @@ import './Nav.scss';
 
 function Nav() {
   const [isClick, setIsClick] = useState(false);
-  const [navClassName, setNavClassName] = useState('nav');
   const handleClick = () => {
     setIsClick(!isClick);
   };
