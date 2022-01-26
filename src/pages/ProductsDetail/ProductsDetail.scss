@@ -1,0 +1,107 @@
+@import '../../styles/variables.scss';
+
+// heading section
+.heading {
+  display: flex;
+  justify-content: space-evenly;
+
+  .imageBox {
+    width: 400px;
+    height: 450px;
+    position: relative;
+    display: inline;
+    left: 90px;
+    text-align: center;
+    img {
+      width: 350px;
+      height: 590px;
+    }
+  }
+}
+
+// middle section
+.message {
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  .leftMsg {
+    // float: left;
+    width: 712px;
+    border-right: 1px solid #d9d8ce;
+    padding-right: 30px;
+    p {
+      width: 400px;
+      text-align: center;
+      margin: auto;
+    }
+  }
+  .rightMsg {
+    // display: inline-block;
+    width: 712px;
+    margin-left: 10px;
+    p {
+      width: 400px;
+      text-align: center;
+      margin: auto;
+    }
+  }
+}
+
+// middle 2 section
+.productsDescription {
+  display: flex;
+  justify-content: space-between;
+  .mainPicture {
+    width: 700px;
+    height: 720px;
+    .explainImg {
+      width: 100%;
+    }
+  }
+  .explainList {
+    width: 700px;
+    height: 720px;
+    display: flex;
+    justify-content: center;
+    .howToUuse {
+      background-color: #f6f5e8;
+      width: 400px;
+    }
+    li {
+      padding: 10px 0;
+      border-bottom: 1px solid lightgray;
+      &:first-child {
+        border-bottom: 2px solid black;
+      }
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+}
+
+// bottom secotion
+
+.slide-box {
+  .left-btn,
+  .right-btn {
+    width: 80px;
+    height: 80px;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    background-color: #333333;
+  }
+  .box {
+    overflow: hidden;
+    .container {
+      margin: 0;
+      width: 2200px;
+      .inside-img {
+        width: 350px;
+        float: left;
+      }
+    }
+  }
+}
