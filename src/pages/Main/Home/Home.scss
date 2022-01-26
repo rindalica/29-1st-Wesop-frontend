@@ -1,0 +1,76 @@
+@import '../../../styles/variables.scss';
+
+.Home {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  color: $ivory;
+
+  .homeImg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .logo {
+    width: 168px;
+    margin: 85px 0 0 24px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .homeContentWrapper {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% * 4 / 12 - 80px);
+    padding: 110px 0 180px 0;
+    margin-left: 5%;
+    word-break: keep-all;
+
+    .titleWrapper {
+      width: 100%;
+      line-height: 1.33;
+
+      .mainTitle {
+        font-size: 30px;
+        letter-spacing: -1px;
+      }
+
+      .subTitle {
+        font-size: 14px;
+      }
+
+      .mainTitle,
+      .subTitle {
+        margin-bottom: 15px;
+      }
+    }
+
+    .text {
+      margin-bottom: 30px;
+      line-height: 1.7;
+      letter-spacing: -0.2px;
+    }
+
+    .LinkButton {
+      .button {
+        border-color: $ivory;
+        color: inherit;
+
+        &:hover {
+          background-color: $ivory;
+          color: $darkgray;
+        }
+      }
+    }
+  }
+}
