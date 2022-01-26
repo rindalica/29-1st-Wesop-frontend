@@ -9,51 +9,19 @@ function Nav() {
   const [navClassName, setNavClassName] = useState('nav');
   const handleClick = () => {
     setIsClick(!isClick);
-    isClick ? setNavClassName('nav') : setNavClassName('navClick');
   };
 
   return (
-    <div className={navClassName}>
+    <div className={!isClick ? 'nav' : 'navClick'}>
+      {isClick ? <CategoryModal /> : null}
       <nav className="primaryMenu">
         <ul className="mainCategories">
-          <li className="mainCategory">
+          <li className="mainCategory" onClick={handleClick}>
             <button
-              onClick={handleClick}
+              // onClick={handleClick}
               className={!isClick ? 'mainCategoryBtn' : 'mainCategoryBtnClick'}
             >
               스킨케어
-            </button>
-          </li>
-          <li className="mainCategory">
-            <button
-              onClick={handleClick}
-              className={!isClick ? 'mainCategoryBtn' : 'mainCategoryBtnClick'}
-            >
-              바디&핸드
-            </button>
-          </li>
-          <li className="mainCategory">
-            <button
-              onClick={handleClick}
-              className={!isClick ? 'mainCategoryBtn' : 'mainCategoryBtnClick'}
-            >
-              헤어
-            </button>
-          </li>
-          <li className="mainCategory">
-            <button
-              onClick={handleClick}
-              className={!isClick ? 'mainCategoryBtn' : 'mainCategoryBtnClick'}
-            >
-              향수
-            </button>
-          </li>
-          <li className="mainCategory">
-            <button
-              onClick={handleClick}
-              className={!isClick ? 'mainCategoryBtn' : 'mainCategoryBtnClick'}
-            >
-              홈
             </button>
           </li>
         </ul>
@@ -69,7 +37,6 @@ function Nav() {
           </li>
         </ul>
       </nav>
-      <CategoryModal />
     </div>
   );
 }
