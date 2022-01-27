@@ -2,19 +2,18 @@ import React from 'react';
 import LinkButton from '../LinkButton/LinkButton';
 import './TwoColumnsPromotion.scss';
 
-const TwoColumnsPromotion = props => {
-  const {
-    isTextOnLeft,
-    isContentImg,
-    children,
-    subTitle,
-    heading,
-    paragraph,
-    btnText,
-    btnLink,
-    alt,
-    src,
-  } = props;
+const TwoColumnsPromotion = ({
+  isTextOnLeft,
+  isContentImg,
+  children,
+  subTitle,
+  heading,
+  paragraph,
+  btnText,
+  btnLink,
+  alt,
+  src,
+}) => {
   return (
     <section
       className={`TwoColumnsPromotion ${isTextOnLeft ? 'left' : 'right'}`}
