@@ -1,6 +1,6 @@
 @import '../../styles/variables.scss';
 
-.TwoColumnSection {
+.TwoColumnsPromotion {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -31,7 +31,7 @@
     }
   }
 
-  .sideImg {
+  .asideContent {
     width: calc((100%) * 8 / 12);
 
     img {
@@ -45,7 +45,7 @@
       padding-left: calc(40px * 2);
     }
 
-    .sideImg {
+    .asideContent {
       padding-left: calc((100%) * 1 / 12);
     }
   }
@@ -57,7 +57,7 @@
       padding-right: calc(40px * 2);
     }
 
-    .sideImg {
+    .asideContent {
       padding-right: calc((100%) * 1 / 12);
     }
   }
