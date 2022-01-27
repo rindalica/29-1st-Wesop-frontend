@@ -1,0 +1,9 @@
+@import '../../../styles/variables.scss';
+
+.Carousel {
+  .contentWrapper {
+    overflow: hidden;
+    display: flex;
+    margin: 0 80px 48px;
+  }
+}

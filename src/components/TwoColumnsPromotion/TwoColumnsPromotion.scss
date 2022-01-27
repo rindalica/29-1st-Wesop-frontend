@@ -1,0 +1,64 @@
+@import '../../styles/variables.scss';
+
+.TwoColumnsPromotion {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 150px;
+
+  .textWrapper {
+    width: calc((100%) * 4 / 12);
+
+    .titleWrapper {
+      line-height: 1.33;
+
+      .mainTitle {
+        margin-bottom: 30px;
+        font-size: 30px;
+        letter-spacing: -1px;
+      }
+
+      .subTitle {
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+    }
+
+    .text {
+      margin-bottom: 30px;
+      line-height: 1.7;
+      letter-spacing: -0.2px;
+    }
+  }
+
+  .asideContent {
+    width: calc((100%) * 8 / 12);
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &.left {
+    .textWrapper {
+      padding-left: calc(40px * 2);
+    }
+
+    .asideContent {
+      padding-left: calc((100%) * 1 / 12);
+    }
+  }
+
+  &.right {
+    flex-direction: row-reverse;
+
+    .textWrapper {
+      padding-right: calc(40px * 2);
+    }
+
+    .asideContent {
+      padding-right: calc((100%) * 1 / 12);
+    }
+  }
+}
