@@ -1,0 +1,35 @@
+@import '../../../styles/variables.scss';
+
+.Carousel {
+  .contentWrapper {
+    overflow: hidden;
+    display: flex;
+    margin: 0 80px 48px;
+  }
+}
+
+.CarouselProduct {
+  flex-shrink: 0;
+  width: calc(100% / 3);
+  text-align: center;
+  font-size: 14px;
+
+  .productImg {
+    display: flex;
+    align-items: flex-end;
+    height: 400px;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .textWrapper {
+    padding: 0 20px;
+
+    h5 {
+      margin: 10px;
+    }
+  }
+}
