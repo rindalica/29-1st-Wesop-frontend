@@ -1,41 +1,50 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CategoryModal from './CategoryModal';
+import CategoryNav from './CategoryNav';
 import './Nav.scss';
 
 // import { FiSearch } from 'react-icons/fi';
 
 function Nav() {
-  const [isClick, setIsClick] = useState(false);
-  const handleClick = () => {
-    setIsClick(!isClick);
+  const [navColor, setNavColor] = useState('categoryNav');
+  const [border, setBorder] = useState('');
+  const [modal, setModal] = useState('categoryModalBoxHidden');
+  const handleClickSkin = () => {
+    setNavColor('categoryNavModal');
+    setModal('categoryModalBoxSkin');
+  };
+  const handleClickBody = () => {
+    setNavColor('categoryNavModal');
+    setModal('categoryModalBoxBody');
+  };
+  const handleClickHair = () => {
+    setNavColor('categoryNavModal');
+    setModal('categoryModalBoxHair');
+  };
+  const handleClose = () => {
+    setNavColor('categoryNav');
+    setModal('categoryModalBoxHidden');
   };
 
-  return (
-    <div className={!isClick ? 'nav' : 'navClick'}>
-      {isClick ? <CategoryModal /> : null}
-      <nav className="primaryMenu">
-        <ul className="mainCategories">
-          <li className="mainCategory" onClick={handleClick}>
-            <button
-              // onClick={handleClick}
-              className={!isClick ? 'mainCategoryBtn' : 'mainCategoryBtnClick'}
-            >
-              스킨케어
-            </button>
-          </li>
-        </ul>
-      </nav>
+  const [categoryLists, setCategoryLists] = useState([]);
 
-      <nav className="secondaryMenu">
-        <ul className="secondaryMenuList">
-          <li className="loginMenu">
-            <button className="loginBtn">로그인</button>
-          </li>
-          <li className="cartMenu">
-            <button className="cartBtn">카트</button>
-          </li>
-        </ul>
-      </nav>
+  useEffect(() => {
+    fetch('/data/dataJimin.json')
+      .then(res => res.json())
+      .then(data => {
+        setCategoryLists(data);
+      });
+  }, []);
+  return (
+    <div className="nav">
+      <CategoryNav
+        className={navColor}
+        onClickSkin={handleClickSkin}
+        onClickBody={handleClickBody}
+        onClickHair={handleClickHair}
+        onClickClose={handleClose}
+      />
+      <CategoryModal Lists={categoryLists} categoryModalClassName={modal} />
     </div>
   );
 }

@@ -1,34 +1,78 @@
 @import '../../styles/variables.scss';
+.categoryModalBoxHidden {
+  display: none;
+}
 
-.categoryModal {
+.categoryModalMain {
   display: flex;
-  position: absolute;
+  justify-content: space-between;
+
+  .modalLogoBox {
+    width: 283px;
+    .modalLogo {
+      width: 180px;
+      position: absolute;
+      left: 20px;
+      top: 150px;
+    }
+  }
+}
+
+.categoryModalBoxSkin {
   top: 80px;
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #f0efe0;
-  // overflow: auto;
+  background-color: rgb(240, 239, 224);
 }
 
-.categoryModalMain {
-  width: calc(100% * 4 / 12);
+.categoryModalBoxBody {
+  top: 80px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(236, 227, 211);
+}
+
+.categoryModalBoxHair {
+  top: 80px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(222, 216, 212);
+}
+.lists {
+  // margin: 0 100px;
   display: flex;
+  justify-content: space-between;
+}
+.mainList,
+.typeList,
+.loveList {
+  margin: 90px 20px 40px;
+  .categoryDetail {
+    .categoryDetailTitle,
+    .ListContents {
+      margin-bottom: 12px;
+      font-size: 16px;
+      font-weight: 300;
+    }
+    .categoryDetailTitle {
+      font-weight: 500;
+    }
+  }
+}
 
-  // flex-direction: row;
-}
-.modalLogo {
-  width: 180px;
-  position: absolute;
-  left: 20px;
-  top: 54px;
-}
 .categorySkintype {
-  width: calc(100% * 4 / 12);
+  display: flex;
+  justify-content: space-between;
+  .modalList {
+    margin: 90px 40px 45px 0;
+  }
 }
 .categoryMainImg {
-  width: calc(100% * 4 / 12);
-  .categorySkinImg {
-    width: 100%;
+  .categorySkinImg,
+  .categoryBodyImg {
+    width: 462px;
   }
 }
