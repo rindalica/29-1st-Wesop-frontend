@@ -1,4 +1,5 @@
 import React from 'react';
+import Login from '../../components/Login/Login';
 import Home from './Home/Home';
 import Carousel from './Carousel/Carousel';
 import TwoColumnsPromotion from '../../components/TwoColumnsPromotion/TwoColumnsPromotion';
@@ -8,6 +9,22 @@ import './Main.scss';
 const Main = () => {
   return (
     <>
+      <Login
+        mainTitle="안녕하세요."
+        subTitle="로그인 및 회원가입을 위한 이메일 주소를 입력 부탁드립니다."
+        btnText="계속"
+      />
+      <Login
+        mainTitle="이솝에 오신 것을 환영합니다."
+        subTitle="회원가입을 위해 아래의 세부 정보를 작성해주세요."
+        btnText="등록"
+      >
+        <input type="password" placeholder="패스워드" />
+        <input type="password" placeholder="패스워드 확인" />
+        <input type="text" placeholder="성" />
+        <input type="text" placeholder="이름" />
+        <input type="checkbox" />
+      </Login>
       <Home />
       <Carousel className="facial" dataList={FACIAL_PRODUCTS} />
       {PROMOTIONS.map(promotion => (
