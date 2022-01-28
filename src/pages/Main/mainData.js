@@ -98,6 +98,13 @@ export const BODY_PRODUCTS = [
     heading: '파슬리 씨드 안티 옥시던트 페이셜 트리트먼트',
     description: '집중적인 보습으로 피부를 탄탄하게 강화시킵니다.',
     alt: 'product',
+    src: 'https://images.unsplash.com/photo-1628088305628-a0aba9b069a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80',
+  },
+  {
+    id: 5,
+    heading: '파슬리 씨드 안티 옥시던트 페이셜 트리트먼트',
+    description: '집중적인 보습으로 피부를 탄탄하게 강화시킵니다.',
+    alt: 'product',
     src: 'https://images.unsplash.com/photo-1628088306756-ef21fbec7386?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80',
   },
 ];
