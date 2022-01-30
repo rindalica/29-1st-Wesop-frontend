@@ -2,22 +2,6 @@
 .categoryModalBoxHidden {
   display: none;
 }
-
-.categoryModalMain {
-  display: flex;
-  justify-content: space-between;
-
-  .modalLogoBox {
-    width: 283px;
-    .modalLogo {
-      width: 180px;
-      position: absolute;
-      left: 20px;
-      top: 150px;
-    }
-  }
-}
-
 .categoryModalBoxSkin {
   top: 80px;
   right: 0;
@@ -41,6 +25,21 @@
   left: 0;
   background-color: rgb(222, 216, 212);
 }
+.categoryModalMain {
+  display: flex;
+  justify-content: space-between;
+
+  .modalLogoBox {
+    width: 283px;
+    .modalLogo {
+      width: 180px;
+      position: absolute;
+      left: 20px;
+      top: 150px;
+    }
+  }
+}
+
 .lists {
   // margin: 0 100px;
   display: flex;

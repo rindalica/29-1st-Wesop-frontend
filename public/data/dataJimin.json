@@ -1,10 +1,13 @@
 [
   {
-    "id": 1,
+    "id": 0,
     "categoryName": "스킨 케어",
+    "className": "Skin",
+    "imgSrc": "https://images.pexels.com/photos/1619488/pexels-photo-1619488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "imgAlt": "categorySkinImg",
     "lists": [
       {
-        "id": 1,
+        "menu": "category",
         "title": "카테고리",
         "list": [
           { "name": "스킨 케어 모두 보기" },
@@ -21,7 +24,7 @@
         ]
       },
       {
-        "id": 2,
+        "menu": "skinType",
         "title": "피부타입",
         "list": [
           { "name": "중성" },
@@ -31,7 +34,7 @@
         ]
       },
       {
-        "id": 3,
+        "menu": "loved",
         "title": "사랑받는 제품",
         "list": [
           { "name": "파슬리 씨드 안티 옥시던트 인텐스 세럼" },
@@ -39,21 +42,17 @@
           { "name": "파슬리 씨드 안티 옥시던트 페이셜 토너" }
         ]
       }
-    ],
-    "CategoryMainImg": [
-      { "CategoryMainImgClassName": "categorySkinImg" },
-      {
-        "CategoryMainImgSrc": "https://images.pexels.com/photos/1619488/pexels-photo-1619488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-      },
-      { "CategoryMainAlt": "categorySkinImg" }
     ]
   },
   {
-    "id": 2,
+    "id": 1,
     "categoryName": "바디",
+    "className": "Body",
+    "imgSrc": "https://images.pexels.com/photos/4857813/pexels-photo-4857813.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "imgAlt": "categoryBodyImg",
     "lists": [
       {
-        "id": 1,
+        "id": "category",
         "title": "카테고리",
         "list": [
           { "name": "향수 모두 보기" },
@@ -67,7 +66,7 @@
         ]
       },
       {
-        "id": 2,
+        "id": "perfume",
         "title": "향수 아로마",
         "list": [
           { "name": "플로럴" },
@@ -77,7 +76,7 @@
         ]
       },
       {
-        "id": 3,
+        "id": "new",
         "title": "신제품",
         "list": [
           { "name": "미라세티 오 드 퍼퓸" },
@@ -85,13 +84,48 @@
           { "name": "카르스트 오 드 퍼퓸" }
         ]
       }
-    ],
-    "CategoryMainImg": [
-      { "CategoryMainImgClassName": "categoryBodyImg" },
+    ]
+  },
+  {
+    "id": 2,
+    "categoryName": "헤어",
+    "className": "Hair",
+    "imgSrc": "https://images.pexels.com/photos/6724357/pexels-photo-6724357.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "imgAlt": "categoryHairImg",
+    "lists": [
       {
-        "CategoryMainImgSrc": "https://images.pexels.com/photos/6724357/pexels-photo-6724357.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        "id": "category",
+        "title": "카테고리",
+        "list": [
+          { "name": "헤어 모두 보기" },
+          { "name": "미라세티" },
+          { "name": "카르스트" },
+          { "name": "에레미아" },
+          { "name": "로즈" },
+          { "name": "휠" },
+          { "name": "마라케시" },
+          { "name": "테싯" }
+        ]
       },
-      { "CategoryMainAlt": "categoryImg" }
+      {
+        "id": "perfume",
+        "title": "향수 아로마",
+        "list": [
+          { "name": "플로럴" },
+          { "name": "프레쉬" },
+          { "name": "우디" },
+          { "name": "오퓰런트" }
+        ]
+      },
+      {
+        "id": "new",
+        "title": "신제품",
+        "list": [
+          { "name": "미라세티 오 드 퍼퓸" },
+          { "name": "에레미아 오 드 퍼퓸" },
+          { "name": "카르스트 오 드 퍼퓸" }
+        ]
+      }
     ]
   }
 ]
