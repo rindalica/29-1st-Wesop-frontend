@@ -1,0 +1,24 @@
+.CartProducts {
+  padding: 40px 40px 0;
+  .CartProductsHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 15px;
+  }
+  .CartProduct {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+  }
+}
+
+.CartSummary {
+  padding: 30px 40px 40px;
+  margin-left: 66%;
+  .CartSummaryMoney {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 25px 0;
+  }
+}
