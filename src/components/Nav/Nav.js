@@ -14,8 +14,8 @@ function Nav() {
 
   const [modal, setModal] = useState('categoryModalBoxHidden');
   const [navColor, setNavColor] = useState('categoryNav');
-  const [imgSrc, setImgSrc] = useState('');
-  const [listss, setListss] = useState([]);
+  const [categoryList, setCategoryList] = useState([]);
+  const [categoryImg, setCategoryImg] = useState([]);
   const handleClose = () => {
     setNavColor('categoryNav');
     setModal('categoryModalBoxHidden');
@@ -27,15 +27,15 @@ function Nav() {
         <nav className="primaryMenu">
           <ul className="mainCategories">
             {categoryLists.map(
-              ({ id, categoryName, className, imgSrc, lists }) => {
+              ({ id, categoryName, className, categoryLists, categoryImg }) => {
                 return (
                   <li key={id} className="mainCategory">
                     <button
                       onClick={function handleModal() {
                         setModal('categoryModalBox' + className);
                         setNavColor('categoryNavModal');
-                        setImgSrc(imgSrc);
-                        setListss(lists);
+                        setCategoryList(categoryLists);
+                        setCategoryImg(categoryImg);
                       }}
                       className="mainCategoryBtn"
                     >
@@ -66,8 +66,8 @@ function Nav() {
       </div>
 
       <CategoryModal
-        Lists={listss}
-        imgSrc={imgSrc}
+        Lists={categoryList}
+        categoryImg={categoryImg}
         categoryModalClassName={modal}
       />
     </div>

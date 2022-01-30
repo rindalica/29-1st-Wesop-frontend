@@ -3,9 +3,13 @@
     "id": 0,
     "categoryName": "스킨 케어",
     "className": "Skin",
-    "imgSrc": "https://images.pexels.com/photos/1619488/pexels-photo-1619488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    "imgAlt": "categorySkinImg",
-    "lists": [
+    "categoryImg": [
+      {
+        "imgSrc": "https://images.pexels.com/photos/1619488/pexels-photo-1619488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "imgAlt": "categorySkinImg"
+      }
+    ],
+    "categoryLists": [
       {
         "menu": "category",
         "title": "카테고리",
@@ -48,9 +52,13 @@
     "id": 1,
     "categoryName": "바디",
     "className": "Body",
-    "imgSrc": "https://images.pexels.com/photos/4857813/pexels-photo-4857813.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    "imgAlt": "categoryBodyImg",
-    "lists": [
+    "categoryImg": [
+      {
+        "imgSrc": "https://images.pexels.com/photos/4857813/pexels-photo-4857813.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "imgAlt": "categoryBodyImg"
+      }
+    ],
+    "categoryLists": [
       {
         "id": "category",
         "title": "카테고리",
@@ -90,21 +98,22 @@
     "id": 2,
     "categoryName": "헤어",
     "className": "Hair",
-    "imgSrc": "https://images.pexels.com/photos/6724357/pexels-photo-6724357.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    "imgAlt": "categoryHairImg",
-    "lists": [
+    "categoryImg": [
+      {
+        "imgSrc": "https://images.pexels.com/photos/6724357/pexels-photo-6724357.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "imgAlt": "categoryHairImg"
+      }
+    ],
+    "categoryLists": [
       {
         "id": "category",
         "title": "카테고리",
         "list": [
           { "name": "헤어 모두 보기" },
-          { "name": "미라세티" },
-          { "name": "카르스트" },
-          { "name": "에레미아" },
-          { "name": "로즈" },
-          { "name": "휠" },
-          { "name": "마라케시" },
-          { "name": "테싯" }
+          { "name": "샴푸" },
+          { "name": "컨디셔너" },
+          { "name": "트리트먼트" },
+          { "name": "그루밍" }
         ]
       },
       {
@@ -120,11 +129,7 @@
       {
         "id": "new",
         "title": "신제품",
-        "list": [
-          { "name": "미라세티 오 드 퍼퓸" },
-          { "name": "에레미아 오 드 퍼퓸" },
-          { "name": "카르스트 오 드 퍼퓸" }
-        ]
+        "list": [{ "name": "샴푸" }, { "name": "컨디셔너" }]
       }
     ]
   }

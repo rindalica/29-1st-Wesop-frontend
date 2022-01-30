@@ -2,15 +2,14 @@ import React, { useState, useEffect } from 'react';
 
 function CategoryList({ title, lists }) {
   return (
-    <div className="mainList">
+    <div className="categoryList">
       <div className="categoryDetail">
         <h2 className="categoryDetailTitle">{title}</h2>
         <ul className="categoryDetailList">
-          {lists.map(listdata => (
-            // eslint-disable-next-line react/jsx-key
-            <li className="ListContents">
+          {lists.map(({ id, name }) => (
+            <li key={id} className="listContents">
               <a href="/">
-                <span>{listdata.name}</span>
+                <span>{name}</span>
               </a>
             </li>
           ))}

@@ -28,50 +28,36 @@
 .categoryModalMain {
   display: flex;
   justify-content: space-between;
-
-  .modalLogoBox {
-    width: 283px;
-    .modalLogo {
-      width: 180px;
-      position: absolute;
-      left: 20px;
-      top: 150px;
-    }
+}
+.modalLogoBox {
+  width: 283px;
+  .modalLogo {
+    width: 180px;
+    position: absolute;
+    left: 20px;
+    top: 150px;
   }
 }
-
-.lists {
-  // margin: 0 100px;
+.categoryLists {
   display: flex;
   justify-content: space-between;
-}
-.mainList,
-.typeList,
-.loveList {
-  margin: 90px 20px 40px;
-  .categoryDetail {
-    .categoryDetailTitle,
-    .ListContents {
-      margin-bottom: 12px;
-      font-size: 16px;
-      font-weight: 300;
-    }
-    .categoryDetailTitle {
-      font-weight: 500;
-    }
+
+  .categoryList {
+    margin: 90px 20px 40px;
+  }
+  .categoryDetailTitle {
+    font-weight: 500;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 300;
+  }
+  .listContents {
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 300;
   }
 }
 
-.categorySkintype {
-  display: flex;
-  justify-content: space-between;
-  .modalList {
-    margin: 90px 40px 45px 0;
-  }
-}
-.categoryMainImg {
-  .categorySkinImg,
-  .categoryBodyImg {
-    width: 462px;
-  }
+.categoryImg {
+  width: 462px;
 }
