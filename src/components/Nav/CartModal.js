@@ -4,27 +4,31 @@ const cartData = [
   {
     id: '0',
     productName: '리무브',
+    quantity: 1,
     size: '60ml',
     price: 30000,
   },
   {
     id: '1',
     productName: '컨트롤',
+    quantity: 3,
     size: '9ml',
     price: 27000,
   },
   {
     id: '2',
     productName: '마스크',
+    quantity: 2,
     size: '90ml',
     price: 65000,
   },
 ];
 function CartModal() {
-  const [quantity, setQuantity] = useState(1);
-  const handleQuantity = e => {
-    setQuantity(e.target.value);
-  };
+  // const [quantity, setQuantity] = useState(1);
+  // const [price, setPrice] = useState(0);
+  function productResult(a, b) {
+    return a * b;
+  }
   return (
     <div className="cartModal">
       <div className="CartProducts">
@@ -35,19 +39,17 @@ function CartModal() {
           <button>X</button>
         </div>
         <ul className="CartProductsList">
-          {cartData.map(({ id, productName, size, price }) => {
+          {cartData.map(({ id, productName, size, price, quantity }) => {
             return (
               <li className="CartProduct" key={id}>
                 <div>{productName}</div>
                 <div>{size}</div>
-                <input
-                  type="number"
-                  placeholder="Quantity"
-                  onChange={handleQuantity}
-                />
                 <div>
-                  {price} * {quantity}
+                  {quantity}
+                  <button>삭제</button>
                 </div>
+
+                <div>{productResult(price, quantity)}</div>
               </li>
             );
           })}
