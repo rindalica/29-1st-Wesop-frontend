@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Home from './Home/Home';
 import Carousel from './Carousel/Carousel';
 import TwoColumnsPromotion from '../../components/TwoColumnsPromotion/TwoColumnsPromotion';
@@ -6,10 +6,27 @@ import { PROMOTIONS, FACIAL_PRODUCTS, BODY_PRODUCTS } from './mainData';
 import './Main.scss';
 
 const Main = () => {
+  const [cleanserData, setCleanserData] = useState(null);
+  const getPromotionData = async () => {
+    const json = await (
+      await fetch('http://10.58.4.18:8000/skin/categories/1')
+    ).json();
+    console.log(json);
+    setCleanserData(json.message.slice(0, 5));
+    console.log(cleanserData);
+  };
+  useEffect(() => {
+    getPromotionData();
+  }, []);
+  useEffect(() => {
+    console.log(cleanserData);
+  }, [cleanserData]);
+
   return (
     <>
       <Home />
-      <Carousel className="facial" dataList={FACIAL_PRODUCTS} />
+      {cleanserData && <Carousel className="facial" dataList={cleanserData} />}
+      {/* <Carousel className="facial" dataList={FACIAL_PRODUCTS} /> */}
       {PROMOTIONS.map(promotion => (
         <TwoColumnsPromotion
           key={promotion.id}

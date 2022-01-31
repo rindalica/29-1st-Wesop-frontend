@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CarouselItem from './CarouselItem/CarouselItem';
 import './Carousel.scss';
 
@@ -15,6 +15,10 @@ const Carousel = ({ className, dataList }) => {
       setSlideIndex(curr => ++curr);
     }
   };
+
+  useEffect(() => {
+    console.log(dataList);
+  }, []);
 
   const firstSlide =
     slideIndex === 0
@@ -45,13 +49,14 @@ const Carousel = ({ className, dataList }) => {
         style={{ transform: `translateX(calc(-100% / 3 * ${slideIndex}))` }}
       >
         {dataList &&
-          dataList.map(data => (
+          dataList.map((data, index) => (
             <CarouselItem
-              key={data.id}
-              heading={data.heading}
+              key={index}
+              heading={data.name}
               description={data.description}
-              alt={data.alt}
-              src={data.src}
+              alt={data.name}
+              src="https://images.unsplash.com/photo-1573575154488-f88a60e170df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+              // src={data.src}
             />
           ))}
       </div>
