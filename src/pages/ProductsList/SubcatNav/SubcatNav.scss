@@ -1,0 +1,40 @@
+.Subnav {
+  background-color: #ebeade;
+  color: #666;
+  display: flex;
+  padding: 30px;
+  font-size: 16px;
+  margin-top: 30px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+
+  .SubnavUl {
+    display: flex;
+    padding: 10px;
+    align-items: flex-end;
+
+    .SubnavLi {
+      margin-left: 10px;
+      padding-right: 10px;
+      flex-shrink: 0;
+
+      &::after {
+        content: '';
+        display: block;
+        border-bottom: solid 1px rgba(102, 102, 102, 0.788);
+        padding-bottom: 4px;
+        transition: width 250ms ease-out;
+        left: auto;
+        right: 0;
+        width: 0;
+      }
+
+      &:hover::after {
+        width: 100%;
+        left: 0;
+        right: auto;
+      }
+    }
+  }
+}

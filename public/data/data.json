@@ -1,0 +1,578 @@
+[
+  {
+    "id": 1,
+    "categoryName": "클렌저",
+    "categoryDescription": "피부의 남은 각질, 불필요한 유분 그리고 기타 잔여물을 말끔히 씻어내어 피부를 깨끗하게 하는 것은 인텔리전트 스킨케어의 기초입니다.",
+    "categoryDetailDescriptionHeader": "처음의 시작",
+    "categoryDetailDescription": "각질, 불필요한 유분 그리고 기타 잔여물을 말끔히 씻어내어 피부를 깨끗하게 하는 것은 인텔리전트 스킨케어의 기초입니다.",
+    "productList": [
+      {
+        "id": 1,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 2,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 3,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 4,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 5,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 6,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 7,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "categoryName": "각질 제거",
+    "categoryDescription": "효과적인 각질 관리는 피부의 잔여물과 불필요한 유분을 깨끗하게 세정해주는 동시에 피부를 부드럽고 생기 있게 가꿔줍니다.",
+    "categoryDetailDescriptionHeader": "마찰로 만드는 아름다움",
+    "categoryDetailDescription": "효과적인 각질 관리는 지친 피부로부터 자유롭게 하여, 부드럽고 생기 있으며 매끄러운 피부로 가꿔줍니다.",
+    "productList": [
+      {
+        "id": 1,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 2,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 3,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 4,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 5,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 6,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 7,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "categoryName": "트리트먼트 & 마스크",
+    "categoryDescription": "딥 클렌징 마스크에서 너리싱 페이셜 오일에 이르기까지 모든 스킨 케어 루틴을 보완하는 제품",
+    "categoryDetailDescriptionHeader": "데일리 스킨 케어의 보완",
+    "categoryDetailDescription": "데일리 스킨 케어 루틴을 보완해 트리트먼트와 마스크를 정기적으로 사용하세요. 잔여물을 씻어내주고 영양과 수분을 보충해 피부를 부드럽고 유연하게 가꾸고 건강하게 지켜줍니다.",
+    "productList": [
+      {
+        "id": 1,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 2,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 3,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 4,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 5,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 6,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 7,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "categoryName": "토너",
+    "categoryDescription": "토너는 클렌징과 수분 공급 사이에서 중요한 과정입니다. 피부의 밸런스를 잡아 주어 수분 공급 시 우수한 효과를 볼 수 있게 합니다.",
+    "categoryDetailDescriptionHeader": "핵심이 되는 준비과정",
+    "categoryDetailDescription": "토닝은 깨끗한 피부를 탄생시키는 핵심적인 역할을 합니다. 오랫동안 남아있는 잔여물과 피지를 씻어내고 피부의 밸런스를 잡아주며 수분 공급을 위해 피부를 준비합니다.",
+    "productList": [
+      {
+        "id": 1,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 2,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 3,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 4,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 5,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 6,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 7,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "categoryName": "하이드레이터",
+    "categoryDescription": "피부에 보습, 영양을 주고 진정을 돕는 하이드레이터는 피부를 건강하게 가꿔주고 우수한 상태로 유지 시켜줍니다.",
+    "categoryDetailDescriptionHeader": "건강하고, 부드럽고, 탄력 있는 피부를 위하여",
+    "categoryDetailDescription": "피부에 보습, 영양을 주고 진정을 돕는 하이드레이터는 피부를 건강하게 가꿔주고 우수한 상태로 유지 시켜줍니다.",
+    "productList": [
+      {
+        "id": 1,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 2,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 3,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 4,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 5,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 6,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 7,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "categoryName": "립 & 아이",
+    "categoryDescription": "다른 피부보다도 얇고 연약한 입술과 눈가 주변은 섬세하고 민감하여 주기적인 수분 공급과 보호가 필요합니다.",
+    "categoryDetailDescriptionHeader": "세심한 케어가 필요한 섬세한 피부",
+    "categoryDetailDescription": "얇고 섬세한 입술과 눈 주위의 피부에는 집중적인 관리가 필요합니다. 세심한 수분 공급과 매일 비타민이 풍부한 영양 공급이 필요합니다.",
+    "productList": [
+      {
+        "id": 1,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 2,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 3,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 4,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 5,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 6,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 7,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "categoryName": "쉐이빙",
+    "categoryDescription": "이솝의 쉐이빙 도구와 제품은 차분하고 신선한 쉐이빙의 경험을 선사합니다.",
+    "categoryDetailDescriptionHeader": "깔끔한 쉐이빙을 위한 필수품",
+    "categoryDetailDescription": "이솝의 쉐이빙 제품은 자극 받은 피부를 진정 시키고 밸런스를 유지해줍니다. 또한 우수한 품질의 쉐이빙 도구는 뛰어난 쉐이빙 경험을 선사합니다.",
+    "productList": [
+      {
+        "id": 1,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 2,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 3,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 4,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 5,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 6,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 7,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "categoryName": "선 케어",
+    "categoryDescription": "자외선에 노출되기 전에 효과적으로 피부를 보호하며 피부의 건강을 유지시켜줍니다.",
+    "categoryDetailDescriptionHeader": "햇빛에서 보내는 시간을 위한 지능적인 케어",
+    "categoryDetailDescription": "UVB 층으로부터 매일 피부를 보호하는 것은 건강하고 유연한 피부를 유지하는 핵심입니다. 이솝의 SPF 제품들은 광범위한 스펙트럼으로부터 피부를 보호할 뿐만 아니라, 수분을 공급하고 부드러운 피부를 위해 영양을 공급합니다.",
+    "productList": [
+      {
+        "id": 1,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 2,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 3,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 4,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 5,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 6,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      },
+      {
+        "id": 7,
+        "src": "https://www.aesop.com/u1nb1km7t5q7/4NWh283d1yqAkukmet0auB/c45a565e71259336c1b557867ec61600/Aesop-Skin-Remove-60mL-large.png",
+        "productName": "리무브",
+        "productSize": "60 ml",
+        "productPrice": "30,000",
+        "skinType": "모든 피부, 메이크업을 한 피부",
+        "texture": "탄력,유연,부드러운"
+      }
+    ]
+  }
+]
