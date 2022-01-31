@@ -4,26 +4,32 @@ import './Carousel.scss';
 
 const Carousel = ({ className, dataList }) => {
   const [slideIndex, setSlideIndex] = useState(0);
+
   const onClick = event => {
-    if (event.target.className.includes('prev')) {
+    const isPrev = event.target.className.includes('prev');
+    const isNext = event.target.className.includes('next');
+    if (isPrev) {
       setSlideIndex(curr => --curr);
     }
-    if (event.target.className.includes('next')) {
+    if (isNext) {
       setSlideIndex(curr => ++curr);
     }
   };
+
   const firstSlide =
     slideIndex === 0
       ? {
           style: { transform: 'translateX(-80px)' },
         }
       : null;
+
   const lastSlide =
     slideIndex === dataList.length - 3
       ? {
           style: { transform: 'translateX(80px)' },
         }
       : null;
+
   return (
     <div className={`Carousel ${className}`}>
       <button
