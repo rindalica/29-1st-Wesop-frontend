@@ -20,8 +20,9 @@
   }
 
   .logo {
-    width: 168px;
-    margin: 85px 0 0 24px;
+    width: $logo-width;
+    margin-top: 85px;
+    margin-left: $logo-left;
 
     img {
       width: 100%;

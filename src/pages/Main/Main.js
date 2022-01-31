@@ -9,10 +9,10 @@ const Main = () => {
   return (
     <>
       <Home />
-      <Carousel dataList={FACIAL_PRODUCTS} />
+      <Carousel className="facial" dataList={FACIAL_PRODUCTS} />
       {PROMOTIONS.map(promotion => (
         <TwoColumnsPromotion
-          key={promotion.idx}
+          key={promotion.id}
           isTextOnLeft={promotion.isTextOnLeft}
           isContentImg={promotion.isContentImg}
           subTitle={promotion.subTitle}
@@ -24,7 +24,7 @@ const Main = () => {
           src={promotion.src}
         />
       ))}
-      <Carousel dataList={BODY_PRODUCTS} />
+      <Carousel className="body" dataList={BODY_PRODUCTS} />
       <TwoColumnsPromotion
         isTextOnLeft={true}
         isContentImg={false}
