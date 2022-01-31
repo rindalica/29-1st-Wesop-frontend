@@ -11,13 +11,7 @@ function CartModal({ cartModal }) {
   const total = cartData
     .map(item => item.price * item.quantity)
     .reduce((prev, curr) => prev + curr, 0);
-  const onDelete = targetId => {
-    const newList = cartData.filter(it => {
-      // eslint-disable-next-line no-unused-expressions
-      it.id !== targetId;
-    });
-    setCartData(newList);
-  };
+
   return (
     <div className={cartModal}>
       <div className="CartProducts">
@@ -32,13 +26,23 @@ function CartModal({ cartModal }) {
             const productResult = (a, b) => {
               return a * b;
             };
+            function onDelete() {
+              setCartData(
+                cartData.filter(it => {
+                  // eslint-disable-next-line no-unused-expressions
+                  if (it.id !== id) {
+                    return id;
+                  }
+                })
+              );
+            }
 
             return (
               <li className="CartProduct" key={id}>
                 <div>{productName}</div>
                 <div>{size}</div>
                 <div>{quantity}</div>
-                <button onClick={onDelete}>삭제</button>
+                <button onClick={onDelete}> 삭제 </button>
                 <div>₩ {productResult(price, quantity)}</div>
               </li>
             );
