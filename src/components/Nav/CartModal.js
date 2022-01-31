@@ -1,36 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import './CartModal.scss';
-const cartData = [
-  {
-    id: '0',
-    productName: '리무브',
-    quantity: 1,
-    size: '60ml',
-    price: 30000,
-  },
-  {
-    id: '1',
-    productName: '컨트롤',
-    quantity: 3,
-    size: '9ml',
-    price: 27000,
-  },
-  {
-    id: '2',
-    productName: '마스크',
-    quantity: 2,
-    size: '90ml',
-    price: 65000,
-  },
-];
-function CartModal() {
-  // const [quantity, setQuantity] = useState(1);
-  // const [price, setPrice] = useState(0);
-  function productResult(a, b) {
-    return a * b;
-  }
+
+function CartModal({ cartModal }) {
+  useEffect(() => {
+    fetch('/data/CartData.json')
+      .then(res => res.json())
+      .then(res => setCartData(res));
+  }, []);
+  const [cartData, setCartData] = useState([]);
+  const total = cartData
+    .map(item => item.price * item.quantity)
+    .reduce((prev, curr) => prev + curr, 0);
+  const onDelete = targetId => {
+    const newList = cartData.filter(it => {
+      // eslint-disable-next-line no-unused-expressions
+      it.id !== targetId;
+    });
+    setCartData(newList);
+  };
   return (
-    <div className="cartModal">
+    <div className={cartModal}>
       <div className="CartProducts">
         <div className="CartProductsHeader">
           <div>카트</div>
@@ -40,16 +29,17 @@ function CartModal() {
         </div>
         <ul className="CartProductsList">
           {cartData.map(({ id, productName, size, price, quantity }) => {
+            const productResult = (a, b) => {
+              return a * b;
+            };
+
             return (
               <li className="CartProduct" key={id}>
                 <div>{productName}</div>
                 <div>{size}</div>
-                <div>
-                  {quantity}
-                  <button>삭제</button>
-                </div>
-
-                <div>{productResult(price, quantity)}</div>
+                <div>{quantity}</div>
+                <button onClick={onDelete}>삭제</button>
+                <div>₩ {productResult(price, quantity)}</div>
               </li>
             );
           })}
@@ -59,7 +49,7 @@ function CartModal() {
         <span>전 제품 무료 배송 혜택을 즐겨보세요.</span>
         <div className="CartSummaryMoney">
           <h5> 소계 (세금 포함)</h5>
-          <span>₩ 55,000</span>
+          <span> ₩ {total}</span>
         </div>
         <button>결제하기</button>
       </div>

@@ -1,20 +1,38 @@
+@import '../../styles/variables.scss';
+$darkgray: #333;
+$ivory: #fffef2;
+$beige: #ebeade;
+
+@mixin flex-justify-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cartModal {
+  background-color: $darkgray;
+}
 .CartProducts {
   padding: 40px 40px 0;
   .CartProductsHeader {
     display: flex;
     justify-content: space-between;
     padding: 0 0 15px;
+    color: $ivory;
+    border-bottom: 2px solid rgba(255, 254, 242, 0.1);
   }
   .CartProduct {
     display: flex;
     justify-content: space-between;
     padding: 15px 0;
+    color: $ivory;
+    border-bottom: 2px solid rgba(255, 254, 242, 0.1);
   }
 }
 
 .CartSummary {
   padding: 30px 40px 40px;
   margin-left: 66%;
+  color: $ivory;
   .CartSummaryMoney {
     display: flex;
     justify-content: space-between;
