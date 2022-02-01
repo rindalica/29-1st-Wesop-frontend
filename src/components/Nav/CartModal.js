@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './CartModal.scss';
+import Option from './Option';
 
 function CartModal({ cartModal }) {
   useEffect(() => {
@@ -11,7 +12,7 @@ function CartModal({ cartModal }) {
   const total = cartData
     .map(item => item.price * item.quantity)
     .reduce((prev, curr) => prev + curr, 0);
-
+  const [selected, setSelected] = useState(1);
   return (
     <div className={cartModal}>
       <div className="CartProducts">
@@ -22,7 +23,7 @@ function CartModal({ cartModal }) {
           <button>X</button>
         </div>
         <ul className="CartProductsList">
-          {cartData.map(({ id, productName, size, price, quantity }) => {
+          {cartData.map(({ id, productName, size, price, option, value }) => {
             const productResult = (a, b) => {
               return a * b;
             };
@@ -36,14 +37,17 @@ function CartModal({ cartModal }) {
                 })
               );
             }
+            function selectHandler(e) {
+              setSelected(e.target.value);
+            }
 
             return (
               <li className="CartProduct" key={id}>
                 <div>{productName}</div>
                 <div>{size}</div>
-                <div>{quantity}</div>
+                <Option option={option} onChange={selectHandler} />
                 <button onClick={onDelete}> 삭제 </button>
-                <div>₩ {productResult(price, quantity)}</div>
+                <div>₩ {productResult(price, selected)}</div>
               </li>
             );
           })}

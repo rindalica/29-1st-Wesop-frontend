@@ -8,8 +8,8 @@ function Cart() {
   };
   return (
     <div className="cart">
-      <CartModal cartModal={isCartModal} />
       <button onClick={handleModal}>카트</button>
+      <CartModal cartModal={isCartModal} />
     </div>
   );
 }
