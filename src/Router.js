@@ -11,9 +11,9 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/products-list-all" element={<AllProductsList />} />
+        <Route path="/products-list" element={<AllProductsList />} />
         <Route
-          path="/products-list-subcategory"
+          path="/products-list/subcategory/"
           element={<SubcatProductsList />}
         />
         <Route path="/products-detail" element={<ProductsDetail />} />

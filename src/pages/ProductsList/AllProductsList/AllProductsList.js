@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SubcatNav from '../SubcatNav/SubcatNav';
-import SubcatIntro from '../SubcatIntro/SubcatIntro';
+import SubcatIntro from '../SubcatProductsIntro/SubcatProductsIntro';
 import './AllProductsList.scss';
 
 function AllProductsList() {

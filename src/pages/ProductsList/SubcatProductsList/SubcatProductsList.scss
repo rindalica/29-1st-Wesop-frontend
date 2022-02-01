@@ -18,14 +18,13 @@
     display: flex;
     margin-top: 10px;
     margin-left: 50px;
-    font-size: 23px;
-    font-weight: 100px;
-    color: rgba(51, 51, 51, 0.822);
+    font-size: 25px;
+    font-weight: 300;
+    color: rgb(51, 51, 51);
   }
 
-  .categoryBodyRow {
+  .productsListMain {
     display: flex;
-    height: 370px;
-    margin-top: 50px;
+    flex-wrap: wrap;
   }
 }

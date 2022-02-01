@@ -1,16 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import SubcatNav from '../SubcatNav/SubcatNav';
-import SubcatIntro from '../SubcatIntro/SubcatIntro';
+import SubcatProductsDetail from '../SubcatProductsDetail/SubcatProductsDetail';
+import SubcatProductsIntro from '../SubcatProductsIntro/SubcatProductsIntro';
+
 import './SubcatProductsList.scss';
 
 function AllProductsList() {
-  const [list, setLists] = useState([]);
+  const [lists, setLists] = useState([]);
+  const params = useParams();
+
+  console.log(params);
 
   useEffect(() => {
     fetch('/data/data.json')
       .then(res => res.json())
       .then(data => {
-        setLists(data);
+        if (data) {
+          setLists(data);
+        }
       });
   }, []);
 
@@ -30,9 +38,13 @@ function AllProductsList() {
       </div>
 
       {/* 카테고리 */}
-      <SubcatNav />
+      <SubcatNav lists={lists} />
 
       {/* 상품 리스트 */}
+      <div className="productsListMain">
+        {/* <SubcatProductsIntro lists={lists} /> */}
+        <SubcatProductsDetail productList={lists.productList} />
+      </div>
     </div>
   );
 }
