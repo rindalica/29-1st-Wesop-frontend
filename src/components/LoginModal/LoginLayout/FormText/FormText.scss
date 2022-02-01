@@ -1,0 +1,49 @@
+@import '../../../../styles/variables.scss';
+
+.FormText {
+  padding: 35px 0 0;
+  margin-bottom: 35px;
+
+  label {
+    position: relative;
+    width: 100%;
+
+    .inputText {
+      width: 100%;
+      height: 40px;
+      padding: 8px 0;
+      border: none;
+      border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+      background-color: transparent;
+      color: $blackgray;
+      line-height: 1;
+
+      &:focus + .labelText,
+      &.hasValue + .labelText {
+        font-size: 14px;
+        transform: translateY(-40px);
+      }
+    }
+
+    .labelText {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding-bottom: 4px;
+      line-height: 1.75;
+    }
+
+    .inputText,
+    .labelText {
+      font-size: 20px;
+      transition: all 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+      cursor: text;
+    }
+  }
+
+  .errorMessage {
+    margin-top: 10px;
+    color: $red;
+    font-size: 14px;
+  }
+}

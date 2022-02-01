@@ -1,0 +1,48 @@
+@import '../../styles/variables.scss';
+
+.LoginModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  z-index: 100;
+
+  .modalInner {
+    padding: 50px 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+
+    .modalBackground {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: #000000, $alpha: 0.4);
+    }
+
+    .name {
+      @include flex-justify-between;
+
+      .FormText:first-child {
+        margin-right: 10px;
+      }
+
+      .FormText:last-child {
+        margin-left: 10px;
+      }
+    }
+
+    .forgotPasswordBtn {
+      margin: -25px 0 10px;
+      text-align: right;
+      font-size: 14px;
+    }
+  }
+}

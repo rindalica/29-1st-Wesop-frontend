@@ -1,5 +1,11 @@
 @import '../../styles/variables.scss';
 
+body {
+  &.noScroll {
+    overflow: hidden;
+  }
+}
+
 .Carousel {
   &.body {
     padding-top: 50px;
