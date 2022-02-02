@@ -3,11 +3,11 @@
     "id": 1,
     "productName": "리무브",
     "option": [
-      { "value": 1, "num": 1 },
-      { "value": 2, "num": 2 },
-      { "value": 3, "num": 3 },
-      { "value": 4, "num": 4 },
-      { "value": 5, "num": 5 }
+      { "value": 1 },
+      { "value": 2 },
+      { "value": 3 },
+      { "value": 4 },
+      { "value": 5 }
     ],
     "size": "60ml",
     "price": 30000
@@ -16,11 +16,11 @@
     "id": 2,
     "productName": "컨트롤",
     "option": [
-      { "value": 1, "num": 1 },
-      { "value": 2, "num": 2 },
-      { "value": 3, "num": 3 },
-      { "value": 4, "num": 4 },
-      { "value": 5, "num": 5 }
+      { "value": 1 },
+      { "value": 2 },
+      { "value": 3 },
+      { "value": 4 },
+      { "value": 5 }
     ],
     "size": "9ml",
     "price": 27000
@@ -29,11 +29,11 @@
     "id": 3,
     "productName": "마스크",
     "option": [
-      { "value": 1, "num": 1 },
-      { "value": 2, "num": 2 },
-      { "value": 3, "num": 3 },
-      { "value": 4, "num": 4 },
-      { "value": 5, "num": 5 }
+      { "value": 1 },
+      { "value": 2 },
+      { "value": 3 },
+      { "value": 4 },
+      { "value": 5 }
     ],
     "size": "90ml",
     "price": 65000

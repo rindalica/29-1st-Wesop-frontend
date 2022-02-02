@@ -9,8 +9,9 @@ function CartModal({ cartModal }) {
       .then(res => setCartData(res));
   }, []);
   const [cartData, setCartData] = useState([]);
+
   const total = cartData
-    .map(item => item.price * item.quantity)
+    .map(item => item.price * item.selected)
     .reduce((prev, curr) => prev + curr, 0);
   const [selected, setSelected] = useState(1);
   return (
@@ -24,9 +25,6 @@ function CartModal({ cartModal }) {
         </div>
         <ul className="CartProductsList">
           {cartData.map(({ id, productName, size, price, option, value }) => {
-            const productResult = (a, b) => {
-              return a * b;
-            };
             function onDelete() {
               setCartData(
                 cartData.filter(it => {
@@ -37,15 +35,26 @@ function CartModal({ cartModal }) {
                 })
               );
             }
-            function selectHandler(e) {
-              setSelected(e.target.value);
-            }
 
+            const productResult = (a, b) => {
+              return a * b;
+            };
+            // console.log(option);
             return (
               <li className="CartProduct" key={id}>
                 <div>{productName}</div>
                 <div>{size}</div>
-                <Option option={option} onChange={selectHandler} />
+                <Option
+                  option={option}
+                  onChange={function selectHandle(e) {
+                    const news = option.filter(o => {
+                      if (e.target.value == o.value) {
+                        return o.value;
+                      }
+                    });
+                    setSelected(news[0].value);
+                  }}
+                />
                 <button onClick={onDelete}> 삭제 </button>
                 <div>₩ {productResult(price, selected)}</div>
               </li>
