@@ -8,8 +8,24 @@ const SigninForm = ({
   goToForgotPassword,
   inputState,
   handleInput,
-  onSubmit,
 }) => {
+  const submitSignin = async () => {
+    const json = await (
+      await fetch('http://172.30.1.11:8000/users/login', {
+        method: 'POST',
+        body: JSON.stringify({
+          email: inputState.email,
+          password: inputState.password,
+        }),
+      })
+    ).json();
+    console.log(json);
+
+    if (json.message === 'SUCCESS') {
+      sessionStorage.setItem('ACCESS_TOKEN', json.ACCESS_TOKEN);
+    }
+  };
+
   return (
     <LoginLayout
       mainTitle="위솝에 다시 오신 것을 환영합니다."
@@ -19,6 +35,7 @@ const SigninForm = ({
       goBack={goBack}
       inputState={inputState}
       handleInput={handleInput}
+      onSubmit={submitSignin}
     >
       <FormText
         name="password"

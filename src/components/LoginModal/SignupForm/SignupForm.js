@@ -8,12 +8,27 @@ const SignupForm = ({
   goToSignin,
   inputState,
   handleInput,
-  onSubmit,
 }) => {
+  // pw: 8자 이상, 대소문자+숫자+특수문자
   const isError =
     inputState.password &&
     inputState.passwordConfirmation &&
     inputState.password !== inputState.passwordConfirmation;
+
+  const submitSignup = async () => {
+    const json = await (
+      await fetch('http://172.30.1.11:8000/users/signUp', {
+        method: 'POST',
+        body: JSON.stringify({
+          email: inputState.email,
+          password: inputState.password,
+          'last-name': inputState.lastName,
+          'first-name': inputState.firstName,
+        }),
+      })
+    ).json();
+    console.log(json);
+  };
 
   return (
     <LoginLayout
@@ -24,6 +39,7 @@ const SignupForm = ({
       goBack={goBack}
       inputState={inputState}
       handleInput={handleInput}
+      onSubmit={submitSignup}
     >
       <FormText
         name="password"
@@ -40,8 +56,18 @@ const SignupForm = ({
         errorMessage="이전에 사용했던 패스워드를 입력하세요."
       />
       <div className="name">
-        <FormText name="lastName" type="text" labelText="성" />
-        <FormText name="firstName" type="text" labelText="이름" />
+        <FormText
+          name="lastName"
+          type="text"
+          labelText="성"
+          onChange={handleInput}
+        />
+        <FormText
+          name="firstName"
+          type="text"
+          labelText="이름"
+          onChange={handleInput}
+        />
       </div>
 
       <label>

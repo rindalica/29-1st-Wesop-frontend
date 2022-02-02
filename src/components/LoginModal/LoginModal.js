@@ -37,25 +37,31 @@ const LoginModal = ({ isLoginOpen, setIsLoginOpen }) => {
     }));
   };
 
-  const submitEmail = () => {
-    const hasAccount = false;
-    goToForm(hasAccount ? isSignin : isSignup);
-  };
+  // const submitEmail = () => {
+  //   postData();
+  //   const hasAccount = false;
+  //   goToForm(hasAccount ? isSignin : isSignup);
+  // };
 
   const handleInput = event => {
     const { name, value } = event.target;
     setInputState(curr => ({ ...curr, [name]: value }));
   };
 
-  const postData = async () => {
+  const submitLogin = async () => {
     const json = await (
-      await fetch('', {
+      await fetch('http://172.30.1.11:8000/users/emailvalid', {
         method: 'POST',
         body: JSON.stringify({
           email: inputState.email,
         }),
       })
     ).json();
+    const hasAccount = json['sign-in'];
+    console.log(hasAccount);
+    // 문자열 1글자 + @ + 문자열 1글자(대소문자숫자) + . + 대소문자숫자 1글자
+
+    goToForm(hasAccount ? isSignin : isSignup);
   };
 
   return isLoginOpen ? (
@@ -68,7 +74,7 @@ const LoginModal = ({ isLoginOpen, setIsLoginOpen }) => {
             isLogin={modalState.isLogin}
             inputState={inputState}
             handleInput={handleInput}
-            onSubmit={submitEmail}
+            onSubmit={submitLogin}
           />
         ) : null}
 
