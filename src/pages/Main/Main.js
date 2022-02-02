@@ -6,27 +6,48 @@ import { PROMOTIONS, FACIAL_PRODUCTS, BODY_PRODUCTS } from './mainData';
 import './Main.scss';
 
 const Main = () => {
-  const [cleanserData, setCleanserData] = useState(null);
-  const getPromotionData = async () => {
-    const json = await (
-      await fetch('http://10.58.4.18:8000/skin/categories/1')
-    ).json();
-    console.log(json);
-    setCleanserData(json.message.slice(0, 5));
-    console.log(cleanserData);
-  };
+  const [carouselData, setCarouselData] = useState(null);
+  const categoryNum = [1, 3];
+
+  // const getPromotionData = async () => {
+  //   const json = await (
+  //     await fetch('http://172.30.1.32:8000/skin/categories/1')
+  //   ).json();
+  //   setCarouselData(json.message.slice(1, 6));
+  // };
+
+  // useEffect(() => {
+  //   getPromotionData();
+  // }, []);
+
   useEffect(() => {
-    getPromotionData();
+    Promise.all(
+      categoryNum.map(num =>
+        fetch(`http://172.30.1.32:8000/skin/categories/${num}`)
+      )
+    )
+      .then(res => Promise.all(res.map(res => res.json())))
+      .then(json => {
+        console.log(json);
+        setCarouselData(json.map(data => data.message));
+        console.log(carouselData);
+      });
   }, []);
+
   useEffect(() => {
-    console.log(cleanserData);
-  }, [cleanserData]);
+    console.log(carouselData);
+  }, [carouselData]);
 
   return (
     <>
       <Home />
-      {cleanserData && <Carousel className="facial" dataList={cleanserData} />}
-      {/* <Carousel className="facial" dataList={FACIAL_PRODUCTS} /> */}
+      {carouselData && (
+        <Carousel
+          className="carouselFirst"
+          dataList={carouselData[0].slice(1, 6)}
+        />
+      )}
+      {/* <Carousel className="carouselFirst" dataList={FACIAL_PRODUCTS} /> */}
       {PROMOTIONS.map(promotion => (
         <TwoColumnsPromotion
           key={promotion.id}
@@ -41,7 +62,12 @@ const Main = () => {
           src={promotion.src}
         />
       ))}
-      <Carousel className="body" dataList={BODY_PRODUCTS} />
+      {carouselData && (
+        <Carousel
+          className="carouselSecond"
+          dataList={carouselData[1].slice(0, 6)}
+        />
+      )}
       <TwoColumnsPromotion
         isTextOnLeft={true}
         isContentImg={false}
