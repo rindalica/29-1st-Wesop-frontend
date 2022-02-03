@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './SubcatProductsDetail.scss';
 
-function SubcatProductsDetail({ productList }) {
+function SubcatProductsDetail({ lists }) {
   const addToCart = e => {
     return (e.target.style.background = '#EBEADE');
   };
@@ -16,8 +16,8 @@ function SubcatProductsDetail({ productList }) {
       onMouseOut={changeToDefault}
     >
       <div className="productList">
-        {productList &&
-          productList.map(product => {
+        {lists &&
+          lists.map(product => {
             return product.categoryDetailDescriptionHeader ? (
               <div className="product">
                 <h1>{product.categoryDetailDescriptionHeader}</h1>

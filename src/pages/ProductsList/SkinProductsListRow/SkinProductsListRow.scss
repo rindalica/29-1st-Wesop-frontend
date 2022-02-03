@@ -1,0 +1,37 @@
+.productsListCarousel {
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: #fffef2;
+  height: 370px;
+
+  .productsListRow {
+    display: flex;
+    height: 370px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    .product {
+      color: #333;
+      font-size: 16px;
+      justify-content: center;
+      align-content: center;
+      width: 200px;
+      padding: 80px 40px;
+
+      h1 {
+        font-size: 30px;
+        font-family: Zapf Humanist, serif;
+        font-weight: 50;
+        margin-bottom: 50px;
+      }
+
+      p {
+        line-height: 25px;
+      }
+    }
+  }
+
+  .carousel {
+    display: flex;
+  }
+}
