@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Home from './Home/Home';
-import Carousel from './Carousel/Carousel';
+import Carousel from '../../components/Carousel/Carousel';
 import TwoColumnsPromotion from '../../components/TwoColumnsPromotion/TwoColumnsPromotion';
 import Quote from './Quote/Quote';
 import {
