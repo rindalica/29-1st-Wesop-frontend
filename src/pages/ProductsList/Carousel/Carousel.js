@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import CarouselItem from '../Carousel/CarouselItem/CarouselItem';
 import './Carousel.scss';
 
-const Carousel = ({ className, dataList }) => {
+const Carousel = ({ className, skinProducts }) => {
   const [slideIndex, setSlideIndex] = useState(0);
 
   const onClick = event => {
@@ -24,7 +24,7 @@ const Carousel = ({ className, dataList }) => {
       : null;
 
   const lastSlide =
-    slideIndex === dataList.length - 3
+    slideIndex === skinProducts.length - 7
       ? {
           style: { transform: 'translateX(80px)' },
         }
@@ -44,14 +44,14 @@ const Carousel = ({ className, dataList }) => {
         className="itemWrapper"
         style={{ transform: `translateX(calc(-100% / 3 * ${slideIndex}))` }}
       >
-        {dataList &&
-          dataList.map(data => (
+        {skinProducts[0].products &&
+          skinProducts[0].products.map(data => (
             <CarouselItem
-              key={data.id}
-              heading={data.heading}
-              description={data.description}
-              alt={data.alt}
-              src={data.src}
+              key={data.product_name}
+              heading={data.product_name}
+              // description={data.description}
+              // alt={data.alt}
+              // src={data.src}
             />
           ))}
       </div>
@@ -67,7 +67,7 @@ const Carousel = ({ className, dataList }) => {
         <div
           className="current"
           style={{
-            width: `calc(100% / ${dataList.length - 2})`,
+            width: `calc(100% / ${skinProducts.length - 2})`,
             transform: `translateX(calc(100% * ${slideIndex}))`,
           }}
         />

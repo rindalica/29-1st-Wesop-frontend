@@ -1,24 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import SubcatNav from '../SubcatNav/SubcatNav';
 import SkinProductsList from '../SkinProductsList/SkinProductsList';
+import Carousel from '../Carousel/Carousel';
 import './AllProductsPage.scss';
 
 function AllProductsPage() {
-  const [skinProducts, setskinProducts] = useState([]);
+  const [skinProducts, setSkinProducts] = useState([]);
+
+  // useEffect(() => {
+  //   fetch('http//172.30.1.32:8000/skin')
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       if (data) {
+  //         setskinProducts(data.message);
+  //       }
+  //     });
+  // }, []);
 
   useEffect(() => {
     fetch('/data/skin.json')
       .then(res => res.json())
       .then(data => {
         if (data) {
-          setskinProducts(data);
+          setSkinProducts(data);
         }
       });
   }, []);
-
-  useEffect(() => {
-    console.log(skinProducts);
-  }, [skinProducts]);
 
   return (
     <div className="productsList">
@@ -29,16 +36,19 @@ function AllProductsPage() {
           className="wesopLogo"
         />
       </div>
-      {/* 카테고리 타이틀 */}
+
       <div className="categoryTitle">
         <h1 className="categoryTitleHeader"> 스킨 </h1>
       </div>
-      {/* 카테고리 */}
+
       <SubcatNav skinProducts={skinProducts} />
 
-      {/* 상품 리스트 */}
       <div className="productsListMain">
         <SkinProductsList skinProducts={skinProducts} />
+      </div>
+
+      <div className="carousel">
+        <Carousel skinProducts={skinProducts} />
       </div>
     </div>
   );

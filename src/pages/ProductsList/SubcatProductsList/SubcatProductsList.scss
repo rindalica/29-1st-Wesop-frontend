@@ -1,13 +1,10 @@
-.productList {
-  display: flex;
-  flex-flow: row wrap;
+.subcatProductsListMain {
   background-color: #fffef2;
-  .product {
-    color: #333;
-    font-size: 16px;
-    justify-content: center;
-    align-content: center;
-    width: 33.33%;
+
+  .productContainer {
+    padding: 50px;
+    width: 33%;
+    font-size: 15px;
     height: 700px;
     padding: 80px 40px;
 
@@ -22,11 +19,10 @@
       line-height: 25px;
     }
 
-    .productImage {
+    .subcatProductImage {
       width: 100%;
-      height: 320px;
-      margin: auto;
-      padding-top: 30px;
+      height: 370px;
+      padding: 30px;
     }
 
     .subcatProductsDetailList {
@@ -40,13 +36,7 @@
         color: rgba(51, 51, 51, 0.774);
         margin: auto;
         height: 90px;
-        margin-top: 10px;
         font-size: 14px;
-
-        .productsName {
-          font-size: 14px;
-          margin: auto;
-        }
       }
 
       .SubcatProductsDetails {
@@ -68,6 +58,11 @@
             .SubcatProductsDetailsTitle,
             .SubcatProductsDetailDetailsTitle {
               margin-right: 20px;
+              width: 60px;
+            }
+
+            .SubcatProductsDetailsContent {
+              width: 200px;
             }
           }
         }

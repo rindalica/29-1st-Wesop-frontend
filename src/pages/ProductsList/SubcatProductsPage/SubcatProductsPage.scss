@@ -15,7 +15,6 @@
   }
 
   .categoryTitleHeader {
-    display: flex;
     margin-top: 10px;
     margin-left: 50px;
     font-size: 25px;
@@ -23,7 +22,7 @@
     color: rgb(51, 51, 51);
   }
 
-  .productsListMain {
+  .subcatProductsListMain {
     display: flex;
     flex-wrap: wrap;
   }

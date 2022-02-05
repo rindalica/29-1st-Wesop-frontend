@@ -1,40 +1,46 @@
 .Subnav {
   background-color: #ebeade;
-  color: rgba(102, 102, 102);
-  font-weight: 300;
+  color: rgba(102, 102, 102, 0.658);
+  font-weight: 400;
   display: flex;
   padding: 25px;
-  font-size: 14px;
+  font-size: 15px;
   margin-top: 30px;
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: none;
+  width: 100%;
 
   .SubnavUl {
     display: flex;
-    padding: 10px;
     align-items: flex-end;
+
+    // .main {
+    //   padding-right: 20px;
+    //   border-right: 1.2px solid rgba(102, 102, 102, 0.658);
+    // }
 
     .SubnavLi {
       margin-left: 10px;
       padding-right: 10px;
       flex-shrink: 0;
 
-      &::after {
-        content: '';
-        display: block;
-        border-bottom: solid 1px rgba(102, 102, 102, 0.788);
-        padding-bottom: 4px;
-        transition: width 250ms ease-out;
-        left: auto;
-        right: 0;
-        width: 0;
-      }
+      .SubnavInnerText {
+        &::after {
+          content: '';
+          display: block;
+          border-bottom: solid 1px rgba(102, 102, 102, 0.658);
+          padding-bottom: 4px;
+          transition: width 250ms ease-out;
+          left: auto;
+          width: 0;
+        }
 
-      &:hover::after {
-        width: 100%;
-        left: 0;
-        right: auto;
+        &:hover::after {
+          width: 100%;
+          left: 0;
+          right: auto;
+        }
       }
     }
   }

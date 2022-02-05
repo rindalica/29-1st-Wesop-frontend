@@ -2,9 +2,9 @@ import React from 'react';
 import SkinProduct from '../SkinProduct/SkinProduct';
 import './SkinProductsListRow.scss';
 
-function SkinProductsList({ name, description, productsList }) {
+function SkinProductsListRow({ name, description, productsList }) {
   return (
-    <div className="skinProductsList">
+    <div className="skinProductsListRow">
       <div className="skinSubcatIntro">
         <h1>{name}</h1>
         <p>{description}</p>
@@ -23,4 +23,4 @@ function SkinProductsList({ name, description, productsList }) {
   );
 }
 
-export default SkinProductsList;
+export default SkinProductsListRow;
