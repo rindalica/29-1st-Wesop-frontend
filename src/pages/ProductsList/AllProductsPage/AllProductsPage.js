@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import SubcatNav from '../SubcatNav/SubcatNav';
 import SkinProductsList from '../SkinProductsList/SkinProductsList';
+import TwoColumnsPromotion from '../../../components/TwoColumnsPromotion/TwoColumnsPromotion';
 import Carousel from '../Carousel/Carousel';
+import { INFORMATION } from './informationData';
 import './AllProductsPage.scss';
 
 function AllProductsPage() {
@@ -47,8 +49,21 @@ function AllProductsPage() {
         <SkinProductsList skinProducts={skinProducts} />
       </div>
 
-      <div className="carousel">
-        <Carousel skinProducts={skinProducts} />
+      <div className="information">
+        {INFORMATION.map(promotion => (
+          <TwoColumnsPromotion
+            key={promotion.idx}
+            isTextOnLeft={promotion.isTextOnLeft}
+            isContentImg={promotion.isContentImg}
+            subTitle={promotion.subTitle}
+            heading={promotion.heading}
+            paragraph={promotion.paragraph}
+            btnText={promotion.btnText}
+            btnLink={promotion.btnLink}
+            alt={promotion.alt}
+            src={promotion.src}
+          />
+        ))}
       </div>
     </div>
   );
