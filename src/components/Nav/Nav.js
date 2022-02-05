@@ -3,6 +3,13 @@ import CategoryModal from './CategoryModal';
 import './Nav.scss';
 
 function Nav() {
+  const [modal, setModal] = useState('categoryModalBoxHidden');
+  const [navColor, setNavColor] = useState('categoryNav');
+  const [categoryImg, setCategoryImg] = useState([]);
+  const handleClose = () => {
+    setNavColor('categoryNav');
+    setModal('categoryModalBoxHidden');
+  };
   const [categoryLists, setCategoryLists] = useState([]);
   useEffect(() => {
     fetch('/data/dataJimin.json')
@@ -11,15 +18,7 @@ function Nav() {
         setCategoryLists(data);
       });
   }, []);
-
-  const [modal, setModal] = useState('categoryModalBoxHidden');
-  const [navColor, setNavColor] = useState('categoryNav');
-  const [categoryList, setCategoryList] = useState([]);
-  const [categoryImg, setCategoryImg] = useState([]);
-  const handleClose = () => {
-    setNavColor('categoryNav');
-    setModal('categoryModalBoxHidden');
-  };
+  //console.log(categoryLists);
 
   return (
     <div className="nav">
@@ -27,14 +26,14 @@ function Nav() {
         <nav className="primaryMenu">
           <ul className="mainCategories">
             {categoryLists.map(
-              ({ id, categoryName, className, categoryLists, categoryImg }) => {
+              ({ id, categoryName, className, categoryImg }) => {
                 return (
                   <li key={id} className="mainCategory">
                     <button
                       onClick={function handleModal() {
                         setModal('categoryModalBox' + className);
                         setNavColor('categoryNavModal');
-                        setCategoryList(categoryLists);
+                        setCategoryLists(categoryLists);
                         setCategoryImg(categoryImg);
                       }}
                       className="mainCategoryBtn"
@@ -45,7 +44,6 @@ function Nav() {
                 );
               }
             )}
-
             <li className="mainCategory">
               <button className="mainCategoryClose" onClick={handleClose}>
                 닫기 X
@@ -64,12 +62,7 @@ function Nav() {
           </ul>
         </nav>
       </div>
-
-      <CategoryModal
-        Lists={categoryList}
-        categoryImg={categoryImg}
-        categoryModalClassName={modal}
-      />
+      <CategoryModal categoryImg={categoryImg} categoryModalClassName={modal} />
     </div>
   );
 }

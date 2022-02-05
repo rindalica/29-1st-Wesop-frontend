@@ -1,7 +1,9 @@
 @import '../../styles/variables.scss';
+
 .categoryModalBoxHidden {
   display: none;
 }
+
 .categoryModalBoxSkin {
   top: 80px;
   right: 0;
@@ -25,39 +27,22 @@
   left: 0;
   background-color: rgb(222, 216, 212);
 }
+
 .categoryModalMain {
   display: flex;
   justify-content: space-between;
-}
-.modalLogoBox {
-  width: 283px;
-  .modalLogo {
-    width: 180px;
-    position: absolute;
-    left: 20px;
-    top: 150px;
-  }
-}
-.categoryLists {
-  display: flex;
-  justify-content: space-between;
 
-  .categoryList {
-    margin: 90px 20px 40px;
+  .modalLogoBox {
+    width: 283px;
+    .modalLogo {
+      width: 180px;
+      position: absolute;
+      left: 20px;
+      top: 150px;
+    }
   }
-  .categoryDetailTitle {
-    font-weight: 500;
-    margin-bottom: 12px;
-    font-size: 16px;
-    font-weight: 300;
-  }
-  .listContents {
-    margin-bottom: 12px;
-    font-size: 16px;
-    font-weight: 300;
-  }
-}
 
-.categoryImg {
-  width: 462px;
+  .categoryImg {
+    width: 462px;
+  }
 }

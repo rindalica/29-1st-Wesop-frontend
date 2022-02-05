@@ -8,44 +8,6 @@
         "imgSrc": "https://images.pexels.com/photos/1619488/pexels-photo-1619488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "imgAlt": "categorySkinImg"
       }
-    ],
-    "categoryLists": [
-      {
-        "menu": "category",
-        "title": "카테고리",
-        "list": [
-          { "name": "스킨 케어 모두 보기" },
-          { "name": "클렌저" },
-          { "name": "각질 제거" },
-          { "name": "트리트먼트 & 마스크" },
-          { "name": "토너" },
-          { "name": "하이드레이터" },
-          { "name": "립 & 아이" },
-          { "name": "쉐이빙" },
-          { "name": "선 케어" },
-          { "name": "키트" },
-          { "name": "스킨 케어 세트 추천" }
-        ]
-      },
-      {
-        "menu": "skinType",
-        "title": "피부타입",
-        "list": [
-          { "name": "중성" },
-          { "name": "건성" },
-          { "name": "지성" },
-          { "name": "복합성" }
-        ]
-      },
-      {
-        "menu": "loved",
-        "title": "사랑받는 제품",
-        "list": [
-          { "name": "파슬리 씨드 안티 옥시던트 인텐스 세럼" },
-          { "name": "파슬리 씨드 안티 옥시던트 페이셜 트리트먼트" },
-          { "name": "파슬리 씨드 안티 옥시던트 페이셜 토너" }
-        ]
-      }
     ]
   },
   {
@@ -57,41 +19,6 @@
         "imgSrc": "https://images.pexels.com/photos/4857813/pexels-photo-4857813.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "imgAlt": "categoryBodyImg"
       }
-    ],
-    "categoryLists": [
-      {
-        "id": "category",
-        "title": "카테고리",
-        "list": [
-          { "name": "향수 모두 보기" },
-          { "name": "미라세티" },
-          { "name": "카르스트" },
-          { "name": "에레미아" },
-          { "name": "로즈" },
-          { "name": "휠" },
-          { "name": "마라케시" },
-          { "name": "테싯" }
-        ]
-      },
-      {
-        "id": "perfume",
-        "title": "향수 아로마",
-        "list": [
-          { "name": "플로럴" },
-          { "name": "프레쉬" },
-          { "name": "우디" },
-          { "name": "오퓰런트" }
-        ]
-      },
-      {
-        "id": "new",
-        "title": "신제품",
-        "list": [
-          { "name": "미라세티 오 드 퍼퓸" },
-          { "name": "에레미아 오 드 퍼퓸" },
-          { "name": "카르스트 오 드 퍼퓸" }
-        ]
-      }
     ]
   },
   {
@@ -102,34 +29,6 @@
       {
         "imgSrc": "https://images.pexels.com/photos/6724357/pexels-photo-6724357.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "imgAlt": "categoryHairImg"
-      }
-    ],
-    "categoryLists": [
-      {
-        "id": "category",
-        "title": "카테고리",
-        "list": [
-          { "name": "헤어 모두 보기" },
-          { "name": "샴푸" },
-          { "name": "컨디셔너" },
-          { "name": "트리트먼트" },
-          { "name": "그루밍" }
-        ]
-      },
-      {
-        "id": "perfume",
-        "title": "향수 아로마",
-        "list": [
-          { "name": "플로럴" },
-          { "name": "프레쉬" },
-          { "name": "우디" },
-          { "name": "오퓰런트" }
-        ]
-      },
-      {
-        "id": "new",
-        "title": "신제품",
-        "list": [{ "name": "샴푸" }, { "name": "컨디셔너" }]
       }
     ]
   }

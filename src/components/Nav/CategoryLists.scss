@@ -1,0 +1,36 @@
+@import '../../styles/variables.scss';
+
+.categoryLists {
+  display: flex;
+  justify-content: space-between;
+
+  .topListsWrap {
+    display: flex;
+  }
+  .skinCareList,
+  .skinTypeList,
+  .rangeList,
+  .lovesList {
+    margin-bottom: 45px;
+    padding-right: 45px;
+  }
+
+  .MainCategoryList,
+  .secondaryLists {
+    margin: 90px 0px 40px;
+  }
+
+  .MainCategoryListTitle,
+  .categoryListTitle {
+    font-weight: 400;
+    margin-bottom: 12px;
+    font-size: 16px;
+  }
+
+  .MainCategoryListContents,
+  .listContents {
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 300;
+  }
+}
