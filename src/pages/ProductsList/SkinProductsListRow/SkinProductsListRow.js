@@ -19,14 +19,14 @@ function SkinProductsListRow({ className, name, description, productsList }) {
   const firstSlide =
     slideIndex === 0
       ? {
-          style: { transform: 'translateX(-80px)' },
+          style: { transform: 'translateX(-100px)' },
         }
       : null;
 
   const lastSlide =
     slideIndex === productsList.length - 3
       ? {
-          style: { transform: 'translateX(80px)' },
+          style: { transform: 'translateX(100px)' },
         }
       : null;
   return (
@@ -45,7 +45,7 @@ function SkinProductsListRow({ className, name, description, productsList }) {
             />
           );
         })} */}
-      <div className={`Carousel ${className}`}>
+      <div className={`subcatCarousel ${className}`}>
         <button
           className="navigation prev"
           onClick={onClick}
@@ -75,15 +75,6 @@ function SkinProductsListRow({ className, name, description, productsList }) {
         >
           <i className="fas fa-chevron-right next" />
         </button>
-        <div className="pagination">
-          <div
-            className="current"
-            style={{
-              width: `calc(100% / ${productsList.length - 2})`,
-              transform: `translateX(calc(100% * ${slideIndex}))`,
-            }}
-          />
-        </div>
       </div>
     </div>
   );
