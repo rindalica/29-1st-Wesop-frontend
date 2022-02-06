@@ -37,32 +37,31 @@ const LoginModal = ({ isLoginOpen, setIsLoginOpen }) => {
     }));
   };
 
-  // const submitEmail = () => {
-  //   postData();
-  //   const hasAccount = false;
-  //   goToForm(hasAccount ? isSignin : isSignup);
-  // };
-
   const handleInput = event => {
     const { name, value } = event.target;
     setInputState(curr => ({ ...curr, [name]: value }));
   };
 
-  const submitLogin = async () => {
-    const json = await (
-      await fetch('http://172.30.1.11:8000/users/emailvalid', {
-        method: 'POST',
-        body: JSON.stringify({
-          email: inputState.email,
-        }),
-      })
-    ).json();
-    const hasAccount = json['sign-in'];
-    console.log(hasAccount);
-    // 문자열 1글자 + @ + 문자열 1글자(대소문자숫자) + . + 대소문자숫자 1글자
-
+  // 로컬 테스트용
+  const submitLogin = () => {
+    const hasAccount = false;
     goToForm(hasAccount ? isSignin : isSignup);
   };
+
+  // 백엔드 통신용
+  // const submitLogin = async () => {
+  //   const json = await (
+  //     await fetch('http://172.30.1.11:8000/users/emailvalid', {
+  //       method: 'POST',
+  //       body: JSON.stringify({
+  //         email: inputState.email,
+  //       }),
+  //     })
+  //   ).json();
+
+  //   const hasAccount = json['sign-in'];
+  //   goToForm(hasAccount ? isSignin : isSignup);
+  // };
 
   return isLoginOpen ? (
     <div className="LoginModal">
