@@ -19,22 +19,36 @@ function Nav() {
       });
   }, []);
   //console.log(categoryLists);
-
+  const [border, setBorder] = useState('mainCategory');
+  // const [isClick, setIsClick] = useState(false);
+  // const handle = a => {
+  //   setIsClick(!isClick);
+  //   if (isClick === true) {
+  //     if (a === 'mainCategorySkin') {
+  //       return 'mainCategorySkin';
+  //     } else if (a === 'mainCategoryBody') {
+  //       return 'mainCategoryBody';
+  //     }
+  //   } else {
+  //     return 'mainCategory';
+  //   }
+  // };
   return (
     <div className="nav">
       <div className={navColor}>
         <nav>
           <ul className="mainCategories">
             {categoryLists.map(
-              ({ id, categoryName, className, categoryImg }) => {
+              ({ id, categoryName, className, categoryImg, liClassName }) => {
                 return (
-                  <li key={id} className="mainCategory">
+                  <li key={id} className={border}>
                     <button
                       onClick={function handleModal() {
                         setModal('categoryModalBox' + className);
                         setNavColor('categoryNavModal');
                         setCategoryLists(categoryLists);
                         setCategoryImg(categoryImg);
+                        setBorder(liClassName);
                       }}
                       className="mainCategoryBtn"
                     >

@@ -3,11 +3,13 @@ import Home from './Home/Home';
 import Carousel from './Carousel/Carousel';
 import TwoColumnsPromotion from '../../components/TwoColumnsPromotion/TwoColumnsPromotion';
 import { PROMOTIONS, FACIAL_PRODUCTS, BODY_PRODUCTS } from './mainData';
+import Nav from '../../components/Nav/Nav';
 import './Main.scss';
 
 const Main = () => {
   return (
     <>
+      <Nav />
       <Home />
       <Carousel className="facial" dataList={FACIAL_PRODUCTS} />
       {PROMOTIONS.map(promotion => (

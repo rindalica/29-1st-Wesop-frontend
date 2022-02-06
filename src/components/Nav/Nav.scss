@@ -54,7 +54,6 @@
       margin: 0 14px 0 0;
     }
   }
-
   .mainCategoryBtn,
   .loginBtn,
   .cartBtn,
@@ -65,4 +64,16 @@
     font-size: 13.3px;
     font-weight: 300;
   }
+}
+
+.mainCategorySkin {
+  margin: 0 14px 0 0;
+  border-bottom: 1px solid black;
+  background-color: blueviolet;
+}
+
+.mainCategoryBody {
+  margin: 0 14px 0 0;
+  border-bottom: 1px solid black;
+  background-color: palegreen;
 }
