@@ -17,12 +17,14 @@
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
-      justify-content: space-around;
+      padding: 10px;
       text-align: center;
       color: rgba(51, 51, 51, 0.774);
-      margin: auto;
       height: 30%;
       font-size: 14px;
+      p {
+        padding: 10px;
+      }
     }
 
     .SubcatProductsDetails {

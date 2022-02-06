@@ -7,7 +7,7 @@ function SkinProduct({ name, detail }) {
     <div className="product">
       <img
         className="productImage"
-        src="/images/products/product2.png"
+        src="/images/products/product.webp"
         alt={name}
       />
       {/* 추후 product 데이터에 img src 추가되면 그 때 다시 작업해주는 걸로 */}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import SkinProduct from '../SkinProduct/SkinProduct';
 import './SkinProductsListRow.scss';
 
@@ -34,6 +35,12 @@ function SkinProductsListRow({ className, name, description, productsList }) {
       <div className="skinSubcatIntro">
         <h1>{name}</h1>
         <p>{description}</p>
+        <Link className="LinkButton" to="./">
+          <div className="button">
+            {name}
+            <i className="fas fa-arrow-right" />
+          </div>
+        </Link>
       </div>
       {/* {productsList &&
         productsList.map(product => {

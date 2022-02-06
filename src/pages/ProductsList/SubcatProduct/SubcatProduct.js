@@ -5,7 +5,7 @@ function SubcatProduct({ name, detail, skinType, keyIngredient }) {
     <div className="productContainer">
       <img
         className="subcatProductImage"
-        src="/images/products/product3.png"
+        src="/images/products/product.webp"
         alt={name}
       />
       <div className="subcatProductsDetailList">

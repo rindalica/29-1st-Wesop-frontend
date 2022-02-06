@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import SubcatNav from '../SubcatNav/SubcatNav';
 import SkinProductsList from '../SkinProductsList/SkinProductsList';
 import TwoColumnsPromotion from '../../../components/TwoColumnsPromotion/TwoColumnsPromotion';
-import Carousel from '../Carousel/Carousel';
 import { INFORMATION } from './informationData';
 import './AllProductsPage.scss';
 
@@ -32,11 +32,13 @@ function AllProductsPage() {
   return (
     <div className="productsList">
       <div className="headerTitle">
-        <img
-          src="/images/logo-darkgray.png"
-          alt="wesopLogo"
-          className="wesopLogo"
-        />
+        <Link to="/">
+          <img
+            src="/images/logo-darkgray.png"
+            alt="wesopLogo"
+            className="wesopLogo"
+          />
+        </Link>
       </div>
 
       <div className="categoryTitle">

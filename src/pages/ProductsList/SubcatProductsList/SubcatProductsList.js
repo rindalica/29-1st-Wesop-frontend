@@ -36,7 +36,6 @@ function SubcatProductsList({ skinProducts }) {
             />
           );
         })}
-      {/* </div> */}
     </div>
   );
 }
