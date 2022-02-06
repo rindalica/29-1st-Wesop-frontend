@@ -23,7 +23,7 @@ function Nav() {
   return (
     <div className="nav">
       <div className={navColor}>
-        <nav className="primaryMenu">
+        <nav>
           <ul className="mainCategories">
             {categoryLists.map(
               ({ id, categoryName, className, categoryImg }) => {

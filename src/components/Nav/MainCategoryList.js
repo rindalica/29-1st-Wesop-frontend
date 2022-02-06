@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 function MainCategoryList() {
   const [list, setList] = useState([]);
   useEffect(() => {
-    fetch('http://172.30.1.32:8000/categories')
+    fetch('http://172.30.1.24:8000/categories')
       .then(res => res.json())
       .then(data => {
         setList(data.sub_categories);
