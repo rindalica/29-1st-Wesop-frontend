@@ -11,7 +11,7 @@ function SubcatProductsPage() {
   const params = useParams();
 
   useEffect(() => {
-    fetch(`http/172.30.1.32:8000/skin/categories/${params.subcatId}`)
+    fetch(`http://172.30.1.24:8000/skin/categories/${params.subcatId}`)
       .then(res => res.json())
       .then(data => {
         if (data) {

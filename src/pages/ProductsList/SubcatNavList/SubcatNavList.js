@@ -6,6 +6,7 @@ function SubcatNavList(props) {
   const navigate = useNavigate();
   const goToCatagory = () => {
     navigate(`/skin/categories/${props.id}`);
+    window.location.reload();
   };
 
   return (
