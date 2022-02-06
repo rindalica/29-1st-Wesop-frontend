@@ -51,8 +51,8 @@ function Nav() {
             </li>
           </ul>
         </nav>
-        <nav className="secondaryMenu">
-          <ul className="secondaryMenuList">
+        <nav>
+          <ul className="individualMenu">
             <li className="loginMenu">
               <button className="loginBtn">로그인</button>
             </li>

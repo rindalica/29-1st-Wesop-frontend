@@ -6,13 +6,13 @@
 
 .categoryNav {
   @include flex-justify-between;
-  background-color: $darkgray;
-  border-bottom: 1px solid $darkgray;
   padding-left: 40px;
   padding-right: 40px;
+  background-color: $darkgray;
+  border-bottom: 1px solid $darkgray;
 
   .mainCategories,
-  .secondaryMenuList {
+  .individualMenu {
     @include flex-justify-between;
 
     .mainCategory,
@@ -28,21 +28,21 @@
     .mainCategoryBtn,
     .loginBtn,
     .cartBtn {
-      font-size: 13.3px;
       height: 72px;
-      font-weight: 300;
-      color: $ivory;
       padding: 4px;
+      color: $ivory;
+      font-size: 13.3px;
+      font-weight: 300;
     }
   }
 }
 
 .categoryNavModal {
   @include flex-justify-between;
-  background-color: $ivory;
-  border-bottom: 1px solid #e5e5e5;
   padding-left: 40px;
   padding-right: 40px;
+  background-color: $ivory;
+  border-bottom: 1px solid #e5e5e5;
 
   .mainCategories,
   .secondaryMenuList {
@@ -59,10 +59,10 @@
   .loginBtn,
   .cartBtn,
   .mainCategoryClose {
-    font-size: 13.3px;
     height: 72px;
-    font-weight: 300;
-    color: $darkgray;
     padding: 4px;
+    color: $darkgray;
+    font-size: 13.3px;
+    font-weight: 300;
   }
 }
