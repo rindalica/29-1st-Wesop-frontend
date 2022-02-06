@@ -1,6 +1,9 @@
 $darkgray: #333;
 $ivory: #fffef2;
 $beige: #ebeade;
+$nav-height: 80px;
+$logo-width: 168px;
+$logo-left: 24px;
 
 @mixin flex-justify-between {
   display: flex;
