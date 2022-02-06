@@ -1,0 +1,54 @@
+.modalContainer {
+  width: 880px;
+  height: 720px;
+  padding: 160px 40px 80px;
+  position: relative;
+  // background-color: #f1f0e8;
+  .closeBtn {
+    position: absolute;
+    right: 50px;
+    top: 30px;
+  }
+}
+
+.ingredientsModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  width: 0;
+  // height: 100vh;
+  height: 700px;
+  background-color: white;
+  // transform: translate3d(0, 0, 0);
+  transition: all 0.5s ease-in-out;
+}
+
+.modalBox {
+  width: 100%;
+  padding: 0 90px;
+  font-size: 11px;
+
+  p {
+    font-size: 15px;
+    line-height: 1.5;
+    &:nth-child(2) {
+      padding-top: 20px;
+    }
+    &:nth-child(3) {
+      padding-top: 30px;
+    }
+    &:nth-child(4) {
+      padding-top: 30px;
+    }
+  }
+}
+.on {
+  // width: 50vw;
+  width: 700px;
+  visibility: visible;
+  display: flex;
+  align-items: center;
+  // transform: translate3d(0, 0, 0);
+  transition: all 0.5s ease-in-out;
+}

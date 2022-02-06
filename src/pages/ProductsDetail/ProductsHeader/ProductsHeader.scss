@@ -1,0 +1,117 @@
+@import '../../../styles/variables.scss';
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  position: relative;
+  .logo {
+    img {
+      width: 110px;
+    }
+  }
+  .sideContainer {
+    display: flex;
+    flex-direction: row;
+    .imageBox {
+      object-fit: cover;
+      margin-right: 90px;
+      display: flex;
+      align-items: center;
+    }
+    .productDetailHeader {
+      width: 340px;
+      margin-right: 120px;
+      margin-left: 15px;
+      .sortBox {
+        display: flex;
+        font-size: 13px;
+        li::after {
+          position: absolute;
+          content: '';
+          display: block;
+          border-bottom: 1px solid #000;
+          transition: width 450ms ease-in-out;
+          left: auto;
+          width: 0;
+        }
+        li:hover::after {
+          width: 5%;
+        }
+        .dot {
+          padding: 0 10px;
+        }
+      }
+
+      .productBox {
+        margin-bottom: 15px;
+        .productName {
+          padding-top: 15px;
+          padding-bottom: 18px;
+          font-size: 30px;
+        }
+        .productExplanation {
+          font-size: 14px;
+          .explain {
+            line-height: 1.3;
+          }
+        }
+      }
+      .productInfo {
+        margin-top: 24px;
+        margin-bottom: 14px;
+        font-size: 14px;
+        li {
+          padding-top: 14px;
+          padding-bottom: 14px;
+          border-top: 3px solid black;
+        }
+        .ingredientsBox {
+          .description {
+            line-height: 1.3;
+          }
+        }
+        .useBox,
+        .ingredientsBox,
+        .sizeBox {
+          border-top: 1px solid gray;
+        }
+        .cartBtn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 60px;
+          background-color: #333;
+          color: white;
+          font-size: 14px;
+          &.cartBtn:hover {
+            background-color: black;
+          }
+          .button:hover {
+            cursor: pointer;
+          }
+        }
+      }
+      .buttonBox {
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        padding: auto;
+        border-radius: 50%;
+        .moreBtnIcon {
+          width: 27px;
+          height: 27px;
+          font-size: 20px;
+          border-radius: 15px;
+        }
+        .moreBtnIcon:hover {
+          background-color: black;
+          color: white;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+}

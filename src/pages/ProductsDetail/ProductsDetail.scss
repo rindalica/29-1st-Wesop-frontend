@@ -1,81 +1,50 @@
 @import '../../styles/variables.scss';
 
-// heading section
-.heading {
-  display: flex;
-  justify-content: space-evenly;
-
-  .imageBox {
-    width: 400px;
-    height: 450px;
-    position: relative;
-    display: inline;
-    left: 90px;
-    text-align: center;
-    img {
-      width: 350px;
-      height: 590px;
-    }
-  }
-}
-
 // middle section
 .message {
-  height: 90px;
   display: flex;
+  height: 150px;
   justify-content: center;
+  align-items: center;
   font-size: 14px;
+  margin-bottom: 100px;
   .leftMsg {
     // float: left;
-    width: 712px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 45%;
     border-right: 1px solid #d9d8ce;
     padding-right: 30px;
+
     p {
-      width: 400px;
+      max-width: 400px;
       text-align: center;
-      margin: auto;
+      &:nth-child(1) {
+        margin-bottom: 10px;
+      }
     }
   }
   .rightMsg {
-    // display: inline-block;
-    width: 712px;
-    margin-left: 10px;
-    p {
-      width: 400px;
-      text-align: center;
-      margin: auto;
-    }
-  }
-}
-
-// middle 2 section
-.productsDescription {
-  display: flex;
-  justify-content: space-between;
-  .mainPicture {
-    width: 700px;
-    height: 720px;
-    .explainImg {
-      width: 100%;
-    }
-  }
-  .explainList {
-    width: 700px;
-    height: 720px;
     display: flex;
     justify-content: center;
-    .howToUuse {
-      background-color: #f6f5e8;
-      width: 400px;
-    }
-    li {
-      padding: 10px 0;
-      border-bottom: 1px solid lightgray;
-      &:first-child {
-        border-bottom: 2px solid black;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+
+    margin-left: 10px;
+    p {
+      max-width: 400px;
+      text-align: center;
+      &:nth-child(1) {
+        margin-bottom: 10px;
       }
-      &:last-child {
-        border: none;
+      &:nth-child(2) {
+        line-height: 1.3;
       }
     }
   }

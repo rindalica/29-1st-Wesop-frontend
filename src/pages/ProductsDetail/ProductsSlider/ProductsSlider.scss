@@ -1,0 +1,24 @@
+@import '../../../styles/variables.scss';
+
+header h2 {
+  font-size: 30px;
+}
+.recommendBox {
+  padding: 100px 0;
+}
+
+.recommendProducts {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 40px 24px;
+}
+// .slideBox {
+//   padding: 150px 0;
+// }
+// .recommendProduct h2 {
+//   font-size: 30px;
+// }
+// .inside-img {
+//   display: flex;
+//   justify-content: center;
+// }

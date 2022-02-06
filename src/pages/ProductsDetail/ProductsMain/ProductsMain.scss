@@ -1,0 +1,43 @@
+@import '../../../styles/variables.scss';
+
+.productMain {
+  display: flex;
+  section {
+    width: 50%;
+    &:nth-child(2) {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      background-color: #f6f5e8;
+      padding: 115px 100px;
+    }
+  }
+  .mainPicture {
+    .explainImg {
+      height: 720px;
+      width: 100%;
+    }
+  }
+
+  .explainList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .howToUuse {
+      background-color: #f6f5e8;
+      width: 400px;
+    }
+    li {
+      padding: 10px 0;
+      border-bottom: 1px solid lightgray;
+      &:first-child {
+        border-bottom: 2px solid black;
+      }
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+}
