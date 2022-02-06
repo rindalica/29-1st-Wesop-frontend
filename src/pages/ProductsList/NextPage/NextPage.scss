@@ -1,0 +1,68 @@
+.nextPageContainer {
+  background-color: #ebeade;
+  color: #333333;
+  height: 370px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 34px;
+
+  .nextPageImage {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    padding: 10px;
+    flex-shrink: 0;
+  }
+  .nextPageInfo {
+    color: #333;
+    font-family: Suisse Regular, sans-serif;
+    flex-basis: auto;
+    .nextPageHeader {
+      color: #333;
+      -webkit-font-smoothing: antialiased;
+      box-sizing: inherit;
+      font-weight: 400;
+      line-height: inherit;
+      margin: 0;
+      padding: 0;
+      font-family: Suisse Medium, sans-serif;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .nextTitle {
+      color: #333;
+      -webkit-font-smoothing: antialiased;
+      box-sizing: inherit;
+      font-weight: 400;
+      margin: 0;
+      padding: 0;
+      font-family: Zapf Humanist, serif;
+      font-size: 30px;
+      line-height: 1.33;
+      margin-bottom: 20px;
+    }
+
+    .nextBtn {
+      -webkit-font-smoothing: antialiased;
+      box-sizing: inherit;
+      cursor: pointer;
+      color: inherit;
+      font-family: inherit;
+      font-size: inherit;
+      font-style: inherit;
+      font-weight: inherit;
+      background: transparent;
+      border-radius: 0;
+      margin: 0;
+      border: 1px solid rgba(51, 51, 51, 0.2);
+      height: 60px;
+      min-width: 210px;
+      padding: 21px 23px;
+      position: relative;
+      transition: all 0.5s ease;
+    }
+  }
+}

@@ -1,10 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './SkinProduct.scss';
 
 //캐러셀
 function SkinProduct({ name, detail }) {
+  const navigate = useNavigate();
+  const goToDetail = () => {
+    navigate(`skin/products/${detail[0].product_id}`);
+  };
   return (
-    <div className="product">
+    <div className="product" onClick={goToDetail}>
       <img
         className="productImage"
         src="/images/products/product.webp"

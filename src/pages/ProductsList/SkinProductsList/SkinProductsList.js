@@ -10,6 +10,7 @@ function SkinProductsList({ skinProducts }) {
           return (
             <SkinProductsListRow
               key={subcat.sub_category_id}
+              id={subcat.sub_category_id}
               name={subcat.sub_category_name}
               description={subcat.sub_category_description}
               productsList={subcat.products}

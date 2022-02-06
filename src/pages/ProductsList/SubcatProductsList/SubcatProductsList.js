@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import SubcatProductsIntro from '../SubcatProductsIntro/SubcatProductsIntro';
 import SubcatProduct from '../SubcatProduct/SubcatProduct';
 import './SubcatProductsList.scss';
 
-function SubcatProductsList({ skinProducts }) {
+function SubcatProductsList({ subcatProducts }) {
   const addToCart = e => {
     return (e.target.style.background = '#EBEADE');
   };
@@ -15,17 +15,17 @@ function SubcatProductsList({ skinProducts }) {
   return (
     <div className="subcatProductsListMain">
       <div className="productContainer">
-        {skinProducts[0] && (
+        {subcatProducts[0] && (
           <SubcatProductsIntro
-            category={skinProducts[0].sub_category_name}
-            description={skinProducts[0].sub_category_description}
+            category={subcatProducts[0].sub_category_name}
+            description={subcatProducts[0].sub_category_description}
           />
         )}
         {/* 질문 : 왜 skinProduct로 하면 안되고 이렇게 배열 안에 숫자를 써주면 되는가?*/}
       </div>
 
-      {skinProducts &&
-        skinProducts.map(product => {
+      {subcatProducts &&
+        subcatProducts.map(product => {
           return (
             <SubcatProduct
               key={product.name}

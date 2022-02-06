@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import SubcatNav from '../SubcatNav/SubcatNav';
 import SubcatProductsList from '../SubcatProductsList/SubcatProductsList';
-
+import NextPage from '../NextPage/NextPage';
 import './SubcatProductsPage.scss';
 
 function SubcatProductsPage() {
   const [subcategories, setSubcategories] = useState([]);
-  const [skinProducts, setSkinProducts] = useState([]);
+  const [subcatProducts, setSubcatProducts] = useState([]);
   const params = useParams();
 
   // useEffect(() => {
@@ -35,10 +35,11 @@ function SubcatProductsPage() {
       .then(res => res.json())
       .then(data => {
         if (data) {
-          setSkinProducts(data);
+          setSubcatProducts(data);
         }
       });
   }, []);
+  // 백엔드와 데이터 통신할 때 지울 것
 
   return (
     <div className="productsList">
@@ -59,7 +60,10 @@ function SubcatProductsPage() {
       <SubcatNav skinProducts={subcategories} />
 
       {/* 상품 리스트 */}
-      <SubcatProductsList skinProducts={skinProducts} />
+      <SubcatProductsList subcatProducts={subcatProducts} />
+
+      {/* 다음 페이지 */}
+      <NextPage />
     </div>
   );
 }

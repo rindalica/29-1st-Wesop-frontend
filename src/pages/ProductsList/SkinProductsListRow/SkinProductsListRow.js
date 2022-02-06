@@ -1,9 +1,20 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import SkinProduct from '../SkinProduct/SkinProduct';
 import './SkinProductsListRow.scss';
 
-function SkinProductsListRow({ className, name, description, productsList }) {
+function SkinProductsListRow({
+  className,
+  id,
+  name,
+  description,
+  productsList,
+}) {
+  const navigate = useNavigate();
+  const goToCatagory = () => {
+    navigate(`/skin/category/${id}`);
+  };
+
   const [slideIndex, setSlideIndex] = useState(0);
 
   const onClick = event => {
@@ -35,23 +46,13 @@ function SkinProductsListRow({ className, name, description, productsList }) {
       <div className="skinSubcatIntro">
         <h1>{name}</h1>
         <p>{description}</p>
-        <Link className="LinkButton" to="./">
-          <div className="button">
-            {name}
-            <i className="fas fa-arrow-right" />
-          </div>
-        </Link>
+
+        <div className="button" onClick={goToCatagory}>
+          {name} 모두 보기
+          <i className="fas fa-arrow-right" />
+        </div>
       </div>
-      {/* {productsList &&
-        productsList.map(product => {
-          return (
-            <SkinProduct
-              key={product.product_name}
-              name={product.product_name}
-              detail={product.product_detail}
-            />
-          );
-        })} */}
+
       <div className={`subcatCarousel ${className}`}>
         <button
           className="navigation prev"
