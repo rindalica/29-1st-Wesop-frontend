@@ -9,25 +9,25 @@ import './AllProductsPage.scss';
 function AllProductsPage() {
   const [skinProducts, setSkinProducts] = useState([]);
 
-  useEffect(() => {
-    fetch('http://172.30.1.24:8000/skin')
-      .then(res => res.json())
-      .then(data => {
-        if (data) {
-          setSkinProducts(data.message);
-        }
-      });
-  }, []);
-
   // useEffect(() => {
-  //   fetch('/data/skin.json')
+  //   fetch('http://172.30.1.24:8000/skin')
   //     .then(res => res.json())
   //     .then(data => {
   //       if (data) {
-  //         setSkinProducts(data);
+  //         setSkinProducts(data.message);
   //       }
   //     });
   // }, []);
+
+  useEffect(() => {
+    fetch('/data/skin.json')
+      .then(res => res.json())
+      .then(data => {
+        if (data) {
+          setSkinProducts(data);
+        }
+      });
+  }, []);
 
   return (
     <div className="productsList">
