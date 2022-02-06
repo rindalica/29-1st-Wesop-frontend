@@ -13,10 +13,10 @@ function Router() {
         <Route path="/" element={<Main />} />
         <Route path="/skin" element={<AllProductsPage />} />
         <Route
-          path="/skin/category/:subcatId"
+          path="/skin/categories/:subcatId"
           element={<SubcatProductsPage />}
         />
-        <Route path="/skin/product/:productId" element={<ProductsDetail />} />
+        <Route path="/skin/products/:productId" element={<ProductsDetail />} />
         <Route path="/order" element={<Order />} />
       </Routes>
     </BrowserRouter>

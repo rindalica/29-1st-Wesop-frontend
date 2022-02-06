@@ -10,15 +10,15 @@ function SubcatProductsPage() {
   const [subcatProducts, setSubcatProducts] = useState([]);
   const params = useParams();
 
-  // useEffect(() => {
-  //   fetch(`http/172.30.1.32:8000/skin/categories/${params.subcatId}`)
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       if (data) {
-  //         setskinProducts(data.message);
-  //       }
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch(`http/172.30.1.32:8000/skin/categories/${params.subcatId}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data) {
+          setSubcatProducts(data.message);
+        }
+      });
+  }, []);
 
   useEffect(() => {
     fetch(`/data/skin.json`)
@@ -30,15 +30,15 @@ function SubcatProductsPage() {
       });
   }, []);
 
-  useEffect(() => {
-    fetch(`/data/category/1.json`)
-      .then(res => res.json())
-      .then(data => {
-        if (data) {
-          setSubcatProducts(data);
-        }
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch(`/data/category/1.json`)
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       if (data) {
+  //         setSubcatProducts(data);
+  //       }
+  //     });
+  // }, []);
   // 백엔드와 데이터 통신할 때 지울 것
 
   return (

@@ -12,7 +12,7 @@ function SkinProductsListRow({
 }) {
   const navigate = useNavigate();
   const goToCatagory = () => {
-    navigate(`/skin/category/${id}`);
+    navigate(`/skin/categories/${id}`);
   };
 
   const [slideIndex, setSlideIndex] = useState(0);

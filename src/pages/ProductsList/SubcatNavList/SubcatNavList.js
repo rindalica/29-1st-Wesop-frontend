@@ -5,7 +5,7 @@ import './SubcatNavList.scss';
 function SubcatNavList(props) {
   const navigate = useNavigate();
   const goToCatagory = () => {
-    navigate(`/skin/category/${props.id}`);
+    navigate(`/skin/categories/${props.id}`);
   };
 
   return (

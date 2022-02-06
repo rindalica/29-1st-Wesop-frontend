@@ -6,7 +6,7 @@ import './SkinProduct.scss';
 function SkinProduct({ name, detail }) {
   const navigate = useNavigate();
   const goToDetail = () => {
-    navigate(`skin/products/${detail[0].product_id}`);
+    navigate(`/skin/products/${detail[0].product_id}`);
   };
   return (
     <div className="product" onClick={goToDetail}>
@@ -21,10 +21,10 @@ function SkinProduct({ name, detail }) {
           <p className="productsName">{name}</p>
           <div className="productsDetailDescription">
             <span className="size">{detail[0].size}</span>
-            <span>ml /</span>
+            <span> /</span>
             <span className="price">
               <span> ₩ </span>
-              {detail[0].price}
+              {(+detail[0].price).toLocaleString()}
             </span>
           </div>
         </div>
