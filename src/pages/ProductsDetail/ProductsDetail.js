@@ -10,11 +10,21 @@ import '../../styles/reset.scss';
 import '../../styles/variables.scss';
 
 function ProductsDetail() {
+  const [product, setProduct] = useState([]);
+
+  useEffect(() => {
+    fetch('http://10.58.4.163:8000/skin/products/1')
+      .then(res => res.json())
+      .then(result => {
+        setProduct(result.message);
+      });
+  }, []);
+
   return (
     <>
       <title>Products Detail</title>
       {/* <Nav /> */}
-      <ProductsHeader />
+      <ProductsHeader product={product} />
       <aside className="message">
         <div className="leftMsg">
           <p>무료 선물 포장 서비스</p>
@@ -28,7 +38,7 @@ function ProductsDetail() {
           </p>
         </div>
       </aside>
-      <ProductsMain />
+      <ProductsMain product={product} />
       <ProductsSlider />
       {/* <Footer />? */}
     </>

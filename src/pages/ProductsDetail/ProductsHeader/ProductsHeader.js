@@ -4,19 +4,10 @@ import './ProductsHeader.scss';
 import IngredientsModal from '../IngredientsModal/IngredientsModal';
 import CartModal from '../CartModal/CartModal';
 
-function ProductsHeader() {
-  const [product, setProduct] = useState([]);
+function ProductsHeader({ product }) {
   const [isShow, setIsShow] = useState(false); // 성분 사이드 모달창
   const [addCart, setAddCart] = useState([]);
   const [topShow, setTopShow] = useState(false); // 카트추가 상단 모달창
-
-  useEffect(() => {
-    fetch('http://172.30.1.24:8000/skin/products/1')
-      .then(res => res.json())
-      .then(result => {
-        setProduct(result.message);
-      });
-  }, []);
 
   // useEffect(() => {
   //   console.log(product);
@@ -33,7 +24,6 @@ function ProductsHeader() {
     });
     setTopShow(!topShow);
   };
-  console.log(product);
   return (
     <div className="heading">
       <IngredientsModal
@@ -43,7 +33,9 @@ function ProductsHeader() {
       />
       <CartModal topShow={topShow} product={product} />
       <div className="logo">
-        <img alt="logo" src="/images/logo-darkgray.png" />
+        <Link to="/">
+          <img alt="logo" src="/images/logo-darkgray.png" />
+        </Link>
       </div>
       <div className="sideContainer">
         <div className="imageBox">
@@ -102,7 +94,9 @@ function ProductsHeader() {
               <button onClick={addToBasket} type="button" className="button">
                 <span>
                   카트에 추가하기 - ₩
-                  {Math.floor(product[0] && product[0].product_detail[0].price)}
+                  {Math.floor(
+                    product[0] && product[0].product_detail[0].price
+                  ).toLocaleString()}
                 </span>
               </button>
             </div>

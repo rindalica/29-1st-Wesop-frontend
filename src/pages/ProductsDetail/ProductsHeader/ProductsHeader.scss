@@ -8,7 +8,9 @@
   position: relative;
   .logo {
     img {
-      width: 110px;
+      position: absolute;
+      width: 140px;
+      left: 30px;
     }
   }
   .sideContainer {
@@ -85,12 +87,10 @@
           height: 60px;
           background-color: #333;
           color: white;
+          cursor: pointer;
           font-size: 14px;
           &.cartBtn:hover {
             background-color: black;
-          }
-          .button:hover {
-            cursor: pointer;
           }
         }
       }
@@ -114,4 +114,8 @@
       }
     }
   }
+}
+
+.description {
+  font-weight: 100;
 }
