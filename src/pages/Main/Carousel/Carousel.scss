@@ -1,0 +1,54 @@
+@import '../../../styles/variables.scss';
+
+.Carousel {
+  position: relative;
+  padding: 150px 0;
+  overflow: hidden;
+
+  button.navigation {
+    position: absolute;
+    top: calc(50% - 80px);
+    width: 80px;
+    height: 80px;
+    background-color: $darkgray;
+    color: $ivory;
+    text-align: center;
+    font-size: 16px;
+    z-index: 1;
+    transition: transform cubic-bezier(0.22, 0.61, 0.36, 1) 0.5s;
+
+    &.prev {
+      left: 0;
+      transform: translateX(-80px);
+    }
+
+    &.next {
+      right: 0;
+      transform: translateX(80px);
+    }
+  }
+
+  &:hover {
+    button.navigation {
+      transform: translateX(0);
+    }
+  }
+
+  .itemWrapper {
+    display: flex;
+    margin: 0 80px 48px;
+    transition: transform ease 0.5s;
+  }
+
+  .pagination {
+    height: 2px;
+    margin: 0 80px 40px;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    .current {
+      height: 100%;
+      background-color: $darkgray;
+      transition: transform cubic-bezier(0.22, 0.61, 0.36, 1) 0.5s;
+    }
+  }
+}
