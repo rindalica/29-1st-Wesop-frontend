@@ -1,24 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Option from './Option';
 
-function CartProduct({
-  key,
-  productName,
-  size,
-  option,
-  onDelete,
-  onChange,
-  price,
-  value,
-}) {
+function CartProduct({ key, productName, size, option, onDelete, price }) {
+  const [selected, setSelected] = useState(1);
+  const handleValue = e => {
+    setSelected(e.target.value);
+  };
   return (
     <li className="CartProduct" key={key}>
       <div>{productName}</div>
       <div>{size}</div>
-      <div>{value}</div>
-      <Option option={option} onChange={onChange} />
+      <Option option={option} onChange={handleValue} />
       <button onClick={onDelete}> 삭제 </button>
-      <div> ₩{price} </div>
+      <div> ₩{price * selected} </div>
     </li>
   );
 }

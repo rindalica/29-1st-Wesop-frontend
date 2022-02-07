@@ -7,11 +7,10 @@ function CartProductsList() {
       .then(res => setCartData(res));
   }, []);
   const [cartData, setCartData] = useState([]);
-  const [selected, setSelected] = useState(1);
 
   return (
     <ul className="CartProductsList">
-      {cartData.map((product, idx) => {
+      {cartData.map(product => {
         function onDelete() {
           setCartData(
             cartData.filter(it => {
@@ -21,19 +20,15 @@ function CartProductsList() {
             })
           );
         }
-        const handleValue = e => {
-          setSelected(e.target.value);
-        };
+
         return (
           <CartProduct
             key={product.id}
             productName={product.productName}
             size={product.size}
-            option={product.option}
-            price={product.price * selected}
-            value={selected}
             onDelete={onDelete}
-            onChange={handleValue}
+            option={product.option}
+            price={product.price}
           />
         );
       })}
