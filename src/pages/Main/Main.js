@@ -8,9 +8,10 @@ import './Main.scss';
 
 const Main = () => {
   const [carouselData, setCarouselData] = useState(null);
-  const categoryNum = [1, 3];
 
   useEffect(() => {
+    const categoryNum = [1, 3];
+
     Promise.all(
       categoryNum.map(num =>
         fetch(`http://10.58.4.163:8000/skin/categories/${num}`)
