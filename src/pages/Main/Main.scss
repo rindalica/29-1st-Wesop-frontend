@@ -1,31 +1,5 @@
 @import '../../styles/variables.scss';
 
-.productsListTest {
-  display: flex;
-
-  header {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    flex-shrink: 0;
-    width: calc(100% / 4.5);
-    padding: 40px 20px 71px 40px;
-    line-height: 1.6;
-
-    h2 {
-      font-size: 24px;
-    }
-  }
-
-  .Carousel {
-    padding: 0;
-
-    .CarouselItem {
-      width: calc(100% / 3.5);
-    }
-  }
-}
-
 .Carousel {
   &.carouselSecond {
     padding-top: 50px;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import CarouselItem from './CarouselItem/CarouselItem';
 import './Carousel.scss';
 
@@ -6,16 +6,19 @@ const Carousel = ({
   className,
   dataList,
   showingItemCount,
-  hasPagination,
+  isListPage,
   hasIntroduction,
   introduction,
   isLoop,
 }) => {
   if (!showingItemCount) showingItemCount = 3;
+
   const totalItemCount = hasIntroduction
     ? dataList.length + 1
     : dataList.length;
+
   const [slideIndex, setSlideIndex] = useState(0);
+
   let movingIndex = isLoop ? slideIndex + 1 : slideIndex;
 
   const onClick = event => {
@@ -30,6 +33,7 @@ const Carousel = ({
         setSlideIndex(curr => --curr);
       }
     }
+
     if (isNext) {
       if (isLoop && slideIndex === totalItemCount - 1) {
         movingIndex = totalItemCount;
@@ -39,10 +43,6 @@ const Carousel = ({
       }
     }
   };
-
-  useEffect(() => {
-    console.log(slideIndex);
-  }, [slideIndex]);
 
   const firstSlide =
     slideIndex === 0 && !isLoop
@@ -68,6 +68,7 @@ const Carousel = ({
       >
         <i className="fas fa-chevron-left prev" />
       </button>
+
       <div
         className="itemWrapper"
         style={{
@@ -79,6 +80,24 @@ const Carousel = ({
             <h2 className="introduction">{introduction}</h2>
           </div>
         )}
+
+        {isLoop
+          ? null
+          : dataList?.map(data => (
+              <CarouselItem
+                key={data.product_id}
+                heading={data.name}
+                description={data.description}
+                alt={data.name}
+                // 이미지 소스 데이터베이스에 포함 후 수정 예정
+                src="https://images.unsplash.com/photo-1573575154488-f88a60e170df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                // src={data.src}
+                link={data.product_id}
+                isListPage={isListPage}
+                detail={data.product_detail}
+              />
+            ))}
+
         {isLoop && (
           <CarouselItem
             heading={dataList[dataList.length - 1].name}
@@ -87,16 +106,9 @@ const Carousel = ({
             src={dataList[dataList.length - 1].src}
           />
         )}
-        {dataList &&
-          dataList.map((data, index) => (
-            <CarouselItem
-              key={index}
-              heading={data.name}
-              description={data.description}
-              alt={data.name}
-              // src="https://images.unsplash.com/photo-1573575154488-f88a60e170df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-              src={data.src}
-            />
+        {isLoop &&
+          dataList.map(data => (
+            <CarouselItem key={data.id} src={data.src} isLoop={isLoop} />
           ))}
         {isLoop && (
           <CarouselItem
@@ -107,6 +119,7 @@ const Carousel = ({
           />
         )}
       </div>
+
       <button
         className="navigation next"
         onClick={onClick}
@@ -115,7 +128,8 @@ const Carousel = ({
       >
         <i className="fas fa-chevron-right next" />
       </button>
-      {hasPagination ? (
+
+      {isListPage ? null : (
         <div className="pagination">
           <div
             className="current"
@@ -127,7 +141,7 @@ const Carousel = ({
             }}
           />
         </div>
-      ) : null}
+      )}
     </div>
   );
 };
