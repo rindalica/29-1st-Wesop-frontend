@@ -63,7 +63,7 @@ function SubcatProductsPage() {
       <SubcatProductsList subcatProducts={subcatProducts} />
 
       {/* 다음 페이지 */}
-      <NextPage />
+      <NextPage subcatProducts={subcatProducts} />
     </div>
   );
 }
