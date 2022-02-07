@@ -8,27 +8,33 @@ function CartProductsList() {
   }, []);
   const [cartData, setCartData] = useState([]);
   const [selected, setSelected] = useState(1);
+  const [idxs, setIdxs] = useState();
+  // const handleValue = e => {
+  //   setSelected(e.target.value);
+  // };
   return (
     <ul className="CartProductsList">
-      {cartData.map(({ id, productName, size, price, option }) => {
+      {cartData.map((pro, idx) => {
         function onDelete() {
           setCartData(
             cartData.filter(it => {
-              if (it.id !== id) {
-                return id;
+              if (it.id !== pro.id) {
+                return pro.id;
               }
             })
           );
         }
+
         return (
           <CartProduct
-            key={id}
-            productName={productName}
-            size={size}
-            option={option}
-            price={price * selected}
+            key={pro.id}
+            productName={pro.productName}
+            size={pro.size}
+            option={pro.option}
+            price={pro.price * selected}
+            value={selected}
             onDelete={onDelete}
-            onChange={function selectHandle(e) {
+            onChange={function handleValue(e) {
               setSelected(e.target.value);
             }}
           />
