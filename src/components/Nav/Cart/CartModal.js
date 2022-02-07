@@ -2,13 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './CartModal.scss';
 import CartProductsList from './CartProductsList';
 function CartModal({ cartModal }) {
-  useEffect(() => {
-    fetch('/data/CartData.json')
-      .then(res => res.json())
-      .then(res => setCartData(res));
-  }, []);
-  const [cartData, setCartData] = useState([]);
-
   // const total = cartData
   //   .map(item => item.price * item.selected)
   //   .reduce((prev, curr) => prev + curr, 0);
