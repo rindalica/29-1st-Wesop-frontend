@@ -27,7 +27,6 @@ const SignupForm = ({
         }),
       })
     ).json();
-    console.log(json);
   };
 
   return (

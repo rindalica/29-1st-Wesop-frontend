@@ -19,7 +19,6 @@ const SigninForm = ({
         }),
       })
     ).json();
-    console.log(json);
 
     if (json.message === 'SUCCESS') {
       sessionStorage.setItem('ACCESS_TOKEN', json.ACCESS_TOKEN);
