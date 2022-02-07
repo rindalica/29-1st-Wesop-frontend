@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import LoginLayout from '../LoginLayout/LoginLayout';
 import FormText from '../LoginLayout/FormText/FormText';
 
@@ -9,7 +10,11 @@ const SignupForm = ({
   inputState,
   handleInput,
 }) => {
+  const history = useHistory();
+
+  // 유효성검사 추가 예정
   // pw: 8자 이상, 대소문자+숫자+특수문자
+
   const isError =
     inputState.password &&
     inputState.passwordConfirmation &&
@@ -27,6 +32,12 @@ const SignupForm = ({
         }),
       })
     ).json();
+
+    if (json.message === 'SUCCESS') {
+      history.push({
+        search: `?id=${json.user.user_id}`,
+      });
+    }
   };
 
   return (
