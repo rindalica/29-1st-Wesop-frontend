@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@import '../../../styles/variables.scss';
 $darkgray: #333;
 $ivory: #fffef2;
 $beige: #ebeade;
@@ -7,6 +7,9 @@ $beige: #ebeade;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.hidden {
+  display: none;
 }
 .cartModal {
   background-color: $darkgray;
