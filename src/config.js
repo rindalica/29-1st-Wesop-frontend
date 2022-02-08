@@ -3,7 +3,7 @@ export const BASE_URL = 'http://10.58.7.109:8000';
 export const api = {
   allProducts: BASE_URL + '/skin/products',
   subCategory: BASE_URL + '/categories',
-  emailValid: BASE_URL + '/users/emailValid',
-  login: BASE_URL + '/users/login',
+  login: BASE_URL + '/users/emailvalid',
+  signIn: BASE_URL + '/users/login',
   signUp: BASE_URL + '/users/signUp',
 };
