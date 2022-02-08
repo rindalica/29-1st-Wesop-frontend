@@ -1,0 +1,19 @@
+@import '../../../styles/variables.scss';
+
+.Quote {
+  padding: 200px 40px;
+  text-align: center;
+
+  blockquote {
+    margin-bottom: 20px;
+    line-height: 1.33;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  cite {
+    line-height: 2;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
