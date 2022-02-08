@@ -7,7 +7,27 @@ body {
 }
 
 .Carousel {
-  &.body {
+  &.carouselSecond {
     padding-top: 50px;
+  }
+
+  &.storeLocator {
+    padding: 0;
+
+    .itemWrapper {
+      margin: 0 0 40px;
+
+      .CarouselItem {
+        width: 100%;
+
+        .itemImg {
+          height: unset;
+        }
+      }
+    }
+
+    .pagination {
+      margin: 0;
+    }
   }
 }
