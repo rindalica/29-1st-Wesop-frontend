@@ -70,5 +70,4 @@ function AllProductsPage() {
     </div>
   );
 }
-
 export default AllProductsPage;

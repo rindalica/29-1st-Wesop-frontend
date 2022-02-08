@@ -1,18 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Home from './Home/Home';
-import Carousel from './Carousel/Carousel';
+import Carousel from '../../components/Carousel/Carousel';
 import TwoColumnsPromotion from '../../components/TwoColumnsPromotion/TwoColumnsPromotion';
-import { PROMOTIONS, FACIAL_PRODUCTS, BODY_PRODUCTS } from './mainData';
+import Quote from './Quote/Quote';
+import { PROMOTIONS, STORE_LOCATOR } from './mainData';
+import { BASE_URL } from '../../config';
 import './Main.scss';
 
 const Main = () => {
+  const [carouselData, setCarouselData] = useState(null);
+
+  useEffect(() => {
+    const categoryNum = [1, 3];
+
+    Promise.all(
+      categoryNum.map(num => fetch(`${BASE_URL}/skin/categories/${num}`))
+    )
+      .then(res => Promise.all(res.map(res => res.json())))
+      .then(json => {
+        setCarouselData(json.map(data => data.message));
+      });
+  }, []);
+
   return (
     <>
       <Home />
-      <Carousel dataList={FACIAL_PRODUCTS} />
+      {carouselData && (
+        <Carousel
+          className="carouselFirst"
+          dataList={carouselData[0].slice(1, 6)}
+        />
+      )}
       {PROMOTIONS.map(promotion => (
         <TwoColumnsPromotion
-          key={promotion.idx}
+          key={promotion.id}
           isTextOnLeft={promotion.isTextOnLeft}
           isContentImg={promotion.isContentImg}
           subTitle={promotion.subTitle}
@@ -24,7 +45,12 @@ const Main = () => {
           src={promotion.src}
         />
       ))}
-      <Carousel dataList={BODY_PRODUCTS} />
+      {carouselData && (
+        <Carousel
+          className="carouselSecond"
+          dataList={carouselData[1].slice(0, 6)}
+        />
+      )}
       <TwoColumnsPromotion
         isTextOnLeft={true}
         isContentImg={false}
@@ -35,8 +61,14 @@ const Main = () => {
         alt="stores"
         src="/images/main/main-3.jpg"
       >
-        <div>stores carousel</div>
+        <Carousel
+          className="storeLocator"
+          dataList={STORE_LOCATOR}
+          showingItemCount={1}
+          isLoop={true}
+        />
       </TwoColumnsPromotion>
+      <Quote />
     </>
   );
 };
