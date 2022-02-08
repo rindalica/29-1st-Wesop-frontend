@@ -25,6 +25,8 @@ function CartProductsList({ sumPrice }) {
             })
           );
         }
+
+        //삭제 :fetch 함수 삭제
         // setSelected(e.target.value);
 
         return (
