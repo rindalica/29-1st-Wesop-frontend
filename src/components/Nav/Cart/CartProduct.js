@@ -29,6 +29,17 @@ function CartProduct({
   const [selected, setSelected] = useState(1);
   const handleValue = e => {
     setSelected(e.target.value);
+    // fetch('/data/CartData.json/1', {
+    //   method: 'post',
+    //   body: JSON.stringify({
+    //     name: 'qu',
+    //     batch: 1,
+    //   }),
+    // })
+    //   .then(res => res.json())
+    //   .then(res => {
+    //     setSelected(e.target.value);
+    //   });
   };
 
   return (

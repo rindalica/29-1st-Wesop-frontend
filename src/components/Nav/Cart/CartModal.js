@@ -15,9 +15,8 @@ function CartModal({ cartModal }) {
   //   .reduce((prev, curr) => prev + curr, 0);
   const sumPrice = () => {
     setTotalPrice(1);
-    console.log(cartData);
   };
-
+  console.log(cartData);
   return (
     <div className={cartModal}>
       <div className="CartProducts">
@@ -57,7 +56,7 @@ function CartModal({ cartModal }) {
         <span>전 제품 무료 배송 혜택을 즐겨보세요.</span>
         <div className="CartSummaryMoney">
           <h5> 소계 (세금 포함)</h5>
-          <span onChange={sumPrice}> ₩{totalPrice} </span>
+          <span> ₩ {totalPrice} </span>
         </div>
         <button>결제하기</button>
       </div>
