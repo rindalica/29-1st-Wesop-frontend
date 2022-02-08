@@ -11,13 +11,13 @@ const Carousel = ({
   introduction,
   isLoop,
 }) => {
+  const [slideIndex, setSlideIndex] = useState(0);
+
   if (!showingItemCount) showingItemCount = 3;
 
   const totalItemCount = hasIntroduction
     ? dataList.length + 1
     : dataList.length;
-
-  const [slideIndex, setSlideIndex] = useState(0);
 
   let movingIndex = isLoop ? slideIndex + 1 : slideIndex;
 
