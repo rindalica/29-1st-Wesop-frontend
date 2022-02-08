@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import CartProduct from './CartProduct';
 function CartProductsList() {
+  const [cartData, setCartData] = useState([]);
   useEffect(() => {
     fetch('/data/CartData.json')
       .then(res => res.json())
       .then(res => setCartData(res));
   }, []);
-  const [cartData, setCartData] = useState([]);
 
+  console.log(cartData);
+
+  const [selected, setSelected] = useState({ value: 1 });
+  const handleValue = (e) => {
+    setSelected(prev => ...Prev, value : e.target.value)
+    });
+  };
   return (
     <ul className="CartProductsList">
       {cartData.map(product => {
