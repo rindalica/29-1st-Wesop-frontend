@@ -24,6 +24,7 @@ function SkinProduct({ name, detail }) {
         <div className="productsDetail">
           <p className="productsName">{name}</p>
           <div className="productsDetailDescription">
+            {/* 삼항 연산자 */}
             <span className="size">{detail[0].size}</span>
             <span> /</span>
             <span className="price">

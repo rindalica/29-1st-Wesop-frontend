@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import './CartAdd.scss';
 
 function CartAdd(props) {
-  const [disappear, setDisappear] = useState(false); //
-
   const cartAdd = event => {
-    setDisappear(!disappear);
-
     // fetch('https://172.30.1.11:8000/users/cart', {
     //   method: 'post',
     //   Headers: {
@@ -24,7 +21,7 @@ function CartAdd(props) {
     //   .then(res => res.json())
     //   .then(res => {
     //     if (res.success) {
-    //       alert('저장 완료');
+    //       alert('카트에 추가되었습니다');
     //     }
     //   });
     // --------------------------------------백엔드 혜린님이 만들어 놓은 것
@@ -40,23 +37,14 @@ function CartAdd(props) {
     //     }
     // }
   };
-
   return (
-    <div
-      className={`cartAdd ${disappear ? 'disappear' : 'appear'}`} //
-      onMouseEnter={() => {
-        setDisappear(false);
-      }} //마우스가 div 영역에 들어가면 hide의 값이 false로 바뀌고 hide의 값이 false로 바뀌면 버튼이 열린다.
-      onMouseLeave={() => {
-        setDisappear(true); //마우스가 div 영역에 들어가면 hide의 값이 true로 바뀌고 hide의 값이 true로 바뀌면 버튼이 사라진다.
-      }}
-    >
+    <div className="cartAdd">
       <button
-        className={`button ${disappear ? 'Disappear' : 'Appear'}`}
+        className="cartAddBtn"
         onClick={cartAdd}
         value={props[0].product_id}
       >
-        <span>카트에 추가 </span>
+        <span>카트에 추가 + </span>
         <span>{(+props[0].price).toLocaleString}</span>
       </button>
     </div>

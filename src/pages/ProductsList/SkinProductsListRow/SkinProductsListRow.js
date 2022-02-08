@@ -53,7 +53,7 @@ function SkinProductsListRow({
         </div>
       </div>
 
-      <div className={`subcatCarousel ${className}`}>
+      <div className="subcatCarousel">
         <button
           className="navigation prev"
           onClick={onClick}

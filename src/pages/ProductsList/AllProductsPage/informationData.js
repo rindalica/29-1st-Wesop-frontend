@@ -10,6 +10,6 @@ export const INFORMATION = [
     btnText: '가이드 읽기',
     btnLink: '/',
     alt: 'skincare',
-    src: '/images/products/production3.jpeg',
+    src: '/images/products/skincare.jpeg',
   },
 ];

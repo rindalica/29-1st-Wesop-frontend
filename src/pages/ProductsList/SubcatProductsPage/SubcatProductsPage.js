@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import SubcatNav from '../SubcatNav/SubcatNav';
 import SubcatProductsList from '../SubcatProductsList/SubcatProductsList';
 import NextPage from '../NextPage/NextPage';
@@ -8,7 +8,9 @@ import './SubcatProductsPage.scss';
 function SubcatProductsPage() {
   const [subcategories, setSubcategories] = useState([]);
   const [subcatProducts, setSubcatProducts] = useState([]);
-  const params = useParams();
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   // useEffect(() => {
   //   fetch(`http://172.30.1.24:8000/skin/categories/${params.subcatId}`)
@@ -19,6 +21,18 @@ function SubcatProductsPage() {
   //       }
   //     });
   // }, [params.subcatId]);
+
+  //데이터 로딩(쿼리스트링)
+  // useEffect(() => {
+  //   const queryString = location.search;
+  //   fetch(`api.allProducts${queryString}`)
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       if (data) {
+  //         setSubcatProducts(data.message);
+  //       }
+  //     });
+  // }, []);
 
   useEffect(() => {
     fetch(`/data/skin.json`)

@@ -1,4 +1,4 @@
-.buttonAppear {
+.cartAdd {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,7 +8,13 @@
   color: white;
   cursor: pointer;
   font-size: 14px;
-  &.cartBtn:hover {
-    background-color: black;
+
+  .cartAddBtn {
+    display: none;
+
+    &:hover {
+      display: block;
+      background-color: black;
+    }
   }
 }
