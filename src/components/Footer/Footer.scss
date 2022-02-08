@@ -4,17 +4,21 @@
   background-color: #252525;
   color: $ivory;
 
+  .footerWrapper {
+    position: relative;
+    border-bottom: 3px solid #d6d5cb;
+  }
+
   .invisible {
     opacity: 0;
   }
 
-  .footerWrapper {
+  .footerBlock {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto 1fr;
     grid-gap: 40px;
     padding: 50px 40px;
-    border-bottom: 3px solid #d6d5cb;
     line-height: 1.8;
     font-size: 14px;
 
@@ -123,7 +127,19 @@
   }
 
   .successMessage {
+    position: absolute;
+    width: 100%;
+    height: 0;
     padding: 50px 40px;
+    background-color: $darkgray;
+    opacity: 0;
     font-size: 20px;
+    transition: height 0.5s ease-in-out;
+    pointer-events: none;
+
+    &.show {
+      height: 100%;
+      opacity: 1;
+    }
   }
 }
