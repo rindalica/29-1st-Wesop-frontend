@@ -2,17 +2,21 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './SkinProduct.scss';
 
-//캐러셀
 function SkinProduct({ name, detail }) {
   const navigate = useNavigate();
   const goToDetail = () => {
     navigate(`/skin/products/${detail[0].product_id}`);
   };
   return (
-    <div className="product" onClick={goToDetail}>
+    <div
+      className="product"
+      onClick={goToDetail}
+      onMouseOver="this.style.backgroundColor='#F6F5E8';"
+      onMouseOut="this.style.backgroundColor=''"
+    >
       <img
         className="productImage"
-        src="/images/products/product.webp"
+        src="/images/products/product3.png"
         alt={name}
       />
       {/* 추후 product 데이터에 img src 추가되면 그 때 다시 작업해주는 걸로 */}

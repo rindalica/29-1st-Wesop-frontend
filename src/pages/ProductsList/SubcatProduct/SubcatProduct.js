@@ -16,7 +16,7 @@ function SubcatProduct({ name, detail, skinType, keyIngredient }) {
             <span> / </span>
             <span className="price">
               <span> ₩ </span>
-              {detail[0].price}
+              {(+detail[0].price).toLocaleString()}
             </span>
           </div>
         </div>

@@ -10,7 +10,7 @@ function AllProductsPage() {
   const [skinProducts, setSkinProducts] = useState([]);
 
   // useEffect(() => {
-  //   fetch('http://172.30.1.24:8000/skin')
+  //   fetch('http://10.58.4.163:8000/skin')
   //     .then(res => res.json())
   //     .then(data => {
   //       if (data) {
