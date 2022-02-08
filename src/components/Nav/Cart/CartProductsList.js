@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import CartProduct from './CartProduct';
-function CartProductsList() {
+
+function CartProductsList({ sumPrice }) {
   const [cartData, setCartData] = useState([]);
+
   useEffect(() => {
     fetch('/data/CartData.json')
       .then(res => res.json())
       .then(res => setCartData(res));
   }, []);
 
-  console.log(cartData);
+  // eslint-disable-next-line no-unused-vars
+  // console.log(selected);
 
-  const [selected, setSelected] = useState({ value: 1 });
-  const handleValue = (e) => {
-    setSelected(prev => ...Prev, value : e.target.value)
-    });
-  };
   return (
     <ul className="CartProductsList">
       {cartData.map(product => {
@@ -27,16 +25,28 @@ function CartProductsList() {
             })
           );
         }
+        // setSelected(e.target.value);
 
         return (
-          <CartProduct
-            key={product.id}
-            productName={product.productName}
-            size={product.size}
-            onDelete={onDelete}
-            option={product.option}
-            price={product.price}
-          />
+          <>
+            <div>{test}</div>
+            <CartProduct
+              key={product.id}
+              productName={product.productName}
+              size={product.size}
+              onClick={onDelete}
+              option={product.option}
+              price={product.price}
+            />
+          </>
+          // <li className="CartProduct" key={product.id}>
+          //   <div>{product.productName}</div>
+          //   <div>{product.size}</div>
+          //   <div>{selected[cartData[1].id]}</div>
+          //   <Option option={product.option} onChange={handleValue} />
+          //   <button onClick={onDelete}> 삭제 </button>
+          //   <div> ₩ </div>
+          // </li>
         );
       })}
     </ul>
