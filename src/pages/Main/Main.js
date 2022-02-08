@@ -5,6 +5,7 @@ import Carousel from '../../components/Carousel/Carousel';
 import TwoColumnsPromotion from '../../components/TwoColumnsPromotion/TwoColumnsPromotion';
 import Quote from './Quote/Quote';
 import { PROMOTIONS, STORE_LOCATOR } from './mainData';
+import { BASE_URL } from '../../config';
 import './Main.scss';
 
 const Main = () => {
@@ -25,9 +26,7 @@ const Main = () => {
     const categoryNum = [1, 3];
 
     Promise.all(
-      categoryNum.map(num =>
-        fetch(`http://10.58.4.163:8000/skin/categories/${num}`)
-      )
+      categoryNum.map(num => fetch(`${BASE_URL}/skin/categories/${num}`))
     )
       .then(res => Promise.all(res.map(res => res.json())))
       .then(json => {
