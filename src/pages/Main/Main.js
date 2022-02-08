@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
-<<<<<<< HEAD
 import LoginModal from '../../components/LoginModal/LoginModal';
-=======
->>>>>>> master
 import Home from './Home/Home';
 import Carousel from '../../components/Carousel/Carousel';
 import TwoColumnsPromotion from '../../components/TwoColumnsPromotion/TwoColumnsPromotion';
@@ -21,6 +18,7 @@ const Main = () => {
   useEffect(() => {
     document.body.className = isLoginOpen ? 'noScroll' : '';
   }, [isLoginOpen]);
+
   const [carouselData, setCarouselData] = useState(null);
 
   useEffect(() => {
