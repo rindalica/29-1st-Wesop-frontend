@@ -1,4 +1,5 @@
 import React from 'react';
+
 import MainCategoryList from './MainCategoryList';
 import './CategoryLists.scss';
 
