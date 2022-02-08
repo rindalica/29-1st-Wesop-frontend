@@ -1,6 +1,7 @@
 import React from 'react';
 import LoginLayout from '../LoginLayout/LoginLayout';
 import FormText from '../LoginLayout/FormText/FormText';
+import { api } from '../../../config';
 
 const SigninForm = ({
   closeLogin,
@@ -11,7 +12,7 @@ const SigninForm = ({
 }) => {
   const submitSignin = async () => {
     const json = await (
-      await fetch('http://172.30.1.11:8000/users/login', {
+      await fetch(api.signIn, {
         method: 'POST',
         body: JSON.stringify({
           email: inputState.email,

@@ -3,6 +3,7 @@ import LoginForm from './LoginForm/LoginForm';
 import SignupForm from './SignupForm/SignupForm';
 import SigninForm from './SigninForm/SigninForm';
 import ForgotPasswordForm from './ForgotPasswordForm/ForgotPasswordForm';
+import { api } from '../../config';
 import './LoginModal.scss';
 
 const LoginModal = ({ isLoginOpen, setIsLoginOpen }) => {
@@ -42,26 +43,19 @@ const LoginModal = ({ isLoginOpen, setIsLoginOpen }) => {
     setInputState(curr => ({ ...curr, [name]: value }));
   };
 
-  // 로컬 테스트용
-  const submitLogin = () => {
-    const hasAccount = false;
+  const submitLogin = async () => {
+    const json = await (
+      await fetch(api.login, {
+        method: 'POST',
+        body: JSON.stringify({
+          email: inputState.email,
+        }),
+      })
+    ).json();
+
+    const hasAccount = json['sign-in'];
     goToForm(hasAccount ? isSignin : isSignup);
   };
-
-  // 백엔드 통신용
-  // const submitLogin = async () => {
-  //   const json = await (
-  //     await fetch('http://172.30.1.11:8000/users/emailvalid', {
-  //       method: 'POST',
-  //       body: JSON.stringify({
-  //         email: inputState.email,
-  //       }),
-  //     })
-  //   ).json();
-
-  //   const hasAccount = json['sign-in'];
-  //   goToForm(hasAccount ? isSignin : isSignup);
-  // };
 
   return isLoginOpen ? (
     <div className="LoginModal">

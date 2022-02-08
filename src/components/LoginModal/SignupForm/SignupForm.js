@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import LoginLayout from '../LoginLayout/LoginLayout';
 import FormText from '../LoginLayout/FormText/FormText';
+import { api } from '../../../config';
 
 const SignupForm = ({
   closeLogin,
@@ -12,7 +13,7 @@ const SignupForm = ({
 }) => {
   const history = useHistory();
 
-  // 유효성검사 추가 예정
+  // FIXME: 유효성검사 추가 예정
   // pw: 8자 이상, 대소문자+숫자+특수문자
 
   const isError =
@@ -22,7 +23,7 @@ const SignupForm = ({
 
   const submitSignup = async () => {
     const json = await (
-      await fetch('http://172.30.1.11:8000/users/signUp', {
+      await fetch(api.signUp, {
         method: 'POST',
         body: JSON.stringify({
           email: inputState.email,
