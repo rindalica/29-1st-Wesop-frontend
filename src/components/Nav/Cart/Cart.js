@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import CartModal from './CartModal';
 
 function Cart() {
-  // const [isClick, setIsClick] = useState(false);
-  const [modal, setModal] = useState('hidden');
-  const handleModal = () => {
-    setModal('cartModal');
+  const [modal, setModal] = useState(false);
+  const openModal = () => {
+    setModal(!modal);
   };
+
   return (
-    <div className="cart">
-      <button onClick={handleModal}>카트</button>
-      <CartModal cartModal={modal} />
+    <div className="Cart">
+      <button onClick={openModal}>카트</button>
+      <CartModal cartModal={modal ? 'cartModal' : 'hidden'} />
     </div>
   );
 }

@@ -1,16 +1,21 @@
 import React from 'react';
 
-function Option({ option, onChange }) {
+function Option({ option, onChange, onClick }) {
   return (
-    <select onChange={onChange}>
-      {option.map(({ value }) => {
-        return (
-          <option key={value} value={value}>
-            {value}
-          </option>
-        );
-      })}
-    </select>
+    <div className="Option">
+      <select onChange={onChange}>
+        {option.map(({ value }) => {
+          return (
+            <option key={value} value={value}>
+              {value}
+            </option>
+          );
+        })}
+      </select>
+      <button className="deleteBtn" onClick={onClick}>
+        삭제
+      </button>
+    </div>
   );
 }
 

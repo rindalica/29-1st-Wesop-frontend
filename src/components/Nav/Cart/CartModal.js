@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './CartModal.scss';
 import CartProduct from './CartProduct';
-function CartModal({ cartModal }) {
+function CartModal({ cartModal, closeBtn }) {
   const [cartData, setCartData] = useState([]);
 
   useEffect(() => {
@@ -9,22 +9,23 @@ function CartModal({ cartModal }) {
       .then(res => res.json())
       .then(res => setCartData(res));
   }, []);
-  const [totalPrice, setTotalPrice] = useState(0);
+  //TODO
+  // const [totalPrice, setTotalPrice] = useState(0);
   // const total = cartData
   //   .map(item => item.price * item.selected)
   //   .reduce((prev, curr) => prev + curr, 0);
-  const sumPrice = () => {
-    setTotalPrice(1);
-  };
-  console.log(cartData);
+  // const sumPrice = () => {
+  //   setTotalPrice(1);
+  // };
+
   return (
     <div className={cartModal}>
-      <div className="CartProducts">
-        <div className="CartProductsHeader">
+      <div className="cartProducts">
+        <div className="cartProductsHeader">
           <div>카트</div>
           <div>사이즈</div>
           <div>수량</div>
-          <button>X</button>
+          <button className="closeModalBtn">X</button>
         </div>
         <ul className="CartProductsList">
           {cartData.map(product => {
@@ -36,6 +37,13 @@ function CartModal({ cartModal }) {
                   }
                 })
               );
+              //               fetch(
+              //               //TODO
+              //               //path파라미터
+              // , {method : "DELETE"}
+              //               )
+              //               .then(res => res.json())
+              //               .then(res => console.log(res.result))
             }
 
             return (
@@ -50,13 +58,12 @@ function CartModal({ cartModal }) {
             );
           })}
         </ul>
-        {/* <CartProductsList sumPrice={sumPrice} /> */}
       </div>
-      <div className="CartSummary">
+      <div className="cartSummary">
         <span>전 제품 무료 배송 혜택을 즐겨보세요.</span>
-        <div className="CartSummaryMoney">
+        <div className="cartSummaryMoney">
           <h5> 소계 (세금 포함)</h5>
-          <span> ₩ {totalPrice} </span>
+          <span> ₩ </span>
         </div>
         <button>결제하기</button>
       </div>

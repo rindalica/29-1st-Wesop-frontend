@@ -1,42 +1,45 @@
 @import '../../../styles/variables.scss';
-$darkgray: #333;
-$ivory: #fffef2;
-$beige: #ebeade;
 
-@mixin flex-justify-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 .hidden {
   display: none;
 }
 .cartModal {
   background-color: $darkgray;
+  .closeModalBtn {
+    padding-left: 50px;
+  }
 }
-.CartProducts {
+.cartProducts {
   padding: 40px 40px 0;
-  .CartProductsHeader {
+  .cartProductsHeader {
     display: flex;
     justify-content: space-between;
     padding: 0 0 15px;
     color: $ivory;
     border-bottom: 2px solid rgba(255, 254, 242, 0.1);
   }
-  .CartProduct {
+  .cartProduct {
     display: flex;
     justify-content: space-between;
     padding: 15px 0;
     color: $ivory;
     border-bottom: 2px solid rgba(255, 254, 242, 0.1);
   }
+  .Option {
+    display: flex;
+
+    .deleteBtn {
+      margin-left: 5px;
+      font-size: 12px;
+    }
+  }
 }
 
-.CartSummary {
+.cartSummary {
   padding: 30px 40px 40px;
   margin-left: 66%;
   color: $ivory;
-  .CartSummaryMoney {
+  .cartSummaryMoney {
     display: flex;
     justify-content: space-between;
 
