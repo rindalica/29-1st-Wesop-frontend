@@ -39,7 +39,7 @@ function CategoryLists() {
 
         <ul className="extra">
           <li className="listContents">실험실에서 배운 교훈</li>
-          <h2 className="categoryListTitle">피부 타입 소개 -> </h2>
+          <h2 className="categoryListTitle"> 피부 타입 소개 </h2>
           <li>
             <img
               className="skintypeImg"
