@@ -7,7 +7,7 @@ import Quote from './Quote/Quote';
 import { PROMOTIONS, STORE_LOCATOR } from './mainData';
 import { BASE_URL } from '../../config';
 import './Main.scss';
-
+import Cart from '../../components/Nav/Cart/Cart';
 const Main = () => {
   // FIXME: Nav와 합치면서 로그인 버튼은 삭제할 예정
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -40,6 +40,8 @@ const Main = () => {
 
   return (
     <>
+      <Cart />
+
       <button type="button" onClick={openLogin}>
         로그인
       </button>

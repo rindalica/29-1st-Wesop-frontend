@@ -4,12 +4,18 @@ import CartProduct from './CartProduct';
 function CartModal({ cartModal }) {
   const [cartData, setCartData] = useState([]);
 
-  useEffect(() => {
-    fetch('/data/CartData.json')
-      .then(res => res.json())
-      .then(res => setCartData(res));
-  }, []);
-  //TODO
+  //useEffect(() => {
+  //   fetch('/data/CartData.json')
+  //     .then(res => res.json())
+  //     .then(res => setCartData(res));
+  //   // .then(res => console.log(res));
+  // }, []);
+  //   fetch('http://10.58.6.120:8000/carts/1')
+  //     .then(res => res.json())
+  //     .then(res => console.log(res));
+  // }, []);
+
+  // }, []);
   // const [totalPrice, setTotalPrice] = useState(0);
   // const total = cartData
   //   .map(item => item.price * item.selected)
@@ -17,7 +23,23 @@ function CartModal({ cartModal }) {
   // const sumPrice = () => {
   //   setTotalPrice(1);
   // };
-
+  const test = () => {
+    fetch('http://10.58.6.120:8000/carts/add', {
+      method: 'post',
+      headers: {
+        // 헤더 조작
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        message: {
+          product_options_id: 2,
+          user_id: 1,
+        },
+      }),
+    })
+      .then(res => res.json())
+      .then(res => console.log(res));
+  };
   return (
     <div className={cartModal}>
       <div className="cartProducts">
@@ -25,7 +47,9 @@ function CartModal({ cartModal }) {
           <div>카트</div>
           <div>사이즈</div>
           <div>수량</div>
-          <button className="closeModalBtn">X</button>
+          <button className="closeModalBtn" onClick={test}>
+            X
+          </button>
         </div>
         <ul className="CartProductsList">
           {cartData.map(product => {
