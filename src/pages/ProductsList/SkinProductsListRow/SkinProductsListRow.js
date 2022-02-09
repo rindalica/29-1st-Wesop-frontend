@@ -3,10 +3,19 @@ import { useNavigate } from 'react-router-dom';
 import SkinProduct from '../SkinProduct/SkinProduct';
 import './SkinProductsListRow.scss';
 
-function SkinProductsListRow({ id, name, description, productsList }) {
+function SkinProductsListRow({
+  id,
+  setCategoryId,
+  name,
+  description,
+  productsList,
+}) {
   const navigate = useNavigate();
   const goToCatagory = () => {
-    navigate(`?categoryId=${id}`);
+    const queryString = `?categoryId=${id}`;
+    navigate(queryString);
+    setCategoryId(queryString);
+    window.location.reload();
   };
 
   const [slideIndex, setSlideIndex] = useState(0);
@@ -63,9 +72,10 @@ function SkinProductsListRow({ id, name, description, productsList }) {
           {productsList &&
             productsList.map(product => (
               <SkinProduct
-                key={product.product_name}
+                key={product.product_id}
                 name={product.product_name}
                 detail={product.product_detail}
+                image={product.product_image_url}
               />
             ))}
 

@@ -2,7 +2,7 @@ import React from 'react';
 import SkinProductsListRow from '../SkinProductsListRow/SkinProductsListRow';
 import './SkinProductsList.scss';
 
-function SkinProductsList({ productsList }) {
+function SkinProductsList({ setCategoryId, productsList }) {
   return (
     <div className="skinProductsList">
       {productsList &&
@@ -14,6 +14,7 @@ function SkinProductsList({ productsList }) {
               name={skinProductsList.sub_category_name}
               description={skinProductsList.sub_category_description}
               productsList={skinProductsList.products}
+              setCategoryId={setCategoryId}
             />
           );
         })}

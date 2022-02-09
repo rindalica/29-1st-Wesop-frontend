@@ -1,20 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import CartAdd from '../CartAdd/CartAdd';
-import './SubcatProduct.scss';
 
-function SubcatProduct({ name, detail, skinType, keyIngredient }) {
+function SubcatProduct({ name, detail, skinType, keyIngredient, image }) {
   const navigate = useNavigate();
   const goToDetail = () => {
     navigate(`/skin/products/${detail[0].product_id}`);
   };
   return (
-    <div className="subcatProduct" onClick={goToDetail}>
-      <img
-        className="subcatProductImage"
-        src="/images/products/product.webp"
-        alt={name}
-      />
+    <div className="productContainer" onClick={goToDetail}>
+      <img className="subcatProductImage" src={image} alt={name} />
       <div className="subcatProductsDetailList">
         <div className="productsDetail">
           <p className="productsName">{name}</p>

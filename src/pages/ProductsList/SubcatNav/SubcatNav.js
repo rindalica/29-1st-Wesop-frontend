@@ -6,7 +6,10 @@ import './SubcatNav.scss';
 function SubcatNav({ subcategory, setCategoryId }) {
   const navigate = useNavigate();
   const goToAll = () => {
-    navigate('/skin');
+    const queryString = ``;
+    navigate(queryString);
+    setCategoryId(queryString);
+    window.location.reload();
   };
 
   return (

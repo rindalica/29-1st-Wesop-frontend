@@ -8,6 +8,7 @@ function SubcatNavList({ id, name, setCategoryId }) {
     const queryString = `?categoryId=${id}`;
     navigate(queryString);
     setCategoryId(queryString);
+    window.location.reload();
   };
 
   return (
