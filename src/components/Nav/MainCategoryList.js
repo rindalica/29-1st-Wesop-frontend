@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import SubCategory from './SubCategory';
 function MainCategoryList() {
   const [list, setList] = useState([]);
+  const navigate = useNavigate();
+  const location = useLocation();
+
   useEffect(() => {
     fetch('http://10.58.7.109:8000/categories')
       .then(res => res.json())
@@ -12,14 +15,15 @@ function MainCategoryList() {
       });
   }, []);
 
-  //TODO
+  //TODO //이것도 내가 하는 건가...
   // const location = useLocation();
   // useEffect(() => {
   //   fetch('http:127.0.0.1:8000/skin/products?categoryId=1')
+  //fetch('http:127.0.0.1:8000/`location.search`)
   //     .then(res => res.json())
   //     .then(res =>);
-  // }, []);
-
+  // }, [location,search]);
+  const [test, setTest] = useState(0);
   return (
     <div className="MainCategoryList">
       <h2 className="MainCategoryListTitle">스킨 케어</h2>
@@ -33,8 +37,17 @@ function MainCategoryList() {
           // <li key={map.main_category_id} className="MainCategoryListContents">
           //   <button onClick={clickSubCategory(map.name)}>{map.name}</button>
           // </li>
-          <SubCategory key={map.name} name={map.name} />
+          <SubCategory
+            key={map.id}
+            name={map.name}
+            onClick={function clickSubCategory() {
+              setTest(map.id);
+              navigate(`/skin/products?categoryId=${map.id}`);
+              console.log(navigate(`${map.id}`));
+            }}
+          />
         ))}
+        <li>{test}</li>
       </ul>
     </div>
   );

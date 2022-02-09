@@ -36,9 +36,18 @@ function CategoryLists() {
             </li>
           </ul>
         </div>
-        <div className="extra">
-          <div>실험실에서 배운 교훈</div>
-        </div>
+
+        <ul className="extra">
+          <li className="listContents">실험실에서 배운 교훈</li>
+          <h2 className="categoryListTitle">피부 타입 소개 -> </h2>
+          <li>
+            <img
+              className="skintypeImg"
+              alt="피부 타입 소개"
+              src="https://images.pexels.com/photos/3621234/pexels-photo-3621234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            />
+          </li>
+        </ul>
       </div>
     </div>
   );

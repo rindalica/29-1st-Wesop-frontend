@@ -1,12 +1,9 @@
 import React from 'react';
 
-function SubCategory({ key, name }) {
-  const clickSubCategory = e => {
-    console.log(e.target.value);
-  };
+function SubCategory({ id, name, onClick }) {
   return (
-    <li key={key} className="MainCategoryListContents">
-      <button onClick={clickSubCategory} value={name} />
+    <li className="MainCategoryListContents">
+      <button key={id} onClick={onClick} value={name} />
     </li>
   );
 }
