@@ -18,8 +18,8 @@ function SubcatProduct({ name, detail, skinType, keyIngredient }) {
       <div className="subcatProductsDetailList">
         <div className="productsDetail">
           <p className="productsName">{name}</p>
-          <div className="productsDetailDescription">
-            {/* 삼항 연산자 */}
+          {/* <div className="productsDetailDescription">
+            삼항 연산자
             {
               (detail.length = 1 ? (
                 <>
@@ -41,7 +41,7 @@ function SubcatProduct({ name, detail, skinType, keyIngredient }) {
                 </>
               ))
             }
-          </div>
+          </div> */}
         </div>
 
         <div class="SubcatProductsDetails">
@@ -59,7 +59,7 @@ function SubcatProduct({ name, detail, skinType, keyIngredient }) {
           </ul>
         </div>
 
-        <CartAdd />
+        <CartAdd detail={detail} />
       </div>
     </div>
   );

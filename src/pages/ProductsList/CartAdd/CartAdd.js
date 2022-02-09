@@ -1,7 +1,7 @@
 import React from 'react';
 import './CartAdd.scss';
 
-function CartAdd(props) {
+function CartAdd({ detail }) {
   // const cartAdd = event => {
   // fetch('https://172.30.1.11:8000/users/cart', {
   //   method: 'post',
@@ -32,10 +32,10 @@ function CartAdd(props) {
       <button
         className="cartAddBtn"
         // onClick={cartAdd}
-        value={props[0].product_id}
+        value={detail[0].product_option_id}
       >
         <span>카트에 추가 + </span>
-        <span>{(+props[0].price).toLocaleString}</span>
+        <span>{(+detail[0].price).toLocaleString}</span>
       </button>
     </div>
   );

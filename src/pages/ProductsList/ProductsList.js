@@ -29,7 +29,8 @@ function ProductsList() {
     if (categoryId) {
       fetch(`${api.allProducts}${categoryId}`)
         .then(res => res.json())
-        .then(data => data.message);
+        .then(data => setProductsList(data.message));
+      console.log(productsList);
     } else {
       fetch(`${api.allProducts}`)
         .then(res => res.json())
@@ -77,7 +78,7 @@ function ProductsList() {
           setSubcategory(dataArr);
         }
       }, []);
-  });
+  }, []);
 
   //productsList에 값이 있을 때만 실행한다?
 
@@ -111,12 +112,6 @@ function ProductsList() {
       <div className="categoryTitle">
         <h1 className="categoryTitleHeader"> 스킨 </h1>
       </div>
-
-      {/* {categoryId ? (
-        <SubcatNav productsList={productsList} />
-      ) : (
-        <SkinProductsList productsList={productsList} />
-      )} */}
 
       <SubcatNav setCategoryId={setCategoryId} subcategory={subcategory} />
 
