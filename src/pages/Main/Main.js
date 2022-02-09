@@ -5,7 +5,6 @@ import TwoColumnsPromotion from '../../components/TwoColumnsPromotion/TwoColumns
 import Quote from './Quote/Quote';
 import { PROMOTIONS, STORE_LOCATOR } from './mainData';
 import './Main.scss';
-import Cart from '../../components/Nav/Cart/Cart';
 
 const Main = () => {
   const [carouselData, setCarouselData] = useState(null);
