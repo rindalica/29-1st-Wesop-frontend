@@ -15,7 +15,7 @@ function Router() {
           path="/skin/categories/:subcatId"
           element={<SubcatProductsPage />}
         />
-        <Route path="/skin/products/:productId" element={<ProductsDetail />} />
+        <Route path="/skin/products/:productsId" element={<ProductsDetail />} />
         <Route path="/order" element={<Order />} />
       </Routes>
     </BrowserRouter>

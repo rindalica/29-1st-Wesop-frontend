@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-//import Nav from '../../components/Nav/Nav';
-//import Footer from '../../components/Footer/Footer';
+import { useParams } from 'react-router-dom';
+import Nav from '../../components/Nav/Nav';
+import Footer from '../../components/Footer/Footer';
 import ProductsHeader from './ProductsHeader/ProductsHeader';
 import ProductsSlider from './ProductsSlider/ProductsSlider';
 import ProductsMain from './ProductsMain/ProductsMain';
@@ -11,13 +11,14 @@ import '../../styles/variables.scss';
 
 function ProductsDetail() {
   const [product, setProduct] = useState([]);
+  const params = useParams();
 
+  console.log(params);
+  // ${params.productsId}
   useEffect(() => {
-    fetch('http://10.58.4.163:8000/skin/products/1')
+    fetch(`http://10.58.3.176:8000/skin/products/${params.productsId}`)
       .then(res => res.json())
-      .then(result => {
-        setProduct(result.message);
-      });
+      .then(result => setProduct(result.message));
   }, []);
 
   return (

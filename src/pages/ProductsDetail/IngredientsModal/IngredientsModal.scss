@@ -3,7 +3,7 @@
   height: 720px;
   padding: 160px 40px 80px;
   position: relative;
-  // background-color: #f1f0e8;
+
   .closeBtn {
     position: absolute;
     right: 50px;
@@ -17,12 +17,11 @@
   left: 0;
   visibility: hidden;
   width: 300px;
-  // height: 100vh;
-  display: none;
   height: 700px;
   background-color: white;
-  // transform: translate3d(0, 0, 0);
   transition: all 0.5s ease-in;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .modalBox {
@@ -51,6 +50,6 @@
   visibility: visible;
   display: flex;
   align-items: center;
-  // transform: translate3d(0, 0, 0);
   transition: all 0.5s ease-in-out;
+  z-index: 1;
 }

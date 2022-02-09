@@ -1,7 +1,7 @@
 import React from 'react';
 import './CartModal.scss';
 
-function CartModal({ topShow }, { product }) {
+function CartModal({ topShow, product }) {
   return (
     <div>
       <div className={topShow} />

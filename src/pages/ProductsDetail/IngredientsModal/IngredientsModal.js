@@ -10,7 +10,7 @@ function IngredientsModal({ isShow, product, btnHandler }) {
         </button>
         <div className="modalBox">
           <p>성분</p>
-          <p>{product[0] && product[0].ingredients_etc}</p>
+          <p>{product.ingredients_etc}</p>
           <p>
             성분 목록은 변경될 수 있습니다. 구매하신 제품에 대한 정확한 성분
             목록은, 사용 전 제품 라벨을 참조하시기 바랍니다.

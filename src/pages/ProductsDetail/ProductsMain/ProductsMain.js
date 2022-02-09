@@ -2,6 +2,26 @@ import React from 'react';
 import './ProductsMain.scss';
 
 function ProductsMain({ product }) {
+  const usage = product.product_usage;
+
+  const INFO_DATA = usage && [
+    {
+      id: 1,
+      title: '사용량',
+      description: usage[0].dosage,
+    },
+    {
+      id: 2,
+      title: '텍스쳐',
+      description: usage[0].texture,
+    },
+    {
+      id: 3,
+      title: '향',
+      description: usage[0].aroma,
+    },
+  ];
+
   return (
     <div className="productMain">
       <section>
@@ -9,7 +29,7 @@ function ProductsMain({ product }) {
           <img
             alt="detail"
             className="explainImg"
-            src="https://picsum.photos/370"
+            src={usage && usage[0].image_url}
           />
         </div>
       </section>
@@ -17,26 +37,16 @@ function ProductsMain({ product }) {
         <ul className="explainList">
           <li className="howToUse">
             <span>사용법</span>
-            <h2>{product[0] && product[0].product_usage[0].description}</h2>
+            <h2>{usage && usage[0].description}</h2>
           </li>
-          <li className="useAmountBox">
-            <div className="useAmount">사용량</div>
-            <div className="description">
-              {product[0] && product[0].product_usage[0].dosage}
-            </div>
-          </li>
-          <li className="textureBox">
-            <div className="texture">텍스쳐</div>
-            <div className="description">
-              {product[0] && product[0].product_usage[0].texture}
-            </div>
-          </li>
-          <li className="scentBox">
-            <div className="scent">향</div>
-            <div className="description">
-              {product[0] && product[0].product_usage[0].aroma}
-            </div>
-          </li>
+
+          {usage &&
+            INFO_DATA.map(ele => (
+              <li className="useAmountBox" key={ele.id}>
+                <div className="useAmount">{ele.title}</div>
+                <div className="description">{ele.description}</div>
+              </li>
+            ))}
         </ul>
       </section>
     </div>

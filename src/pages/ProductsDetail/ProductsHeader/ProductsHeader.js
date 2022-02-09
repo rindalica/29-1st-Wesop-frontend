@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ProductsHeader.scss';
 import IngredientsModal from '../IngredientsModal/IngredientsModal';
@@ -9,12 +9,12 @@ function ProductsHeader({ product }) {
   const [addCart, setAddCart] = useState([]);
   const [topShow, setTopShow] = useState(false); // 카트추가 상단 모달창
 
-  // useEffect(() => {
-  //   console.log(product);
-  // }, [product]);
-
   const btnHandler = () => {
-    setIsShow(!isShow);
+    setIsShow(isShow => !isShow);
+
+    !isShow
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'unset');
   };
 
   const addToBasket = () => {
@@ -24,6 +24,13 @@ function ProductsHeader({ product }) {
     });
     setTopShow(!topShow);
   };
+
+  const usage = product.product_usage;
+  const detail = product.product_detail;
+  console.log(product.skin_type);
+  // const uiskinType = [...product.skin_type].join(', ');
+  console.log(product);
+  // const price = detail[0].price;
   return (
     <div className="heading">
       <IngredientsModal
@@ -39,7 +46,7 @@ function ProductsHeader({ product }) {
       </div>
       <div className="sideContainer">
         <div className="imageBox">
-          <img alt="product" src="https://picsum.photos/300" />
+          {/* <img alt="product" src="/images/logo-darkgray.png" /> */}
         </div>
         <div className="productDetailHeader">
           <nav className="productDetail">
@@ -55,18 +62,16 @@ function ProductsHeader({ product }) {
           </nav>
           <div className="productBox">
             <div className="productName">
-              <h1 className="name">{product[0] && product[0].name}</h1>
+              <h1 className="name">{product.name}</h1>
             </div>
             <div className="productExplanation">
-              <p className="explain">{product[0] && product[0].description}</p>
+              <p className="explain">{product.description}</p>
             </div>
           </div>
           <ul className="productInfo">
             <li className="skinBox">
               <div className="skinType">피부 타입</div>
-              <div className="description">
-                {product[0] && product[0].skin_type}
-              </div>
+              {/* <div className="description">{product && uiskinType}</div> */}
             </li>
             <li className="useBox">
               <div className="feeling">사용감</div>
@@ -80,23 +85,17 @@ function ProductsHeader({ product }) {
                   <span className="moreBtnIcon">+</span>
                 </button>
               </div>
-              <div className="description">
-                {product[0] && product[0].key_ingredient}
-              </div>
+              <div className="description">{product.key_ingredient}</div>
             </li>
             <li className="sizeBox">
               <div className="size">사이즈</div>
-              <div className="description">
-                {product[0] && product[0].product_detail[0].size}
-              </div>
+              <div className="description">{detail && detail[0].size}</div>
             </li>
             <div className="cartBtn">
               <button onClick={addToBasket} type="button" className="button">
                 <span>
-                  카트에 추가하기 - ₩
-                  {Math.floor(
-                    product[0] && product[0].product_detail[0].price
-                  ).toLocaleString()}
+                  {/* 카트에 추가하기 - ₩{(detail && price).toLocaleString()} */}
+                  {/* {Math.floor({detail && detail[0].price}).toLocaleString()} */}
                 </span>
               </button>
             </div>

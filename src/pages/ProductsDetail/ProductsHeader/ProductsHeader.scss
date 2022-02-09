@@ -16,12 +16,14 @@
   .sideContainer {
     display: flex;
     flex-direction: row;
+
     .imageBox {
       object-fit: cover;
       margin-right: 90px;
       display: flex;
       align-items: center;
     }
+
     .productDetailHeader {
       width: 340px;
       margin-right: 120px;
