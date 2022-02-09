@@ -8,15 +8,10 @@ function SkinProduct({ name, detail }) {
     navigate(`/skin/products/${detail[0].product_id}`);
   };
   return (
-    <div
-      className="product"
-      onClick={goToDetail}
-      onMouseOver="this.style.backgroundColor='#F6F5E8';"
-      onMouseOut="this.style.backgroundColor=''"
-    >
+    <div className="product" onClick={goToDetail}>
       <img
         className="productImage"
-        src="/images/products/product3.png"
+        src="/images/products/product.webp"
         alt={name}
       />
       {/* 추후 product 데이터에 img src 추가되면 그 때 다시 작업해주는 걸로 */}
@@ -25,12 +20,27 @@ function SkinProduct({ name, detail }) {
           <p className="productsName">{name}</p>
           <div className="productsDetailDescription">
             {/* 삼항 연산자 */}
-            <span className="size">{detail[0].size}</span>
+            {/* {
+              (detail.length = 1 ? (
+                <> */}
+            <span className="size">{detail[0].size} </span>
             <span> /</span>
             <span className="price">
               <span> ₩ </span>
               {(+detail[0].price).toLocaleString()}
             </span>
+            {/* </>
+              ) : (
+                <>
+                  <span className="size">2 사이즈</span>
+                  <span> /</span>
+                  <span className="price">
+                    <span> ₩ </span>
+                    {(+detail[0].price).toLocaleString()} 원부터
+                  </span>
+                </>
+              ))
+            } */}
           </div>
         </div>
       </div>

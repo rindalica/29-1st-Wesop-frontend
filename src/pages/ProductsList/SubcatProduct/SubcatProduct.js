@@ -1,8 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import CartAdd from '../CartAdd/CartAdd';
+import './SubcatProduct.scss';
 
 function SubcatProduct({ name, detail, skinType, keyIngredient }) {
+  const navigate = useNavigate();
+  const goToDetail = () => {
+    navigate(`/skin/products/${detail[0].product_id}`);
+  };
   return (
-    <div className="productContainer">
+    <div className="subcatProduct" onClick={goToDetail}>
       <img
         className="subcatProductImage"
         src="/images/products/product.webp"
@@ -12,12 +19,28 @@ function SubcatProduct({ name, detail, skinType, keyIngredient }) {
         <div className="productsDetail">
           <p className="productsName">{name}</p>
           <div className="productsDetailDescription">
-            <span className="size">{detail[0].size}</span>
-            <span> / </span>
-            <span className="price">
-              <span> ₩ </span>
-              {(+detail[0].price).toLocaleString()}
-            </span>
+            {/* 삼항 연산자 */}
+            {
+              (detail.length = 1 ? (
+                <>
+                  <span className="size">{detail[0].size} </span>
+                  <span> /</span>
+                  <span className="price">
+                    <span> ₩ </span>
+                    {(+detail[0].price).toLocaleString()}
+                  </span>
+                </>
+              ) : (
+                <>
+                  <span className="size">2 사이즈</span>
+                  <span> /</span>
+                  <span className="price">
+                    <span> ₩ </span>
+                    {(+detail[0].price).toLocaleString()} 원부터
+                  </span>
+                </>
+              ))
+            }
           </div>
         </div>
 
@@ -35,6 +58,8 @@ function SubcatProduct({ name, detail, skinType, keyIngredient }) {
             </li>
           </ul>
         </div>
+
+        <CartAdd />
       </div>
     </div>
   );

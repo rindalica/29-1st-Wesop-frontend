@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import SubcatNavList from '../SubcatNavList/SubcatNavList';
 import './SubcatNav.scss';
 
-function SubcatNav({ skinProducts }) {
+function SubcatNav({ productsList }) {
   const navigate = useNavigate();
   const goToAll = () => {
     navigate('/skin');
@@ -17,12 +17,12 @@ function SubcatNav({ skinProducts }) {
             <span className="SubnavInnerText">모든 스킨</span>
           </button>
         </li>
-        {skinProducts.map(skin => {
+        {productsList.map(category => {
           return (
             <SubcatNavList
-              key={skin.sub_category_id}
-              id={skin.sub_category_id}
-              name={skin.sub_category_name}
+              key={category.sub_category_id}
+              id={category.sub_category_id}
+              name={category.sub_category_name}
             />
           );
         })}

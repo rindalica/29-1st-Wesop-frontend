@@ -3,16 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import SkinProduct from '../SkinProduct/SkinProduct';
 import './SkinProductsListRow.scss';
 
-function SkinProductsListRow({
-  className,
-  id,
-  name,
-  description,
-  productsList,
-}) {
+function SkinProductsListRow({ id, name, description, productsList }) {
   const navigate = useNavigate();
   const goToCatagory = () => {
-    navigate(`/skin/categories/${id}`);
+    navigate(`?categoryId=${id}`);
   };
 
   const [slideIndex, setSlideIndex] = useState(0);
@@ -74,6 +68,8 @@ function SkinProductsListRow({
                 detail={product.product_detail}
               />
             ))}
+
+          {/* 카테고리가 같은 제품끼리 어떻게 한 줄로 묶지? */}
         </div>
         <button
           className="navigation next"
