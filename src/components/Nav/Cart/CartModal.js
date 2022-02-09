@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './CartModal.scss';
 import CartProduct from './CartProduct';
-function CartModal({ cartModal, closeBtn }) {
+function CartModal({ cartModal }) {
   const [cartData, setCartData] = useState([]);
 
   useEffect(() => {
