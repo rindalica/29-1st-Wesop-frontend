@@ -21,13 +21,16 @@ const SignupForm = ({
     firstName: false,
   });
 
+  const { email, password, passwordConfirmation, lastName, firstName } =
+    inputState;
+
+  const { ageVerification, loginTerms } = checkboxState;
+
   const regPassword =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
   const isPasswordConfirmationError =
-    inputState.password &&
-    inputState.passwordConfirmation &&
-    inputState.password !== inputState.passwordConfirmation;
+    password && passwordConfirmation && password !== passwordConfirmation;
 
   const testUserNameValid = event => {
     const name = event.target.name;
@@ -46,20 +49,15 @@ const SignupForm = ({
   };
 
   const submitSignup = async () => {
-    if (
-      !(
-        checkboxState.ageVerification.isChecked &&
-        checkboxState.loginTerms.isChecked
-      )
-    ) {
-      if (!checkboxState.ageVerification.isChecked) {
+    if (!(ageVerification.isChecked && loginTerms.isChecked)) {
+      if (!ageVerification.isChecked) {
         setCheckboxState(curr => ({
           ...curr,
           ageVerification: { isChecked: false, isError: true },
         }));
       }
 
-      if (!checkboxState.loginTerms.isChecked) {
+      if (!loginTerms.isChecked) {
         setCheckboxState(curr => ({
           ...curr,
           loginTerms: { isChecked: false, isError: true },
@@ -70,8 +68,8 @@ const SignupForm = ({
 
     setErrorState(curr => ({
       ...curr,
-      lastName: !inputState.lastName,
-      firstName: !inputState.firstName,
+      lastName: !lastName,
+      firstName: !firstName,
     }));
 
     if (
@@ -84,10 +82,10 @@ const SignupForm = ({
       await fetch(api.signUp, {
         method: 'POST',
         body: JSON.stringify({
-          email: inputState.email,
-          password: inputState.password,
-          'last-name': inputState.lastName,
-          'first-name': inputState.firstName,
+          email,
+          password,
+          'last-name': lastName,
+          'first-name': firstName,
         }),
       })
     ).json();
@@ -156,7 +154,7 @@ const SignupForm = ({
         type="checkbox"
         labelText="가입자 본인은 만 14세 이상입니다."
         onChange={handleCheckbox}
-        isError={checkboxState.ageVerification.isError}
+        isError={ageVerification.isError}
         errorMessage="본인의 만 14세 이상 여부를 확인해주세요."
       />
       <FormText
@@ -165,7 +163,7 @@ const SignupForm = ({
         type="checkbox"
         labelText="이용 약관에 동의합니다."
         onChange={handleCheckbox}
-        isError={checkboxState.loginTerms.isError}
+        isError={loginTerms.isError}
         errorMessage="이용 약관에 동의하였는지 확인하십시오."
       />
       <div className="haveAccount">

@@ -10,13 +10,15 @@ const SigninForm = ({
   inputState,
   handleInput,
 }) => {
+  const { email, password } = inputState;
+
   const submitSignin = async () => {
     const json = await (
       await fetch(api.signIn, {
         method: 'POST',
         body: JSON.stringify({
-          email: inputState.email,
-          password: inputState.password,
+          email,
+          password,
         }),
       })
     ).json();

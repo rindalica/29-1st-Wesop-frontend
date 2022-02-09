@@ -23,6 +23,7 @@ const LoginModal = ({ isLoginOpen, setIsLoginOpen }) => {
 
   const [inputState, setInputState] = useState({
     email: '',
+    password: '',
   });
 
   const closeLogin = () => {
