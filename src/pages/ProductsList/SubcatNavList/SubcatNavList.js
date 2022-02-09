@@ -2,16 +2,18 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './SubcatNavList.scss';
 
-function SubcatNavList(props) {
+function SubcatNavList({ id, name, setCategoryId }) {
   const navigate = useNavigate();
   const goToCatagory = () => {
-    navigate(`?categoryId=${props.id}`);
+    const queryString = `?categoryId=${id}`;
+    navigate(queryString);
+    setCategoryId(queryString);
   };
 
   return (
     <li className="SubnavLi" onClick={goToCatagory}>
       <button type="button" className="SubnavSelected">
-        <span className="SubnavInnerText">{props.name}</span>
+        <span className="SubnavInnerText">{name}</span>
       </button>
     </li>
   );

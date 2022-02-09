@@ -3,27 +3,27 @@ import SubcatProductsIntro from '../SubcatProductsIntro/SubcatProductsIntro';
 import SubcatProduct from '../SubcatProduct/SubcatProduct';
 import './SubcatProductsList.scss';
 
-function SubcatProductsList({ subcategoryProductsList }) {
+function SubcatProductsList({ productsList }) {
   return (
     <div className="subcatProductsListMain">
       <div className="productContainer">
-        {subcategoryProductsList[0] && (
+        {productsList[0] && (
           <SubcatProductsIntro
-            category={subcategoryProductsList[0].sub_category_name}
-            description={subcategoryProductsList[0].sub_category_description}
+            category={productsList[0].sub_category_name}
+            description={productsList[0].sub_category_description}
           />
         )}
       </div>
 
-      {subcategoryProductsList &&
-        subcategoryProductsList.map(product => {
+      {productsList &&
+        productsList.map(product => {
           return (
             <SubcatProduct
-              key={product.name}
-              name={product.name}
-              detail={product.product_detail}
-              skinType={product.skin_type}
-              keyIngredient={product.key_ingredient}
+              key={product.products.product_id}
+              name={product.products.name}
+              detail={product.products.product_detail}
+              skinType={product.products.skin_type}
+              keyIngredient={product.products.key_ingredient}
             />
           );
         })}

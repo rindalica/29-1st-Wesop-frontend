@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://10.58.3.176:8000';
+export const BASE_URL = 'http://10.58.4.177:8000';
 
 export const api = {
   allProducts: BASE_URL + '/skin/products',
