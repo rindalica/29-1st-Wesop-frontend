@@ -5,8 +5,8 @@ import './Nav.scss';
 function Nav() {
   const [modal, setModal] = useState('categoryModalBoxHidden');
   const [navColor, setNavColor] = useState('categoryNav');
-  const [login, setLogin] = useState('로그인');
-  const [cartLength, setCartLength] = useState(1);
+  // const [login, setLogin] = useState('로그인');
+  // const [cartLength, setCartLength] = useState(1);
   const [categoryImg, setCategoryImg] = useState([]);
   const handleClose = () => {
     setNavColor('categoryNav');
