@@ -3,7 +3,7 @@ import './IngredientsModal.scss';
 
 function IngredientsModal({ isShow, product, btnHandler }) {
   return (
-    <div className="modalContainer">
+    <div className="IngredientsModal">
       <div className={isShow ? 'ingredientsModal on' : 'ingredientsModal'}>
         <button className="closeBtn" onClick={btnHandler}>
           X

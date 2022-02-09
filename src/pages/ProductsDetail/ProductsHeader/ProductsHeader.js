@@ -27,12 +27,12 @@ function ProductsHeader({ product }) {
 
   const usage = product.product_usage;
   const detail = product.product_detail;
-  console.log(product.skin_type);
+
   // const uiskinType = [...product.skin_type].join(', ');
-  console.log(product);
+
   // const price = detail[0].price;
   return (
-    <div className="heading">
+    <div className="ProductsHeader">
       <IngredientsModal
         isShow={isShow}
         product={product}
@@ -92,12 +92,13 @@ function ProductsHeader({ product }) {
               <div className="description">{detail && detail[0].size}</div>
             </li>
             <div className="cartBtn">
-              <button onClick={addToBasket} type="button" className="button">
+              <button onClick={addToBasket} type="button" className="button" ß>
                 <span>
                   {/* 카트에 추가하기 - ₩{(detail && price).toLocaleString()} */}
                   {/* {Math.floor({detail && detail[0].price}).toLocaleString()} */}
                 </span>
               </button>
+              ß
             </div>
           </ul>
         </div>

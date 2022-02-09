@@ -23,7 +23,7 @@ function ProductsMain({ product }) {
   ];
 
   return (
-    <div className="productMain">
+    <div className="ProductsMain">
       <section>
         <div className="mainPicture">
           <img

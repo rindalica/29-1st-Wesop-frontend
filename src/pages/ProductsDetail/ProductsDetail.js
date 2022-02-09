@@ -16,13 +16,13 @@ function ProductsDetail() {
   console.log(params);
   // ${params.productsId}
   useEffect(() => {
-    fetch(`http://10.58.3.176:8000/skin/products/${params.productsId}`)
+    fetch(`http://10.58.4.177:8000/skin/products/${params.productsId}`)
       .then(res => res.json())
       .then(result => setProduct(result.message));
   }, []);
 
   return (
-    <>
+    <div className="ProductsDetail">
       <title>Products Detail</title>
       {/* <Nav /> */}
       <ProductsHeader product={product} />
@@ -42,7 +42,7 @@ function ProductsDetail() {
       <ProductsMain product={product} />
       <ProductsSlider />
       {/* <Footer />? */}
-    </>
+    </div>
   );
 }
 

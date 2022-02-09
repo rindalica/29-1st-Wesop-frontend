@@ -1,50 +1,51 @@
 @import '../../styles/variables.scss';
-
-.message {
-  display: flex;
-  height: 150px;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  margin-bottom: 100px;
-
-  .leftMsg {
-    position: relative;
+.ProductsDetail {
+  .message {
     display: flex;
+    height: 150px;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    width: 50%;
-    height: 45%;
-    border-right: 1px solid #d9d8ce;
-    padding-right: 30px;
+    font-size: 14px;
+    margin-bottom: 100px;
 
-    p {
-      max-width: 400px;
-      text-align: center;
-      &:nth-child(1) {
-        margin-bottom: 10px;
+    .leftMsg {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 50%;
+      height: 45%;
+      border-right: 1px solid #d9d8ce;
+      padding-right: 30px;
+
+      p {
+        max-width: 400px;
+        text-align: center;
+        &:nth-child(1) {
+          margin-bottom: 10px;
+        }
       }
     }
-  }
 
-  .rightMsg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 50%;
-    height: 100%;
-    margin-left: 10px;
+    .rightMsg {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 50%;
+      height: 100%;
+      margin-left: 10px;
 
-    p {
-      max-width: 400px;
-      text-align: center;
-      &:nth-child(1) {
-        margin-bottom: 10px;
-      }
-      &:nth-child(2) {
-        line-height: 1.3;
+      p {
+        max-width: 400px;
+        text-align: center;
+        &:nth-child(1) {
+          margin-bottom: 10px;
+        }
+        &:nth-child(2) {
+          line-height: 1.3;
+        }
       }
     }
   }
