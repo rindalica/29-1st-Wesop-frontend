@@ -17,7 +17,6 @@ function Nav() {
     fetch('/data/dataJimin.json')
       .then(res => res.json())
       .then(data => {
-        // console.log('data');
         setCategoryLists(data);
       });
   }, []);

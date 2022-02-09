@@ -1,7 +1,7 @@
 import React from 'react';
 
-function AllProductsPage() {
+const AllProductsPage = () => {
   return <div />;
-}
+};
 
 export default AllProductsPage;
