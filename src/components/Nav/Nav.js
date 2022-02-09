@@ -15,7 +15,7 @@ function Nav() {
   };
   const [categoryLists, setCategoryLists] = useState([]);
   useEffect(() => {
-    fetch('/data/dataJimin.json')
+    fetch('/data/NavData.json')
       .then(res => res.json())
       .then(data => {
         setCategoryLists(data);

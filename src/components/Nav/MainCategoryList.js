@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { BASE_URL } from '../../config';
 function MainCategoryList() {
   const [list, setList] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch('http://10.58.4.177:8000/categories')
+    fetch(`${BASE_URL}/categories`)
       .then(res => res.json())
       .then(data => {
         setList(data.sub_categories);
