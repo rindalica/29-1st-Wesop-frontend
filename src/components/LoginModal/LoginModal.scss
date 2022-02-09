@@ -28,7 +28,9 @@
     }
 
     .name {
-      @include flex-justify-between;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
 
       .FormText:first-child {
         margin-right: 10px;

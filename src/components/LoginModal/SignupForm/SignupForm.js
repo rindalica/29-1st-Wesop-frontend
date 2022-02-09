@@ -1,5 +1,4 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useState } from 'react';
 import LoginLayout from '../LoginLayout/LoginLayout';
 import FormText from '../LoginLayout/FormText/FormText';
 import { api } from '../../../config';
@@ -11,17 +10,76 @@ const SignupForm = ({
   inputState,
   handleInput,
 }) => {
-  const history = useHistory();
+  const [checkboxState, setCheckboxState] = useState({
+    ageVerification: { isChecked: false, isError: false },
+    loginTerms: { isChecked: false, isError: false },
+  });
 
-  // FIXME: 유효성검사 추가 예정
-  // pw: 8자 이상, 대소문자+숫자+특수문자
+  const [errorState, setErrorState] = useState({
+    password: false,
+    lastName: false,
+    firstName: false,
+  });
 
-  const isError =
+  const regPassword =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+  const isPasswordConfirmationError =
     inputState.password &&
     inputState.passwordConfirmation &&
     inputState.password !== inputState.passwordConfirmation;
 
+  const testUserNameValid = event => {
+    const name = event.target.name;
+    setErrorState(curr => ({
+      ...curr,
+      [name]: !inputState[name],
+    }));
+  };
+
+  const handleCheckbox = event => {
+    const { name, checked } = event.target;
+    setCheckboxState(curr => ({
+      ...curr,
+      [name]: { isChecked: checked, isError: !checked },
+    }));
+  };
+
   const submitSignup = async () => {
+    if (
+      !(
+        checkboxState.ageVerification.isChecked &&
+        checkboxState.loginTerms.isChecked
+      )
+    ) {
+      if (!checkboxState.ageVerification.isChecked) {
+        setCheckboxState(curr => ({
+          ...curr,
+          ageVerification: { isChecked: false, isError: true },
+        }));
+      }
+
+      if (!checkboxState.loginTerms.isChecked) {
+        setCheckboxState(curr => ({
+          ...curr,
+          loginTerms: { isChecked: false, isError: true },
+        }));
+      }
+      return;
+    }
+
+    setErrorState(curr => ({
+      ...curr,
+      lastName: !inputState.lastName,
+      firstName: !inputState.firstName,
+    }));
+
+    if (
+      Object.values(errorState).some(val => val) ||
+      isPasswordConfirmationError
+    )
+      return;
+
     const json = await (
       await fetch(api.signUp, {
         method: 'POST',
@@ -35,9 +93,7 @@ const SignupForm = ({
     ).json();
 
     if (json.message === 'SUCCESS') {
-      history.push({
-        search: `?id=${json.user.user_id}`,
-      });
+      // FiXME: Nav와 합친 후 Nav에서 조건부 렌더링할 예정
     }
   };
 
@@ -57,13 +113,21 @@ const SignupForm = ({
         type="password"
         labelText="패스워드"
         onChange={handleInput}
+        onBlur={event => {
+          setErrorState(curr => ({
+            ...curr,
+            [event.target.name]: !regPassword.test(inputState.password),
+          }));
+        }}
+        isError={errorState.password}
+        errorMessage="알파벳 대소문자, 숫자, 특수문자 포함 8자리 이상 입력해주세요."
       />
       <FormText
         name="passwordConfirmation"
         type="password"
         labelText="패스워드 확인"
         onChange={handleInput}
-        isError={isError}
+        isError={isPasswordConfirmationError}
         errorMessage="이전에 사용했던 패스워드를 입력하세요."
       />
       <div className="name">
@@ -72,26 +136,43 @@ const SignupForm = ({
           type="text"
           labelText="성"
           onChange={handleInput}
+          onBlur={testUserNameValid}
+          isError={errorState.lastName}
+          errorMessage="성을 입력하세요."
         />
         <FormText
           name="firstName"
           type="text"
           labelText="이름"
           onChange={handleInput}
+          onBlur={testUserNameValid}
+          isError={errorState.firstName}
+          errorMessage="이름을 입력하세요."
         />
       </div>
-
-      <label>
-        <input type="checkbox" />
-        <span>가입자 본인은 만 14세 이상입니다.</span>
-      </label>
-      <label>
-        <input type="checkbox" />
-        <span>이용 약관에 동의합니다.</span>
-      </label>
-      <button type="button" onClick={goToSignin}>
-        위솝 계정을 가지고 계십니까?
-      </button>
+      <FormText
+        className="checkboxWrapper"
+        name="ageVerification"
+        type="checkbox"
+        labelText="가입자 본인은 만 14세 이상입니다."
+        onChange={handleCheckbox}
+        isError={checkboxState.ageVerification.isError}
+        errorMessage="본인의 만 14세 이상 여부를 확인해주세요."
+      />
+      <FormText
+        className="checkboxWrapper"
+        name="loginTerms"
+        type="checkbox"
+        labelText="이용 약관에 동의합니다."
+        onChange={handleCheckbox}
+        isError={checkboxState.loginTerms.isError}
+        errorMessage="이용 약관에 동의하였는지 확인하십시오."
+      />
+      <div className="haveAccount">
+        <button className="haveAccountBtn" type="button" onClick={goToSignin}>
+          위솝 계정을 가지고 계십니까?
+        </button>
+      </div>
     </LoginLayout>
   );
 };

@@ -66,5 +66,15 @@
         background-color: $blackgray;
       }
     }
+
+    .haveAccount {
+      order: 20;
+      margin-top: 15px;
+      text-align: center;
+
+      .haveAccountBtn {
+        font-size: 14px;
+      }
+    }
   }
 }

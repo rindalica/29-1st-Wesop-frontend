@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './FormText.scss';
 
 const FormText = ({
+  className,
   name,
   type,
   value,
@@ -9,6 +10,7 @@ const FormText = ({
   labelText,
   isError,
   errorMessage,
+  onBlur,
   isAutoFocus,
 }) => {
   const [hasValue, setHasValue] = useState(!!value);
@@ -18,16 +20,19 @@ const FormText = ({
   };
 
   return (
-    <div className="FormText">
+    <div
+      className={`FormText${className ? ` ${className}` : ' inputTextWrapper'}`}
+    >
       <label>
         <input
-          className={`inputText ${hasValue ? 'hasValue' : ''}`}
+          className={`inputText${hasValue ? ' hasValue' : ''}`}
           name={name}
           type={type}
           autoFocus={isAutoFocus}
           value={value}
           onChange={onChange}
           onInput={onInput}
+          onBlur={onBlur}
         />
         <span className="labelText">{labelText}</span>
       </label>

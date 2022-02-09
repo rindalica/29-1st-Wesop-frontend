@@ -7,6 +7,10 @@ const ForgotPasswordForm = ({
   inputState,
   handleInput,
 }) => {
+  const onSubmit = () => {
+    alert('링크가 전송되었습니다.');
+  };
+
   return (
     <LoginLayout
       mainTitle="패스워드 재설정하기"
@@ -16,6 +20,7 @@ const ForgotPasswordForm = ({
       goBack={goBack}
       inputState={inputState}
       handleInput={handleInput}
+      onSubmit={onSubmit}
     />
   );
 };
