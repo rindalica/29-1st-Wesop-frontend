@@ -86,12 +86,10 @@ const Carousel = ({
           : dataList?.map(data => (
               <CarouselItem
                 key={data.product_id}
-                heading={data.name}
-                description={data.description}
-                alt={data.name}
-                // 이미지 소스 데이터베이스에 포함 후 수정 예정
-                src="https://images.unsplash.com/photo-1573575154488-f88a60e170df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-                // src={data.src}
+                heading={data.product_name}
+                description={data.product_description}
+                alt={data.product_name}
+                src={data.image_url}
                 link={data.product_id}
                 isListPage={isListPage}
                 detail={data.product_detail}
