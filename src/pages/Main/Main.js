@@ -11,7 +11,7 @@ const Main = () => {
   const [carouselData, setCarouselData] = useState(null);
 
   useEffect(() => {
-    const categoryNum = [1, 3];
+    const categoryNum = [3, 6, 7];
 
     Promise.all(
       categoryNum.map(num =>
@@ -52,7 +52,7 @@ const Main = () => {
       {carouselData && (
         <Carousel
           className="carouselSecond"
-          dataList={carouselData[1].slice(0, 6)}
+          dataList={[...carouselData[1], ...carouselData[2]]}
         />
       )}
       <TwoColumnsPromotion
