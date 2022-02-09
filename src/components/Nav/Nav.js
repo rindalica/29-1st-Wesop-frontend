@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import CategoryModal from './CategoryModal';
+import CategoryModal from './NavModal/CategoryModal';
 import './Nav.scss';
 
 function Nav() {
   const [modal, setModal] = useState('categoryModalBoxHidden');
-  const [navColor, setNavColor] = useState('categoryNav');
+  const [navColor, setNavColor] = useState(false);
   //TODO
   // const [login, setLogin] = useState('로그인');
   // const [cartLength, setCartLength] = useState(1);
   const [categoryImg, setCategoryImg] = useState([]);
-  const handleClose = () => {
-    setNavColor('categoryNav');
+  const closeModal = () => {
+    setNavColor(false);
     setModal('categoryModalBoxHidden');
   };
   const [categoryLists, setCategoryLists] = useState([]);
@@ -24,17 +24,17 @@ function Nav() {
 
   return (
     <div className="nav">
-      <div className={navColor}>
+      <div className={navColor ? 'categoryNavModal' : 'categoryNav'}>
         <nav>
           <ul className="mainCategories">
             {categoryLists.map(
-              ({ id, categoryName, className, categoryImg, liClassName }) => {
+              ({ id, categoryName, className, categoryImg }) => {
                 return (
                   <li key={id} className="mainCategory">
                     <button
                       onClick={function handleModal() {
                         setModal('categoryModalBox' + className);
-                        setNavColor('categoryNavModal');
+                        setNavColor(true);
                         setCategoryLists(categoryLists);
                         setCategoryImg(categoryImg);
                       }}
@@ -47,7 +47,7 @@ function Nav() {
               }
             )}
             <li className="mainCategory">
-              <button className="mainCategoryClose" onClick={handleClose}>
+              <button className="mainCategoryClose" onClick={closeModal}>
                 닫기 X
               </button>
             </li>

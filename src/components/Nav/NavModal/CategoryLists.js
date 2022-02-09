@@ -1,27 +1,34 @@
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
 import MainCategoryList from './MainCategoryList';
+import CategoryList from './CategoryList';
 import './CategoryLists.scss';
 
 function CategoryLists() {
+  const [list, setList] = useState([]);
+  useEffect(() => {
+    fetch('/data/CategoryList.json')
+      .then(res => res.json())
+      .then(data => {
+        setList(data);
+      });
+  }, []);
+
   return (
     <div className="categoryLists">
       <MainCategoryList />
       <div className="secondaryLists">
         <div className="topListsWrap">
           <div>
-            <ul className="skinTypeList">
-              <h2 className="categoryListTitle">피부타입</h2>
-              <li className="listContents">중성</li>
-              <li className="listContents">건성</li>
-              <li className="listContents">지성</li>
-              <li className="listContents">복합성</li>
-            </ul>
-            <ul className="rangeList">
-              <h2 className="categoryListTitle">레인지</h2>
-              <li className="listContents">파슬리 씨드</li>
-              <li className="listContents">스킨케어 플러스</li>
-            </ul>
+            {list.map(lists => {
+              return (
+                <CategoryList
+                  key={lists.id}
+                  className={lists.className}
+                  categoryName={lists.categoryName}
+                  contentsList={lists.listContents}
+                />
+              );
+            })}
           </div>
           <ul className="lovesList">
             <h2 className="categoryListTitle">사랑받는 제품</h2>

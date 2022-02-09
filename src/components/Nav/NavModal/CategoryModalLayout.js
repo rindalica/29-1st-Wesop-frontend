@@ -16,13 +16,13 @@ function CategoryModalLayout({
           />
         </div>
         {children}
-        {categoryImg.map(y => {
+        {categoryImg.map(img => {
           return (
             <img
               className="categoryImg"
-              key={y.id}
-              alt={y.imgAlt}
-              src={y.imgSrc}
+              key={img.id}
+              alt={img.imgAlt}
+              src={img.imgSrc}
             />
           );
         })}
