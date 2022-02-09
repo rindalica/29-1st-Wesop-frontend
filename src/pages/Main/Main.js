@@ -26,11 +26,15 @@ const Main = () => {
     const categoryNum = [1, 3];
 
     Promise.all(
-      categoryNum.map(num => fetch(`${BASE_URL}/skin/categories/${num}`))
+      categoryNum.map(num =>
+        fetch(`${BASE_URL}/skin/products?categoryId=${num}`)
+      )
     )
       .then(res => Promise.all(res.map(res => res.json())))
       .then(json => {
-        setCarouselData(json.map(data => data.message));
+        setCarouselData(
+          json.map(data => data.message.map(data => data.products))
+        );
       });
   }, []);
 
