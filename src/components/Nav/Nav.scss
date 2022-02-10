@@ -1,0 +1,67 @@
+@import '../../styles/variables.scss';
+
+.mainCategoryBtnClose {
+  display: none;
+}
+
+.categoryNav {
+  @include flex-justify-between;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: $darkgray;
+  border-bottom: 1px solid $darkgray;
+
+  .mainCategories,
+  .individualMenu {
+    @include flex-justify-between;
+
+    .mainCategory,
+    .loginMenu,
+    .cartMenu {
+      margin: 0 14px 0 0;
+    }
+
+    .mainCategoryClose {
+      display: none;
+    }
+
+    .mainCategoryBtn,
+    .loginBtn,
+    .cartBtn {
+      height: 72px;
+      padding: 4px;
+      color: $ivory;
+      font-size: 13.3px;
+      font-weight: 300;
+    }
+  }
+}
+
+.categoryNavModal {
+  @include flex-justify-between;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: $ivory;
+  border-bottom: 1px solid #e5e5e5;
+
+  .mainCategories,
+  .individualMenu {
+    @include flex-justify-between;
+
+    .mainCategory,
+    .loginMenu,
+    .cartMenu {
+      margin: 0 14px 0 0;
+    }
+  }
+  .mainCategoryBtn,
+  .loginBtn,
+  .cartBtn,
+  .mainCategoryClose {
+    height: 72px;
+    padding: 4px;
+    color: $darkgray;
+    font-size: 13.3px;
+    font-weight: 300;
+  }
+}
