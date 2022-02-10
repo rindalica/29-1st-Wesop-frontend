@@ -27,6 +27,7 @@ const Main = () => {
   return (
     <>
       <Home />
+      <Cart />
       {carouselData && (
         <Carousel
           className="carouselFirst"

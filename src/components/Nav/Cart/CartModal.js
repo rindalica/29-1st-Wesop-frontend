@@ -1,40 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import './CartModal.scss';
 import CartProduct from './CartProduct';
-// import { CartData } from './CartData';
-// import { BASE_URL } from '../../../config';
 
 function CartModal({ cartModal }) {
   const [cartData, setCartData] = useState([]);
-  useEffect(() => {
-    fetch('http://localhost:3000/data/CartData.json', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => {
-        setCartData(data);
-      });
-  }, []);
-
   const test = () => {
+    sessionStorage.setItem(
+      'ACCESS_TOKEN',
+      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.WgDrUj6df_iJkOoZ5e_j9x9p-GPwuPq41HTQQ_jlNX8'
+    );
     fetch('http://10.58.6.236:8000/carts', {
       method: 'GET',
       headers: {
-        // 헤더 조작
         'Content-Type': 'application/json',
-        Authorization: localStorage.getItem(
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.WgDrUj6df_iJkOoZ5e_j9x9p-GPwuPq41HTQQ_jlNX8'
-        ),
+        Authorization: sessionStorage.getItem('ACCESS_TOKEN'),
       },
-      // body: JSON.stringify({
-      //   message: {
-      //     product_options_id: 2,
-      //   },
-      // }),
     })
       .then(res => res.json())
-      .then(res => console.log(res));
+      .then(data => {
+        setCartData(data.products);
+        console.log(data.products);
+      });
   };
+
   return (
     <div className={cartModal}>
       <div className="cartProducts">
@@ -51,22 +39,21 @@ function CartModal({ cartModal }) {
             function onDelete() {
               setCartData(
                 cartData.filter(it => {
-                  console.log(it.id);
-                  if (it.id !== product.id) {
-                    return product.id;
+                  console.log(product.option_id);
+                  if (it.option_id !== product.option_id) {
+                    return product.option_id;
                   }
                 })
               );
             }
             return (
               <CartProduct
-                key={product.id}
-                productName={product.productName}
+                key={product.option_id}
+                productName={product.name}
                 size={product.size}
                 onClick={onDelete}
                 option={product.option}
                 price={product.price}
-                //event={}
               />
             );
           })}
