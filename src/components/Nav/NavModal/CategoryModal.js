@@ -3,13 +3,13 @@ import './CategoryModal.scss';
 import CategoryModalLayout from './CategoryModalLayout';
 import CategoryLists from './CategoryLists';
 
-function CategoryModal({ categoryImg, categoryModalClassName }) {
+function CategoryModal({ closeModal, categoryImg, categoryModalClassName }) {
   return (
     <CategoryModalLayout
       categoryModalClassNames={categoryModalClassName}
       categoryImg={categoryImg}
     >
-      <CategoryLists />
+      <CategoryLists closeModal={closeModal} />
     </CategoryModalLayout>
   );
 }

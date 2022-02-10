@@ -82,6 +82,7 @@ function Nav() {
         <CategoryModal
           categoryImg={categoryImg}
           categoryModalClassName={modal}
+          closeModal={closeModal}
         />
       </div>
     </>
