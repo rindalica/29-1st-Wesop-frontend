@@ -20,7 +20,7 @@ function CategoryModalLayout({
           return (
             <img
               className="categoryImg"
-              key={img.id}
+              key={img.imgId}
               alt={img.imgAlt}
               src={img.imgSrc}
             />

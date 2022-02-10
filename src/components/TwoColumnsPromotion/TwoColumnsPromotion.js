@@ -4,6 +4,7 @@ import './TwoColumnsPromotion.scss';
 
 const TwoColumnsPromotion = ({
   isTextOnLeft,
+  className,
   isContentImg,
   children,
   subTitle,
@@ -16,7 +17,9 @@ const TwoColumnsPromotion = ({
 }) => {
   return (
     <section
-      className={`TwoColumnsPromotion ${isTextOnLeft ? 'left' : 'right'}`}
+      className={`TwoColumnsPromotion ${isTextOnLeft ? 'left' : 'right'}${
+        className ? ' ' + className : ''
+      }`}
     >
       <article className="textWrapper">
         <header className="titleWrapper">
