@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Nav from '../../components/Nav/Nav';
-import Footer from '../../components/Footer/Footer';
 import ProductsHeader from './ProductsHeader/ProductsHeader';
 import ProductsSlider from './ProductsSlider/ProductsSlider';
 import ProductsMain from './ProductsMain/ProductsMain';
