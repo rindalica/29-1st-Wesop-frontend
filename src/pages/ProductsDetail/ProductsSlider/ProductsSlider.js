@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ProductsSlider.scss';
 
 function ProductsSlider({ productSlider }) {
   const [current, setCurrent] = useState(0);
+  const navigate = useNavigate();
+
+  const goToDetail = id => {
+    navigate(`/skin/products/${id}`);
+  };
+
   const leftBtn = () => {
     if (current < 0) {
       setCurrent(prev => prev + 300);
@@ -20,9 +27,12 @@ function ProductsSlider({ productSlider }) {
         <h2>함께 사용하기 좋은 제품</h2>
       </div>
       {productSlider.length !== 0
-        ? productSlider.map((image, idx) => {
+        ? productSlider.map(image => {
+            const id = image.products.product_id;
+            const go = () => goToDetail(id);
+
             return (
-              <div key={idx}>
+              <div key={id} className="recommendBox" onClick={go}>
                 <div
                   className="imageBox"
                   style={{ transform: `translate(${current}px)` }}

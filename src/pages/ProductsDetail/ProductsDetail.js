@@ -15,13 +15,13 @@ function ProductsDetail() {
   const params = useParams();
 
   useEffect(() => {
-    fetch(`http://10.58.7.122:8000/skin/products/${params.productsId}`)
+    fetch(`http://54.180.140.106:8000/skin/products/${params.productsId}`)
       .then(res => res.json())
       .then(result => setProduct(result.message));
   }, [params.productsId]);
 
   useEffect(() => {
-    fetch(`http://10.58.7.122:8000/skin/products`)
+    fetch(`http://54.180.140.106:8000/skin/products`)
       .then(res => res.json())
       .then(result => setProductSlider(result.message));
   }, []);
