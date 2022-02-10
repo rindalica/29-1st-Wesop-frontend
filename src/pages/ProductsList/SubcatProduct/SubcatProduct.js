@@ -67,7 +67,7 @@ function SubcatProduct({ name, id, detail, skinType, keyIngredient, image }) {
                   name="size"
                   value={detail[1].size}
                 />
-                <labe className="selectedSize">{detail[1].size}</labe>
+                <label className="selectedSize">{detail[1].size}</label>
               </div>
             )}
           </div>

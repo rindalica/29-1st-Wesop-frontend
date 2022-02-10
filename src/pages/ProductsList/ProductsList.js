@@ -18,7 +18,7 @@ function ProductsList() {
 
   useEffect(() => {
     setCategoryId(queryString ? queryString : 0);
-  }, []);
+  }, [queryString]);
 
   useEffect(() => {
     if (categoryId === null) return;
