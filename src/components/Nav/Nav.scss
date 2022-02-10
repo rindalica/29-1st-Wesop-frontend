@@ -6,6 +6,12 @@
 
 .categoryNav {
   @include flex-justify-between;
+  position: absolute;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $nav-height;
   padding-left: 40px;
   padding-right: 40px;
   background-color: $darkgray;
