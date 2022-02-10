@@ -25,12 +25,10 @@ function ProductsHeader({ product }) {
     setTopShow(!topShow);
   };
 
-  const usage = product.product_usage;
   const detail = product.product_detail;
+  const skin = product.skin_type;
+  const ingredient = product.key_ingredient;
 
-  // const uiskinType = [...product.skin_type].join(', ');
-
-  // const price = detail[0].price;
   return (
     <div className="ProductsHeader">
       <IngredientsModal
@@ -46,7 +44,7 @@ function ProductsHeader({ product }) {
       </div>
       <div className="sideContainer">
         <div className="imageBox">
-          {/* <img alt="product" src="/images/logo-darkgray.png" /> */}
+          <img alt="product" src={product.product_image_url} />
         </div>
         <div className="productDetailHeader">
           <nav className="productDetail">
@@ -71,7 +69,9 @@ function ProductsHeader({ product }) {
           <ul className="productInfo">
             <li className="skinBox">
               <div className="skinType">피부 타입</div>
-              {/* <div className="description">{product && uiskinType}</div> */}
+              <div className="description">
+                {product.product_id && skin.join(', ')}
+              </div>
             </li>
             <li className="useBox">
               <div className="feeling">사용감</div>
@@ -85,20 +85,24 @@ function ProductsHeader({ product }) {
                   <span className="moreBtnIcon">+</span>
                 </button>
               </div>
-              <div className="description">{product.key_ingredient}</div>
+              <div className="description">
+                {product.product_id && ingredient.join(', ')}
+              </div>
             </li>
             <li className="sizeBox">
               <div className="size">사이즈</div>
               <div className="description">{detail && detail[0].size}</div>
             </li>
             <div className="cartBtn">
-              <button onClick={addToBasket} type="button" className="button" ß>
+              <button onClick={addToBasket} type="button" className="button">
                 <span>
-                  {/* 카트에 추가하기 - ₩{(detail && price).toLocaleString()} */}
-                  {/* {Math.floor({detail && detail[0].price}).toLocaleString()} */}
+                  카트에 추가하기 - ₩
+                  {detail &&
+                    parseInt(detail[0].price)
+                      .toString()
+                      .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}
                 </span>
               </button>
-              ß
             </div>
           </ul>
         </div>
@@ -108,3 +112,7 @@ function ProductsHeader({ product }) {
 }
 
 export default ProductsHeader;
+// optional chaining 조건부렌더링 방법 ?
+
+// detail && detail.price.toLocaleString()
+// detail?.price.toLocaleString()

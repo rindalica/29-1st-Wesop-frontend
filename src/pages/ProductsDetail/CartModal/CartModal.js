@@ -4,7 +4,7 @@ import './CartModal.scss';
 function CartModal({ topShow, product }) {
   return (
     <div>
-      <div className={topShow} />
+      <div className="false" />
       {/* <p>{product.name}카트에 추가</p> */}
     </div>
   );

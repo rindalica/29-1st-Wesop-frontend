@@ -11,14 +11,19 @@ import '../../styles/variables.scss';
 
 function ProductsDetail() {
   const [product, setProduct] = useState([]);
+  const [productSlider, setProductSlider] = useState([]);
   const params = useParams();
 
-  console.log(params);
-  // ${params.productsId}
   useEffect(() => {
-    fetch(`http://10.58.4.177:8000/skin/products/${params.productsId}`)
+    fetch(`http://10.58.7.122:8000/skin/products/${params.productsId}`)
       .then(res => res.json())
       .then(result => setProduct(result.message));
+  }, [params.productsId]);
+
+  useEffect(() => {
+    fetch(`http://10.58.7.122:8000/skin/products`)
+      .then(res => res.json())
+      .then(result => setProductSlider(result.message));
   }, []);
 
   return (
@@ -40,7 +45,7 @@ function ProductsDetail() {
         </div>
       </aside>
       <ProductsMain product={product} />
-      <ProductsSlider />
+      <ProductsSlider productSlider={productSlider} />
       {/* <Footer />? */}
     </div>
   );

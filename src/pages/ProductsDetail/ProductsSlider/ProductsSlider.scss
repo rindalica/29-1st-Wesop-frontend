@@ -3,7 +3,6 @@
 .ProductsSlider {
   height: 600px;
   padding-top: 100px;
-  background-color: lightgray;
   display: flex;
   flex-direction: row;
   overflow: hidden;
@@ -14,6 +13,7 @@
   h2 {
     width: 350px;
     font-size: 30px;
+    padding-left: 30px;
   }
 
   .imageBox {
@@ -21,6 +21,7 @@
     transition: all 0.3s ease;
     img {
       width: 350px;
+      height: 350px;
     }
     p {
       font-size: 13px;
@@ -40,6 +41,12 @@
     i {
       background-color: black;
       color: white;
+      opacity: 0.4;
+      padding: 10px;
+      border-radius: 3px;
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 }

@@ -27,6 +27,8 @@
 
     .howToUse {
       width: 100%;
+      line-height: 1.4;
+      padding-bottom: 20px;
 
       h2 {
         font-size: 30px;
@@ -42,6 +44,11 @@
       &:last-child {
         border: none;
       }
+    }
+
+    .description {
+      font-weight: 100;
+      line-height: 2;
     }
   }
 }
