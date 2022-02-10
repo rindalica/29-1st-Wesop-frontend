@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+
+.productsList {
+  background-color: $ivory;
+  width: 100%;
+  height: 100%;
+
+  .headerTitle {
+    margin-top: 150px;
+    background-color: rgb(255, 254, 242);
+
+    .wesopLogo {
+      width: $logo-width;
+      margin-left: $logo-left;
+    }
+  }
+}
+
+.categoryTitle {
+  .categoryTitleHeader {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 50px;
+    font-size: 23px;
+    font-weight: 100px;
+    color: rgba(51, 51, 51, 0.822);
+  }
+}
+
+.informationBox {
+  padding-top: 150px;
+}
