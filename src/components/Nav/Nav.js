@@ -9,6 +9,7 @@ function Nav() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [categoryImg, setCategoryImg] = useState([]);
   const [categoryLists, setCategoryLists] = useState([]);
+  const [cartModal, setCartModal] = useState(false);
 
   useEffect(() => {
     fetch('/data/NavData.json')
@@ -31,9 +32,14 @@ function Nav() {
     setIsLoginOpen(true);
   };
 
+  const openModal = () => {
+    setCartModal(!cartModal);
+  };
   return (
     <>
       <LoginModal isLoginOpen={isLoginOpen} setIsLoginOpen={setIsLoginOpen} />
+      {/* Fix : cart 머지 후 가져오기 */}
+      {/* <CartModal cartModal={cartModal ? 'cartModal' : 'hidden'} /> */}
       <div className="Nav">
         <div className={navColor ? 'categoryNavModal' : 'categoryNav'}>
           <nav>
@@ -72,7 +78,7 @@ function Nav() {
                 </button>
               </li>
               <li className="cartMenu">
-                <button className="cartBtn" type="button">
+                <button className="cartBtn" type="button" onClick={openModal}>
                   카트
                 </button>
               </li>
