@@ -7,7 +7,6 @@
 .categoryNav {
   @include flex-justify-between;
   position: absolute;
-  z-index: 30;
   top: 0;
   left: 0;
   right: 0;
@@ -16,6 +15,7 @@
   padding-right: 40px;
   background-color: $darkgray;
   border-bottom: 1px solid $darkgray;
+  z-index: 30;
 
   .mainCategories,
   .individualMenu {
@@ -45,10 +45,16 @@
 
 .categoryNavModal {
   @include flex-justify-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $nav-height;
   padding-left: 40px;
   padding-right: 40px;
   background-color: $ivory;
   border-bottom: 1px solid #e5e5e5;
+  z-index: 30;
 
   .mainCategories,
   .individualMenu {
