@@ -1,30 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LoginLayout from '../LoginLayout/LoginLayout';
 import FormText from '../LoginLayout/FormText/FormText';
 import { api } from '../../../config';
 
 const SigninForm = ({
+  setIsLoginOpen,
   closeLogin,
   goBack,
   goToForgotPassword,
   inputState,
   handleInput,
 }) => {
+  const [errorState, setErrorState] = useState({
+    isError: false,
+    errorMessage: null,
+  });
+
+  const { isError, errorMessage } = errorState;
   const { email, password } = inputState;
 
   const submitSignin = async () => {
-    const json = await (
-      await fetch(api.signIn, {
-        method: 'POST',
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-      })
-    ).json();
+    const response = await fetch(api.signIn, {
+      method: 'POST',
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
+    const json = await response.json();
 
-    if (json.message === 'SUCCESS') {
+    if (response.ok) {
+      setErrorState({
+        isError: false,
+        errorMessage: null,
+      });
       sessionStorage.setItem('ACCESS_TOKEN', json.ACCESS_TOKEN);
+      setIsLoginOpen(false);
+    } else if (response.status === 401) {
+      setErrorState({
+        isError: true,
+        errorMessage:
+          '귀하의 이메일과 패스워드가 일치하지 않습니다. 다시 시도하십시오.',
+      });
+    } else if (response.status === 404) {
+      setErrorState({
+        isError: true,
+        errorMessage: '존재하지 않는 계정입니다.',
+      });
     }
   };
 
@@ -44,6 +66,8 @@ const SigninForm = ({
         type="password"
         labelText="패스워드"
         onChange={handleInput}
+        isError={isError}
+        errorMessage={errorMessage}
       />
       <button
         className="forgotPasswordBtn"

@@ -54,7 +54,7 @@ const LoginModal = ({ isLoginOpen, setIsLoginOpen }) => {
       })
     ).json();
 
-    const hasAccount = json['sign-in'];
+    const hasAccount = json.sign_in;
     goToForm(hasAccount ? isSignin : isSignup);
   };
 
@@ -84,6 +84,7 @@ const LoginModal = ({ isLoginOpen, setIsLoginOpen }) => {
 
         {modalState.isSignin ? (
           <SigninForm
+            setIsLoginOpen={setIsLoginOpen}
             closeLogin={closeLogin}
             goBack={() => goToForm(isLogin)}
             goToForgotPassword={() => goToForm(isForgotPassword)}
