@@ -3,7 +3,7 @@ import MainCategoryList from './MainCategoryList';
 import CategoryList from './CategoryList';
 import './CategoryLists.scss';
 
-function CategoryLists() {
+function CategoryLists({ closeModal }) {
   const [list, setList] = useState([]);
   useEffect(() => {
     fetch('/data/CategoryList.json')
@@ -15,7 +15,7 @@ function CategoryLists() {
 
   return (
     <div className="categoryLists">
-      <MainCategoryList />
+      <MainCategoryList closeModal={closeModal} />
       <div className="secondaryLists">
         <div className="topListsWrap">
           <div>

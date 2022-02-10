@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from './pages/Main/Main';
-import AllProductsPage from './pages/ProductsList/AllProductsPage/AllProductsPage';
-import SubcatProductsPage from './pages/ProductsList/SubcatProductsPage/SubcatProductsPage';
+import ProductsList from './pages/ProductsList/ProductsList';
 import ProductsDetail from './pages/ProductsDetail/ProductsDetail';
 import Order from './pages/Order/Order';
 import Nav from './components/Nav/Nav';
@@ -14,12 +13,8 @@ function Router() {
       <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/skin" element={<AllProductsPage />} />
-        <Route
-          path="/skin/categories/:subcatId"
-          element={<SubcatProductsPage />}
-        />
-        <Route path="/skin/products/:productsId" element={<ProductsDetail />} />
+        <Route path="/skin" element={<ProductsList />} />
+        <Route path="/skin/products/:productId" element={<ProductsDetail />} />
         <Route path="/order" element={<Order />} />
       </Routes>
       <Footer />
