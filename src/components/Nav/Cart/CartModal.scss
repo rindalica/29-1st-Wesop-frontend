@@ -20,23 +20,22 @@
       .closeModalBtn {
         padding-left: 50px;
       }
+    }
+  }
+  .CartProduct {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    color: $ivory;
+    border-bottom: 2px solid rgba(255, 254, 242, 0.1);
+  }
 
-      .cartProduct {
-        display: flex;
-        justify-content: space-between;
-        padding: 15px 0;
-        color: $ivory;
-        border-bottom: 2px solid rgba(255, 254, 242, 0.1);
-      }
+  .Option {
+    display: flex;
 
-      .Option {
-        display: flex;
-
-        .deleteBtn {
-          margin-left: 5px;
-          font-size: 12px;
-        }
-      }
+    .deleteBtn {
+      margin-left: 5px;
+      font-size: 12px;
     }
   }
   .cartSummary {

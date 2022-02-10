@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './CartModal.scss';
 import CartProduct from './CartProduct';
+import { CartData } from './CartData';
 // import { BASE_URL } from '../../../config';
 
 function CartModal({ cartModal }) {
   const [cartData, setCartData] = useState([]);
 
-  useEffect(() => {
-    fetch('http://localhost:3000/data/CartDatas.json')
-      .then(res => res.json())
-      .then(data => {
-        setCartData(data);
-        console.log(data);
-      });
-  }, []);
+  // TODO - 나중에 통신 필요
+  // useEffect(() => {
+  //   fetch('http://localhost:3000/data/CartData.json')
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setCartData(data);
+  //     });
+  // }, []);
 
   return (
     <div className={cartModal}>
@@ -25,11 +26,11 @@ function CartModal({ cartModal }) {
           <button className="closeModalBtn">X</button>
         </div>
         <ul>
-          {cartData.map(product => {
+          {CartData.map(product => {
             function onDelete() {
               setCartData(
-                cartData.filter(select => {
-                  if (select.id !== product.id) {
+                cartData.filter(it => {
+                  if (it.id !== product.id) {
                     return product.id;
                   }
                 })

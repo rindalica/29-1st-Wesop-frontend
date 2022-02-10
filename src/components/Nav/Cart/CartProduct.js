@@ -9,7 +9,7 @@ function CartProduct({ productName, size, option, onClick, price }) {
   };
 
   return (
-    <li className="cartProduct">
+    <li className="CartProduct">
       <div>{productName}</div>
       <div>{size}</div>
       <Option option={option} onChange={selectValue} onClick={onClick} />
