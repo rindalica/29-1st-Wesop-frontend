@@ -7,14 +7,25 @@ import { CartData } from './CartData';
 function CartModal({ cartModal }) {
   const [cartData, setCartData] = useState([]);
 
-  // TODO - 나중에 통신 필요
-  // useEffect(() => {
-  //   fetch('http://localhost:3000/data/CartData.json')
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setCartData(data);
-  //     });
-  // }, []);
+  const test = () => {
+    fetch('http://10.58.6.236:8000/carts', {
+      method: 'GET',
+      headers: {
+        // 헤더 조작
+        'Content-Type': 'application/json',
+        Authorization: localStorage.getItem(
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.WgDrUj6df_iJkOoZ5e_j9x9p-GPwuPq41HTQQ_jlNX8'
+        ),
+      },
+      // body: JSON.stringify({
+      //   message: {
+      //     product_options_id: 2,
+      //   },
+      // }),
+    })
+      .then(res => res.json())
+      .then(res => console.log(res));
+  };
 
   return (
     <div className={cartModal}>
@@ -23,7 +34,9 @@ function CartModal({ cartModal }) {
           <div>카트</div>
           <div>사이즈</div>
           <div>수량</div>
-          <button className="closeModalBtn">X</button>
+          <button onClick={test} className="closeModalBtn">
+            X
+          </button>
         </div>
         <ul>
           {CartData.map(product => {
