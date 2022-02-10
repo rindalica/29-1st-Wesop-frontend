@@ -1,26 +1,21 @@
 import React from 'react';
+import INFO_DATA from '../INFO_DATA';
 import './ProductsMain.scss';
 
 function ProductsMain({ product }) {
   const usage = product.product_usage;
 
-  const INFO_DATA = usage && [
-    {
-      id: 1,
-      title: '사용량',
-      description: usage[0].dosage,
-    },
-    {
-      id: 2,
-      title: '텍스쳐',
-      description: usage[0].texture,
-    },
-    {
-      id: 3,
-      title: '향',
-      description: usage[0].aroma,
-    },
-  ];
+  // description: usage[0].dosage,
+  // description: usage[0].texture,
+  // description: usage[0].aroma,
+
+  const a = usage && usage[0].aroma;
+  const b = usage && usage[0].dosage;
+  const c = usage && usage[0].texture;
+  INFO_DATA[0].name = a;
+  INFO_DATA[1].name = b;
+  INFO_DATA[2].name = c;
+  const NEWINFO_DATA = [...INFO_DATA];
 
   return (
     <div className="ProductsMain">
@@ -41,10 +36,10 @@ function ProductsMain({ product }) {
           </li>
 
           {usage &&
-            INFO_DATA.map(ele => (
+            NEWINFO_DATA.map(ele => (
               <li className="useAmountBox" key={ele.id}>
                 <div className="useAmount">{ele.title}</div>
-                <div className="description">{ele.description}</div>
+                <div className="description">{ele.name}</div>
               </li>
             ))}
         </ul>

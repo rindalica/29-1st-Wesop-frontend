@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BASE_URL } from '../../config';
 import { useParams } from 'react-router-dom';
 import ProductsHeader from './ProductsHeader/ProductsHeader';
 import ProductsSlider from './ProductsSlider/ProductsSlider';
@@ -13,13 +14,13 @@ function ProductsDetail() {
   const params = useParams();
 
   useEffect(() => {
-    fetch(`http://54.180.140.106:8000/skin/products/${params.productsId}`)
+    fetch(`${BASE_URL}/skin/products/${params.productsId}`)
       .then(res => res.json())
       .then(result => setProduct(result.message));
   }, [params.productsId]);
 
   useEffect(() => {
-    fetch(`http://54.180.140.106:8000/skin/products`)
+    fetch(`${BASE_URL}/skin/products`)
       .then(res => res.json())
       .then(result => setProductSlider(result.message));
   }, []);
@@ -27,7 +28,6 @@ function ProductsDetail() {
   return (
     <div className="ProductsDetail">
       <title>Products Detail</title>
-      {/* <Nav /> */}
       <ProductsHeader product={product} />
       <aside className="message">
         <div className="leftMsg">
@@ -44,7 +44,6 @@ function ProductsDetail() {
       </aside>
       <ProductsMain product={product} />
       <ProductsSlider productSlider={productSlider} />
-      {/* <Footer />? */}
     </div>
   );
 }

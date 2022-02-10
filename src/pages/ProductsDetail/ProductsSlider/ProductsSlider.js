@@ -8,6 +8,7 @@ function ProductsSlider({ productSlider }) {
 
   const goToDetail = id => {
     navigate(`/skin/products/${id}`);
+    window.scrollTo({ top: 0 });
   };
 
   const leftBtn = () => {
