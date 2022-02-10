@@ -1,11 +1,11 @@
 @import '../../../styles/variables.scss';
 
 .ProductsHeader {
+  position: relative;
   display: flex;
   justify-content: space-between;
   padding-top: 120px;
   padding-bottom: 30px;
-  position: relative;
 
   .logo {
     img {
@@ -19,10 +19,10 @@
     flex-direction: row;
 
     .imageBox {
-      object-fit: cover;
-      margin-right: 90px;
       display: flex;
       align-items: center;
+      margin-right: 90px;
+      object-fit: cover;
     }
 
     .productDetailHeader {

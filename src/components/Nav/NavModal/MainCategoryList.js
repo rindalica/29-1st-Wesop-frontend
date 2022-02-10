@@ -5,7 +5,6 @@ import { BASE_URL } from '../../../config';
 function MainCategoryList({ closeModal }) {
   const [list, setList] = useState([]);
   const navigate = useNavigate();
-  console.log(list);
 
   useEffect(() => {
     fetch(`${BASE_URL}/categories`)

@@ -1,14 +1,14 @@
 @import '../../../styles/variables.scss';
 
 .ProductsSlider {
-  height: 600px;
-  padding-top: 100px;
+  position: relative;
   display: flex;
   flex-direction: row;
-  overflow: hidden;
   width: 100vw;
-  position: relative;
+  height: 600px;
+  padding-top: 100px;
   transition: transform 0.5s;
+  overflow: hidden;
 
   h2 {
     width: 350px;
@@ -31,18 +31,18 @@
   }
   .btnBox {
     position: absolute;
-    font-size: 30px;
-    cursor: pointer;
-    width: 100%;
     display: flex;
     justify-content: space-between;
+    width: 100%;
     padding: 50px;
     top: 200px;
+    font-size: 30px;
+    cursor: pointer;
     i {
-      background-color: black;
-      color: white;
-      opacity: 0.4;
       padding: 10px;
+      color: white;
+      background-color: black;
+      opacity: 0.4;
       border-radius: 3px;
       &:hover {
         opacity: 0.8;
