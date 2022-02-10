@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import LoginModal from '../../components/LoginModal/LoginModal';
 import Home from './Home/Home';
 import Carousel from '../../components/Carousel/Carousel';
 import TwoColumnsPromotion from '../../components/TwoColumnsPromotion/TwoColumnsPromotion';
@@ -9,17 +8,6 @@ import { BASE_URL } from '../../config';
 import './Main.scss';
 
 const Main = () => {
-  // FIXME: Nav와 합치면서 로그인 버튼은 삭제할 예정
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
-
-  const openLogin = () => {
-    setIsLoginOpen(true);
-  };
-
-  useEffect(() => {
-    document.body.className = isLoginOpen ? 'noScroll' : '';
-  }, [isLoginOpen]);
-
   const [carouselData, setCarouselData] = useState(null);
 
   useEffect(() => {
@@ -40,10 +28,6 @@ const Main = () => {
 
   return (
     <>
-      <button type="button" onClick={openLogin}>
-        로그인
-      </button>
-      <LoginModal isLoginOpen={isLoginOpen} setIsLoginOpen={setIsLoginOpen} />
       <Home />
       {carouselData && (
         <Carousel
