@@ -22,9 +22,9 @@ function SubcatProduct({ name, id, detail, skinType, keyIngredient, image }) {
     })
       .then(res => res.json())
       .then(result => {
-        if (result.message === 'SUCCESS') {
+        if (result.result === 'SUCCESS') {
           alert('상품이 장바구니에 담겼습니다.');
-        } else if (result.message === 'SUCCESS_UPDATE') {
+        } else if (result.result === 'SUCCESS_UPDATE') {
           alert('이미 장바구니에 담겨 있습니다.');
         }
       });
@@ -45,30 +45,21 @@ function SubcatProduct({ name, id, detail, skinType, keyIngredient, image }) {
             {detail.length === 1 ? (
               <>
                 <span className="size">{detail[0].size} </span>
-                <span>/</span>
+                <span> /</span>
                 <span className="price">
                   <span> ₩ </span>
                   {(+detail[0].price).toLocaleString()}
                 </span>
               </>
             ) : (
-              <div className="size">
-                <input
-                  className="selectedButton"
-                  type="radio"
-                  name="size"
-                  value={detail[0].size}
-                />
-                <label className="selectedSize">{detail[0].size}</label>
-
-                <input
-                  className="selectedButton"
-                  type="radio"
-                  name="size"
-                  value={detail[1].size}
-                />
-                <label className="selectedSize">{detail[1].size}</label>
-              </div>
+              <>
+                <span className="size">2 사이즈</span>
+                <span> /</span>
+                <span className="price">
+                  <span> ₩ </span>
+                  {(+detail[0].price).toLocaleString()} 원부터
+                </span>
+              </>
             )}
           </div>
         </div>
