@@ -66,6 +66,7 @@ function CartModal({ cartModal }) {
                 onClick={onDelete}
                 option={product.option}
                 price={product.price}
+                //event={}
               />
             );
           })}
