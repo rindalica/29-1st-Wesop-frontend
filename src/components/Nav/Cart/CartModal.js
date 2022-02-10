@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CartModal.scss';
 import CartProduct from './CartProduct';
-import { CartData } from './CartData';
+// import { CartData } from './CartData';
 // import { BASE_URL } from '../../../config';
 
 function CartModal({ cartModal }) {
   const [cartData, setCartData] = useState([]);
+  useEffect(() => {
+    fetch('http://localhost:3000/data/CartData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setCartData(data);
+      });
+  }, []);
 
   const test = () => {
     fetch('http://10.58.6.236:8000/carts', {
@@ -26,7 +35,6 @@ function CartModal({ cartModal }) {
       .then(res => res.json())
       .then(res => console.log(res));
   };
-
   return (
     <div className={cartModal}>
       <div className="cartProducts">
@@ -39,10 +47,11 @@ function CartModal({ cartModal }) {
           </button>
         </div>
         <ul>
-          {CartData.map(product => {
+          {cartData.map(product => {
             function onDelete() {
               setCartData(
                 cartData.filter(it => {
+                  console.log(it.id);
                   if (it.id !== product.id) {
                     return product.id;
                   }
