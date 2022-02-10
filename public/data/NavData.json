@@ -6,6 +6,7 @@
     "liClassName": "mainCategorySkin",
     "categoryImg": [
       {
+        "imgId": 1,
         "imgSrc": "https://images.pexels.com/photos/1619488/pexels-photo-1619488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "imgAlt": "categorySkinImg"
       }
@@ -18,6 +19,7 @@
     "liClassName": "mainCategoryBody",
     "categoryImg": [
       {
+        "imgId": 2,
         "imgSrc": "https://images.pexels.com/photos/4857813/pexels-photo-4857813.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "imgAlt": "categoryBodyImg"
       }
@@ -30,6 +32,7 @@
     "liClassName": "mainCategoryHair",
     "categoryImg": [
       {
+        "imgId": 3,
         "imgSrc": "https://images.pexels.com/photos/6724357/pexels-photo-6724357.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "imgAlt": "categoryHairImg"
       }

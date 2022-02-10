@@ -7,7 +7,7 @@ function CategoryList({ className, categoryName, contentsList }) {
 
       {contentsList.map(content => {
         return (
-          <li key={content.id} className="listContents">
+          <li key={content.contentId} className="listContents">
             {content.content}
           </li>
         );

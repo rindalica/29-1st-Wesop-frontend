@@ -1,34 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import LoginModal from '../../components/LoginModal/LoginModal';
 import Home from './Home/Home';
 import Carousel from '../../components/Carousel/Carousel';
 import TwoColumnsPromotion from '../../components/TwoColumnsPromotion/TwoColumnsPromotion';
 import Quote from './Quote/Quote';
 import { PROMOTIONS, STORE_LOCATOR } from './mainData';
-import { BASE_URL } from '../../config';
+import { api } from '../../config';
 import './Main.scss';
 import Cart from '../../components/Nav/Cart/Cart';
 const Main = () => {
-  // FIXME: Nav와 합치면서 로그인 버튼은 삭제할 예정
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
-
-  const openLogin = () => {
-    setIsLoginOpen(true);
-  };
-
-  useEffect(() => {
-    document.body.className = isLoginOpen ? 'noScroll' : '';
-  }, [isLoginOpen]);
-
   const [carouselData, setCarouselData] = useState(null);
 
   useEffect(() => {
     const categoryNum = [3, 6, 7];
 
     Promise.all(
-      categoryNum.map(num =>
-        fetch(`${BASE_URL}/skin/products?categoryId=${num}`)
-      )
+      categoryNum.map(num => fetch(`${api.allProducts}?categoryId=${num}`))
     )
       .then(res => Promise.all(res.map(res => res.json())))
       .then(json => {
@@ -40,11 +26,6 @@ const Main = () => {
 
   return (
     <>
-      <Cart />
-      <button type="button" onClick={openLogin}>
-        로그인
-      </button>
-      <LoginModal isLoginOpen={isLoginOpen} setIsLoginOpen={setIsLoginOpen} />
       <Home />
       {carouselData && (
         <Carousel
