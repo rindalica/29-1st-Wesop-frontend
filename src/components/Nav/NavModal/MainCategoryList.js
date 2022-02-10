@@ -39,9 +39,7 @@ function MainCategoryList({ closeModal }) {
                 navigate(
                   `/skin/products/?categoryId=${mainCategory.sub_category_id}`
                 );
-                {
-                  closeModal();
-                }
+                closeModal();
               }}
             >
               {mainCategory.name}
