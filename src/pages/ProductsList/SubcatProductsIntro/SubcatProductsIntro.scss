@@ -3,13 +3,13 @@
   width: 100%;
   font-size: 15px;
   height: 100%;
-  padding: 80px 40px;
+  padding: 50, 80px;
   display: flex;
   flex-direction: column;
-  align-content: flex-end;
+  align-content: flex-start;
   justify-content: flex-end;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
 
   .SubcatIntroHeadline {
     font-size: 30px;

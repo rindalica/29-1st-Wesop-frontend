@@ -73,6 +73,7 @@ function SkinProductsListRow({
             productsList.map(product => (
               <SkinProduct
                 key={product.product_id}
+                id={product.product_id}
                 name={product.product_name}
                 detail={product.product_detail}
                 image={product.product_image_url}

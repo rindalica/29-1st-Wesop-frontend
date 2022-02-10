@@ -20,6 +20,7 @@ function SubcatProductsList({ productsList }) {
           return (
             <SubcatProduct
               key={product.products.product_id}
+              id={product.products.product_id}
               name={product.products.product_name}
               detail={product.products.product_detail}
               skinType={product.products.skin_type}
