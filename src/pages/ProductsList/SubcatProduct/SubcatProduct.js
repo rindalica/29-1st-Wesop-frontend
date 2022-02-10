@@ -22,9 +22,9 @@ function SubcatProduct({ name, id, detail, skinType, keyIngredient, image }) {
     })
       .then(res => res.json())
       .then(result => {
-        if (result.message === 'SUCCESS') {
+        if (result === 'SUCCESS') {
           alert('상품이 장바구니에 담겼습니다.');
-        } else if (result.message === 'SUCCESS_UPDATE') {
+        } else if (result === 'SUCCESS_UPDATE') {
           alert('이미 장바구니에 담겨 있습니다.');
         }
         console.log('결과: ', result);
