@@ -1,0 +1,52 @@
+@import '../../../styles/variables.scss';
+
+.ProductsSlider {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 600px;
+  padding-top: 100px;
+  transition: transform 0.5s;
+  overflow: hidden;
+
+  h2 {
+    width: 350px;
+    font-size: 30px;
+    padding-left: 30px;
+  }
+
+  .imageBox {
+    margin-right: 110px;
+    transition: all 0.3s ease;
+    img {
+      width: 350px;
+      height: 350px;
+    }
+    p {
+      font-size: 13px;
+      text-align: center;
+      margin: 15px 0;
+    }
+  }
+  .btnBox {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 50px;
+    top: 200px;
+    font-size: 30px;
+    cursor: pointer;
+    i {
+      padding: 10px;
+      color: white;
+      background-color: black;
+      opacity: 0.4;
+      border-radius: 3px;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
