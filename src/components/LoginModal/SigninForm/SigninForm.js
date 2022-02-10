@@ -47,6 +47,11 @@ const SigninForm = ({
         isError: true,
         errorMessage: '존재하지 않는 계정입니다.',
       });
+    } else {
+      setErrorState({
+        isError: true,
+        errorMessage: '잘못된 이메일 또는 패스워드입니다.',
+      });
     }
   };
 
