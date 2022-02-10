@@ -19,13 +19,13 @@ function MainCategoryList() {
       <h2 className="MainCategoryListTitle">스킨 케어</h2>
       <ul className="skinCareList">
         <li className="MainCategoryListContents">
-          <a href="/">
+          <a href="/skin">
             <span>스킨 케어 모두 보기</span>
           </a>
         </li>
         {list.map(mainCategory => (
           <li
-            key={mainCategory.main_category_id}
+            key={mainCategory.sub_category_id}
             className="MainCategoryListContents"
           >
             <button
