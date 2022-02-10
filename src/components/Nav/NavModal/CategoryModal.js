@@ -8,6 +8,7 @@ function CategoryModal({ closeModal, categoryImg, categoryModalClassName }) {
     <CategoryModalLayout
       categoryModalClassNames={categoryModalClassName}
       categoryImg={categoryImg}
+      closeModal={closeModal}
     >
       <CategoryLists closeModal={closeModal} />
     </CategoryModalLayout>
