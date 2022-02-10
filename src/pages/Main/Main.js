@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import LoginModal from '../../components/LoginModal/LoginModal';
 import Home from './Home/Home';
 import Carousel from '../../components/Carousel/Carousel';
 import TwoColumnsPromotion from '../../components/TwoColumnsPromotion/TwoColumnsPromotion';
@@ -8,10 +9,21 @@ import { BASE_URL } from '../../config';
 import './Main.scss';
 
 const Main = () => {
+  // FIXME: Nav와 합치면서 로그인 버튼은 삭제할 예정
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+
+  const openLogin = () => {
+    setIsLoginOpen(true);
+  };
+
+  useEffect(() => {
+    document.body.className = isLoginOpen ? 'noScroll' : '';
+  }, [isLoginOpen]);
+
   const [carouselData, setCarouselData] = useState(null);
 
   useEffect(() => {
-    const categoryNum = [1, 3];
+    const categoryNum = [3, 6, 7];
 
     Promise.all(
       categoryNum.map(num =>
@@ -28,6 +40,10 @@ const Main = () => {
 
   return (
     <>
+      <button type="button" onClick={openLogin}>
+        로그인
+      </button>
+      <LoginModal isLoginOpen={isLoginOpen} setIsLoginOpen={setIsLoginOpen} />
       <Home />
       {carouselData && (
         <Carousel
@@ -52,7 +68,7 @@ const Main = () => {
       {carouselData && (
         <Carousel
           className="carouselSecond"
-          dataList={carouselData[1].slice(0, 6)}
+          dataList={[...carouselData[1], ...carouselData[2]]}
         />
       )}
       <TwoColumnsPromotion

@@ -1,0 +1,80 @@
+@import '../../../styles/variables.scss';
+
+.LoginLayout {
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+  padding: 50px;
+  margin: 0 auto;
+  background-color: $ivory;
+  color: $gray;
+
+  .backBtn,
+  .closeBtn {
+    position: absolute;
+    top: 42px;
+    width: 30px;
+    height: 30px;
+    color: $blackgray;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .backBtn {
+    left: 42px;
+    font-size: 18px;
+  }
+
+  .closeBtn {
+    right: 42px;
+  }
+
+  .titleWrapper {
+    padding-bottom: 30px;
+
+    .mainTitle {
+      padding: 40px 0 10px;
+      color: $blackgray;
+      line-height: 1.54;
+      font-size: 26px;
+      letter-spacing: -1px;
+    }
+
+    .subTitle {
+      line-height: 1.7;
+      letter-spacing: -0.2px;
+    }
+  }
+
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+
+    .submitBtn {
+      width: 100%;
+      min-width: 210px;
+      height: 60px;
+      padding: 21px 23px;
+      margin-top: 25px;
+      background-color: $darkgray;
+      color: $ivory;
+      text-align: center;
+      font-size: 14px;
+      transition: all 0.5s ease;
+
+      &:hover {
+        background-color: $blackgray;
+      }
+    }
+
+    .haveAccount {
+      order: 20;
+      margin-top: 15px;
+      text-align: center;
+
+      .haveAccountBtn {
+        font-size: 14px;
+      }
+    }
+  }
+}

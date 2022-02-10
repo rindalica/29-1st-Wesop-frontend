@@ -5,11 +5,13 @@ import AllProductsPage from './pages/ProductsList/AllProductsPage/AllProductsPag
 import SubcatProductsPage from './pages/ProductsList/SubcatProductsPage/SubcatProductsPage';
 import ProductsDetail from './pages/ProductsDetail/ProductsDetail';
 import Order from './pages/Order/Order';
+import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
 
 function Router() {
   return (
     <BrowserRouter>
+      <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/skin" element={<AllProductsPage />} />
