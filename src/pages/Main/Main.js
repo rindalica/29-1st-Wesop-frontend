@@ -6,7 +6,6 @@ import Quote from './Quote/Quote';
 import { PROMOTIONS, STORE_LOCATOR } from './mainData';
 import { api } from '../../config';
 import './Main.scss';
-import Cart from '../../components/Nav/Cart/Cart';
 const Main = () => {
   const [carouselData, setCarouselData] = useState(null);
 
@@ -27,7 +26,6 @@ const Main = () => {
   return (
     <>
       <Home />
-      <Cart />
       {carouselData && (
         <Carousel
           className="carouselFirst"

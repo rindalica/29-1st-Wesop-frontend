@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CategoryModal from './NavModal/CategoryModal';
 import LoginModal from '../LoginModal/LoginModal';
+import CartModal from './Cart/CartModal';
 import './Nav.scss';
 
 function Nav() {
@@ -38,8 +39,8 @@ function Nav() {
   return (
     <>
       <LoginModal isLoginOpen={isLoginOpen} setIsLoginOpen={setIsLoginOpen} />
-      {/* Fix : cart 머지 후 가져오기 */}
-      {/* <CartModal cartModal={cartModal ? 'cartModal' : 'hidden'} /> */}
+
+      <CartModal cartModal={cartModal ? 'cartModal' : 'hidden'} />
       <div className="Nav">
         <div className={navColor ? 'categoryNavModal' : 'categoryNav'}>
           <nav>
