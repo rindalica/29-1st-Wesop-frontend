@@ -7,7 +7,6 @@ function SubcatProduct({ name, detail, skinType, keyIngredient, image }) {
   const goToDetail = () => {
     navigate(`/skin/products/${detail[0].product_id}`);
   };
-  console.log(detail);
   return (
     <div className="productContainer" onClick={goToDetail}>
       <img className="subcatProductImage" src={image} alt={name} />
@@ -39,15 +38,15 @@ function SubcatProduct({ name, detail, skinType, keyIngredient, image }) {
           </div> */}
         </div>
 
-        <div class="SubcatProductsDetails">
-          <ul class="SubcatProductsDetailsList">
-            <li class="SubcatProductsDetailsListItem">
-              <div class="SubcatProductsDetailsTitle">피부 타입</div>
-              <div class="SubcatProductsDetailsContent">{skinType}</div>
+        <div className="SubcatProductsDetails">
+          <ul className="SubcatProductsDetailsList">
+            <li className="SubcatProductsDetailsListItem">
+              <div className="SubcatProductsDetailsTitle">피부 타입</div>
+              <div className="SubcatProductsDetailsContent">{skinType}</div>
             </li>
-            <li class="SubcatProductsDetailDetailslistItem">
-              <div class="SubcatProductsDetailDetailsTitle">주요 성분</div>
-              <div class="SubcatProductsDetailDetailsContent">
+            <li className="SubcatProductsDetailsListItem">
+              <div className="SubcatProductsDetailsTitle">주요 성분</div>
+              <div className="SubcatProductsDetailsContent">
                 {keyIngredient}
               </div>
             </li>

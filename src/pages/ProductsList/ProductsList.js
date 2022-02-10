@@ -6,7 +6,6 @@ import SubcatProductsList from './SubcatProductsList/SubcatProductsList';
 import TwoColumnsPromotion from '../../components/TwoColumnsPromotion/TwoColumnsPromotion';
 import { api } from '../../config';
 import { INFORMATION } from './informationData';
-import Footer from '../../components/Footer/Footer';
 import './ProductsList.scss';
 
 function ProductsList() {
@@ -28,7 +27,6 @@ function ProductsList() {
       fetch(`${api.allProducts}${categoryId}`)
         .then(res => res.json())
         .then(data => setProductsList(data.message));
-      console.log(productsList);
     } else {
       fetch(`${api.allProducts}`)
         .then(res => res.json())
@@ -110,7 +108,7 @@ function ProductsList() {
           <TwoColumnsPromotion
             key={promotion.idx}
             isTextOnLeft={promotion.isTextOnLeft}
-            className="jiyoon"
+            className="informationBox"
             isContentImg={promotion.isContentImg}
             subTitle={promotion.subTitle}
             heading={promotion.heading}
@@ -122,7 +120,6 @@ function ProductsList() {
           />
         ))}
       </div>
-      {/* <Footer /> */}
     </div>
   );
 }
