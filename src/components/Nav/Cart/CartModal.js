@@ -4,7 +4,7 @@ import CartProduct from './CartProduct';
 
 function CartModal({ cartModal }) {
   const [cartData, setCartData] = useState([]);
-  const test = () => {
+  const getCartList = () => {
     sessionStorage.setItem(
       'ACCESS_TOKEN',
       'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.WgDrUj6df_iJkOoZ5e_j9x9p-GPwuPq41HTQQ_jlNX8'
@@ -30,7 +30,7 @@ function CartModal({ cartModal }) {
           <div>카트</div>
           <div>사이즈</div>
           <div>수량</div>
-          <button onClick={test} className="closeModalBtn">
+          <button onClick={getCartList} className="closeModalBtn">
             X
           </button>
         </div>

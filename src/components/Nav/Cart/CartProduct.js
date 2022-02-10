@@ -12,7 +12,7 @@ function CartProduct({ productName, size, option, onClick, price }) {
 
   return (
     <li className="CartProduct">
-      <div>{productName}</div>
+      <div className="cartProductName">{productName}</div>
       <div>{size}</div>
       <Option option={option} onChange={selectValue} onClick={onClick} />
       <div> ₩ {(+productPrice).toLocaleString()} </div>

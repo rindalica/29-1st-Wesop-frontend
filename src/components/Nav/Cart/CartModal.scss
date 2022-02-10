@@ -28,6 +28,10 @@
     padding: 15px 0;
     color: $ivory;
     border-bottom: 2px solid rgba(255, 254, 242, 0.1);
+
+    .cartProductName {
+      width: 300px;
+    }
   }
 
   .Option {
