@@ -2,7 +2,7 @@
   {
     "id": 1,
     "productName": "리무브",
-    "defaults": 1,
+    "Quantity": 1,
     "option": [
       { "value": 1 },
       { "value": 2 },
@@ -16,7 +16,7 @@
   {
     "id": 2,
     "productName": "컨트롤",
-    "defaults": 1,
+    "Quantity": 1,
     "option": [
       { "value": 1 },
       { "value": 2 },
@@ -30,7 +30,7 @@
   {
     "id": 3,
     "productName": "마스크",
-    "defaults": 1,
+    "Quantity": 1,
     "option": [
       { "value": 1 },
       { "value": 2 },
