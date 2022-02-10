@@ -10,7 +10,7 @@ function SkinProduct({ name, detail, image }) {
   return (
     <div className="product" onClick={goToDetail}>
       <img className="productImage" src={image} alt={name} />
-      {/* 추후 product 데이터에 img src 추가되면 그 때 다시 작업해주는 걸로 */}
+
       <div className="subcatProductsDetailList">
         <div className="productsDetail">
           <p className="productsName">{name}</p>

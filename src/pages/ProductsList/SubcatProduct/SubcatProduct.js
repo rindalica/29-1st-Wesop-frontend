@@ -1,12 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import CartAdd from '../CartAdd/CartAdd';
+// import CartAdd from '../CartAdd/CartAdd';
 
 function SubcatProduct({ name, detail, skinType, keyIngredient, image }) {
   const navigate = useNavigate();
   const goToDetail = () => {
     navigate(`/skin/products/${detail[0].product_id}`);
   };
+  console.log(detail);
   return (
     <div className="productContainer" onClick={goToDetail}>
       <img className="subcatProductImage" src={image} alt={name} />
@@ -14,7 +15,6 @@ function SubcatProduct({ name, detail, skinType, keyIngredient, image }) {
         <div className="productsDetail">
           <p className="productsName">{name}</p>
           {/* <div className="productsDetailDescription">
-            삼항 연산자
             {
               (detail.length = 1 ? (
                 <>
@@ -54,7 +54,7 @@ function SubcatProduct({ name, detail, skinType, keyIngredient, image }) {
           </ul>
         </div>
 
-        <CartAdd detail={detail} />
+        {/* <CartAdd price={detail} /> */}
       </div>
     </div>
   );

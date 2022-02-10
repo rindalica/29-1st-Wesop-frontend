@@ -15,7 +15,7 @@ function Router() {
         <Route path="/skin/products/:productId" element={<ProductsDetail />} />
         <Route path="/order" element={<Order />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }

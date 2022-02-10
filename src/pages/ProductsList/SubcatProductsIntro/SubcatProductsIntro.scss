@@ -1,15 +1,20 @@
 .SubcatProductsIntro {
   padding: 50px;
-  width: 33%;
+  width: 100%;
   font-size: 15px;
-  height: 700px;
+  height: 100%;
   padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  justify-content: flex-end;
+  align-items: center;
 
   .SubcatIntroHeadline {
     font-size: 30px;
     font-family: Zapf Humanist, serif;
     font-weight: 50;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
   }
 
   .SubcatIntroInfo {

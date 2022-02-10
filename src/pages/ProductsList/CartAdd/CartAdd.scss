@@ -1,5 +1,5 @@
-.cartAdd {
-  display: flex;
+#cartAdd {
+  display: none;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -8,13 +8,4 @@
   color: white;
   cursor: pointer;
   font-size: 14px;
-
-  .cartAddBtn {
-    display: none;
-
-    &:hover {
-      display: block;
-      background-color: black;
-    }
-  }
 }

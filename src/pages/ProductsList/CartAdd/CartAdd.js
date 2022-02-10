@@ -1,37 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CartAdd.scss';
+import { BASE_URL } from '../../../config';
 
 function CartAdd({ detail }) {
-  // const cartAdd = event => {
-  // fetch('https://172.30.1.11:8000/users/cart', {
-  //   method: 'post',
-  //   Headers: {
-  //  "HOST": "https://www.apple.com/kr"
-  //  "Authroization": "kldiduajsadm@9df0asmzm" (유저가 본인임을    증명할 수 있는 인증/인가 토큰)
-  // }
-  // Body:
-  // {
-  //     "url"         : "[여기에 client에서 요청한(fork한) URL 주소를 적는다]" ,
-  //     "message"     :
-  //     {
-  //         token       : "[로그인 성공시 받았던 token 입력하기, 문자열로 전달]",
-  //         id          : [여기에 회원 아이디 전달, int로 전달 할 것],
-  //         product_id  : [여기에 상품 아이디 전달, int로 전달 할 것],
-  //     }
-  // }
-  // })
-  //   .then(res => res.json())
-  //   .then(res => {
-  //     if (res.success) {
-  //       alert('카트에 추가되었습니다');
-  //     }
-  //   });
+  const [option, setOption] = useState([]);
+
+  const cartAdd = e => {
+    // setOption(value);
+    fetch(`${BASE_URL}carts/add`, {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.WgDrUj6df_iJkOoZ5e_j9x9p-GPwuPq41HTQQ_jlNX8',
+      },
+      body: JSON.stringify({
+        item_id: option,
+      }),
+    })
+      .then(res => res.json())
+      .then(result => {
+        if (result.message === 'SUCCESS') {
+          alert('상품이 장바구니에 담겼습니다.');
+        } else if (result.message === 'SUCCESS_UPDATE') {
+          alert('이미 장바구니에 담겨 있습니다.');
+        }
+        console.log('결과: ', result);
+      });
+  };
 
   return (
-    <div className="cartAdd">
+    <div id="cartAdd">
       <button
         className="cartAddBtn"
-        // onClick={cartAdd}
+        onClick={cartAdd}
         value={detail[0].product_option_id}
       >
         <span>카트에 추가 + </span>
