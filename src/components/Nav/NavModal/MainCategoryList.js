@@ -36,9 +36,7 @@ function MainCategoryList({ closeModal }) {
           >
             <button
               onClick={function clickSubCategory() {
-                navigate(
-                  `/skin/products/?categoryId=${mainCategory.sub_category_id}`
-                );
+                navigate(`/skin?categoryId=${mainCategory.sub_category_id}`);
                 closeModal();
               }}
             >
