@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "className": "skinTypeList",
+    "categoryName": "피부타입",
+    "listContents": [
+      { "id": 1, "content": "중성" },
+      { "id": 2, "content": "건성" },
+      { "id": 3, "content": "지성" },
+      { "id": 4, "content": "복합성" }
+    ]
+  },
+  {
+    "id": 2,
+    "className": "rangeList",
+    "categoryName": "레인지",
+    "listContents": [
+      { "id": 1, "content": "파슬리 씨드" },
+      { "id": 2, "content": "스킨케어 플러스" }
+    ]
+  }
+]
