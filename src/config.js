@@ -5,5 +5,5 @@ export const api = {
   subCategory: BASE_URL + '/categories',
   login: BASE_URL + '/users/emailvalid',
   signIn: BASE_URL + '/users/login',
-  signUp: BASE_URL + '/users/signUp',
+  signUp: BASE_URL + '/users/signup',
 };

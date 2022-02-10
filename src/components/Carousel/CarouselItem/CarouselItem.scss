@@ -23,10 +23,12 @@
     margin-top: 40px;
     line-height: 1.33;
     letter-spacing: -0.2px;
+    word-break: keep-all;
 
     h5 {
       margin: 10px 0;
       line-height: 1.7;
+      font-weight: 500;
     }
   }
 }

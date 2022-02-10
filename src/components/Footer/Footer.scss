@@ -1,8 +1,7 @@
 @import '../../styles/variables.scss';
 
 .Footer {
-  height: 965px;
-  background-color: #252525;
+  background-color: $blackgray;
   color: $ivory;
 
   .footerWrapper {
@@ -95,7 +94,7 @@
       }
 
       .errorMessage {
-        color: #ea6956;
+        color: $red;
       }
     }
 
