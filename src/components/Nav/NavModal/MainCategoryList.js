@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { BASE_URL } from '../../../config';
 
-function MainCategoryList() {
+function MainCategoryList({ closeModal }) {
   const [list, setList] = useState([]);
   const navigate = useNavigate();
 
@@ -19,7 +19,15 @@ function MainCategoryList() {
       <h2 className="MainCategoryListTitle">스킨 케어</h2>
       <ul className="skinCareList">
         <li className="MainCategoryListContents">
-          <Link to="/Skin">스킨 케어 모두 보기</Link>
+          <Link to="/Skin">
+            <button
+              onClick={function allSkinCare() {
+                closeModal();
+              }}
+            >
+              스킨 케어 모두 보기
+            </button>
+          </Link>
         </li>
         {list.map(mainCategory => (
           <li
@@ -31,6 +39,9 @@ function MainCategoryList() {
                 navigate(
                   `/skin/products/?categoryId=${mainCategory.sub_category_id}`
                 );
+                {
+                  closeModal();
+                }
               }}
             >
               {mainCategory.name}
