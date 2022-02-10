@@ -1,0 +1,52 @@
+@import '../../styles/variables.scss';
+.ProductsDetail {
+  .message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    margin-bottom: 100px;
+    font-size: 14px;
+
+    .leftMsg {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 50%;
+      height: 45%;
+      border-right: 1px solid #d9d8ce;
+      padding-right: 30px;
+
+      p {
+        max-width: 400px;
+        text-align: center;
+        &:nth-child(1) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .rightMsg {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      height: 100%;
+      margin-left: 10px;
+
+      p {
+        max-width: 400px;
+        text-align: center;
+        &:nth-child(1) {
+          margin-bottom: 10px;
+        }
+        &:nth-child(2) {
+          line-height: 1.3;
+        }
+      }
+    }
+  }
+}
