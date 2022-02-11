@@ -17,7 +17,6 @@ function CartModal({ cartModal }) {
       .then(res => res.json())
       .then(data => {
         setCartData(data.products);
-        console.log(data);
       });
   };
 
