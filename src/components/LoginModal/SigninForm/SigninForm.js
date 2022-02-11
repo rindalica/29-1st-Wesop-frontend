@@ -10,6 +10,7 @@ const SigninForm = ({
   goToForgotPassword,
   inputState,
   handleInput,
+  goToForm,
 }) => {
   const [errorState, setErrorState] = useState({
     isError: false,
@@ -36,6 +37,7 @@ const SigninForm = ({
       });
       sessionStorage.setItem('ACCESS_TOKEN', json.ACCESS_TOKEN);
       setIsLoginOpen(false);
+      goToForm('isLogin');
     } else if (response.status === 401) {
       setErrorState({
         isError: true,

@@ -4,11 +4,13 @@ import FormText from '../LoginLayout/FormText/FormText';
 import { api } from '../../../config';
 
 const SignupForm = ({
+  setIsLoginOpen,
   closeLogin,
   goBack,
   goToSignin,
   inputState,
   handleInput,
+  goToForm,
 }) => {
   const [checkboxState, setCheckboxState] = useState({
     ageVerification: { isChecked: false, isError: false },
@@ -78,20 +80,21 @@ const SignupForm = ({
     )
       return;
 
-    const json = await (
-      await fetch(api.signUp, {
-        method: 'POST',
-        body: JSON.stringify({
-          email,
-          password,
-          'last-name': lastName,
-          'first-name': firstName,
-        }),
-      })
-    ).json();
-
-    if (json.message === 'SUCCESS') {
-      // FiXME: Nav와 합친 후 Nav에서 조건부 렌더링할 예정
+    const response = await fetch(api.signUp, {
+      method: 'POST',
+      body: JSON.stringify({
+        email,
+        password,
+        'last-name': lastName,
+        'first-name': firstName,
+      }),
+    });
+    if (response.ok) {
+      alert('가입을 축하드립니다. 다시 로그인해 주시기 바랍니다.');
+      setIsLoginOpen(false);
+      goToForm('isSignin');
+    } else {
+      alert('올바른 형식으로 입력해 주시길 바랍니다.');
     }
   };
 
