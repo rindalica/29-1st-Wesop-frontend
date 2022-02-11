@@ -7,7 +7,7 @@ function CartModal({ cartModal }) {
   const [cartData, setCartData] = useState([]);
   const getCartList = () => {
     // eslint-disable-next-line no-template-curly-in-string
-    fetch('${LOGIN_URL}:8000/carts', {
+    fetch(`${LOGIN_URL}/carts`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -17,6 +17,7 @@ function CartModal({ cartModal }) {
       .then(res => res.json())
       .then(data => {
         setCartData(data.products);
+        console.log(data);
       });
   };
 
@@ -33,17 +34,17 @@ function CartModal({ cartModal }) {
         </div>
         <ul>
           {cartData.map(product => {
-            // function onDelete() {
-            //   setCartData(
-            //     cartData.filter(it => it.option_id !== product.option_id)
-            //   );
-            // }
+            function onDelete() {
+              setCartData(
+                cartData.filter(it => it.option_id !== product.option_id)
+              );
+            }
             return (
               <CartProduct
                 key={product.option_id}
                 productName={product.name}
                 size={product.size}
-                // onClick={onDelete}
+                onClick={onDelete}
                 option={product.option}
                 price={product.price}
               />
