@@ -4,37 +4,37 @@ import CartProduct from './CartProduct';
 
 function CartModal({ cartModal }) {
   const [cartData, setCartData] = useState([]);
-  // const getCartList = () => {
-  //   sessionStorage.setItem(
-  //     'ACCESS_TOKEN',
-  //     'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.WgDrUj6df_iJkOoZ5e_j9x9p-GPwuPq41HTQQ_jlNX8'
-  //   );
-  //   fetch('http://18.222.129.30:8000/carts', {
-  //     method: 'GET',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       Authorization: sessionStorage.getItem('ACCESS_TOKEN'),
-  //     },
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setCartData(data.products);
-  //       console.log(data.products);
-  //     });
-  // };
-  useEffect(() => {
-    fetch('/data/CartData.json')
+  const getCartList = () => {
+    sessionStorage.setItem(
+      'ACCESS_TOKEN',
+      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.WgDrUj6df_iJkOoZ5e_j9x9p-GPwuPq41HTQQ_jlNX8'
+    );
+    fetch('http://10.58.1.245:8000/carts', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: sessionStorage.getItem('ACCESS_TOKEN'),
+      },
+    })
       .then(res => res.json())
       .then(data => {
-        setCartData(data);
+        setCartData(data.products);
+        console.log(data);
       });
-  }, []);
+  };
+  // useEffect(() => {
+  //   fetch('/data/CartData.json')
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setCartData(data);
+  //     });
+  // }, []);
   return (
     <div className={cartModal}>
       <div className="cartProducts">
         <div className="cartProductsHeader">
           <div>
-            <button>카트</button>
+            <button onClick={getCartList}>카트</button>
           </div>
           <div>사이즈</div>
           <div>수량</div>
