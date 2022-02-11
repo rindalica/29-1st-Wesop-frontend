@@ -33,9 +33,10 @@ function Nav() {
     setIsLoginOpen(true);
   };
 
-  const openModal = () => {
+  const openCartModal = () => {
     setCartModal(!cartModal);
   };
+
   return (
     <>
       <LoginModal isLoginOpen={isLoginOpen} setIsLoginOpen={setIsLoginOpen} />
@@ -79,7 +80,11 @@ function Nav() {
                 </button>
               </li>
               <li className="cartMenu">
-                <button className="cartBtn" type="button" onClick={openModal}>
+                <button
+                  className="cartBtn"
+                  type="button"
+                  onClick={openCartModal}
+                >
                   카트
                 </button>
               </li>

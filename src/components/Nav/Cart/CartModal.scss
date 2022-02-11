@@ -6,8 +6,12 @@
 
 .cartModal {
   background-color: $darkgray;
-  margin-top: $nav-height;
-
+  padding-top: $nav-height;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
   .cartProducts {
     padding: 40px 40px 0;
 

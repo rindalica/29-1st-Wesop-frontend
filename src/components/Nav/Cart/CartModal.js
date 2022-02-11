@@ -4,44 +4,50 @@ import CartProduct from './CartProduct';
 
 function CartModal({ cartModal }) {
   const [cartData, setCartData] = useState([]);
-  const getCartList = () => {
-    sessionStorage.setItem(
-      'ACCESS_TOKEN',
-      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.WgDrUj6df_iJkOoZ5e_j9x9p-GPwuPq41HTQQ_jlNX8'
-    );
-    fetch('http://10.58.6.236:8000/carts', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: sessionStorage.getItem('ACCESS_TOKEN'),
-      },
-    })
+  // const getCartList = () => {
+  //   sessionStorage.setItem(
+  //     'ACCESS_TOKEN',
+  //     'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.WgDrUj6df_iJkOoZ5e_j9x9p-GPwuPq41HTQQ_jlNX8'
+  //   );
+  //   fetch('http://18.222.129.30:8000/carts', {
+  //     method: 'GET',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       Authorization: sessionStorage.getItem('ACCESS_TOKEN'),
+  //     },
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setCartData(data.products);
+  //       console.log(data.products);
+  //     });
+  // };
+  useEffect(() => {
+    fetch('/data/CartData.json')
       .then(res => res.json())
       .then(data => {
-        setCartData(data.products);
-        console.log(data.products);
+        setCartData(data);
       });
-  };
-
+  }, []);
   return (
     <div className={cartModal}>
       <div className="cartProducts">
         <div className="cartProductsHeader">
-          <div>카트</div>
+          <div>
+            <button>카트</button>
+          </div>
           <div>사이즈</div>
           <div>수량</div>
-          <button onClick={getCartList} className="closeModalBtn">
-            X
-          </button>
+          <button className="closeModalBtn">X</button>
         </div>
         <ul>
           {cartData.map(product => {
             function onDelete() {
               setCartData(
                 cartData.filter(it => {
-                  console.log(product.option_id);
-                  if (it.option_id !== product.option_id) {
-                    return product.option_id;
+                  console.log(product.id);
+                  if (it.id !== product.id) {
+                    return product.id;
                   }
                 })
               );
@@ -49,7 +55,7 @@ function CartModal({ cartModal }) {
             return (
               <CartProduct
                 key={product.option_id}
-                productName={product.name}
+                productName={product.productName}
                 size={product.size}
                 onClick={onDelete}
                 option={product.option}
