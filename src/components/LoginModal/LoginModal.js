@@ -74,11 +74,13 @@ const LoginModal = ({ isLoginOpen, setIsLoginOpen }) => {
 
         {modalState.isSignup ? (
           <SignupForm
+            setIsLoginOpen={setIsLoginOpen}
             closeLogin={closeLogin}
             goBack={() => goToForm(isLogin)}
             goToSignin={() => goToForm(isSignin)}
             inputState={inputState}
             handleInput={handleInput}
+            goToForm={goToForm}
           />
         ) : null}
 
@@ -90,6 +92,7 @@ const LoginModal = ({ isLoginOpen, setIsLoginOpen }) => {
             goToForgotPassword={() => goToForm(isForgotPassword)}
             inputState={inputState}
             handleInput={handleInput}
+            goToForm={goToForm}
           />
         ) : null}
 
