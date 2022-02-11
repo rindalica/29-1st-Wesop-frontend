@@ -9,7 +9,7 @@ function SubcatProduct({ name, id, detail, skinType, keyIngredient, image }) {
   };
 
   const cartAdd = e => {
-    fetch(`${BASE_URL}/carts/add`, {
+    fetch(`http://18.222.129.30:8000/carts/add`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ function SubcatProduct({ name, id, detail, skinType, keyIngredient, image }) {
         if (result.result === 'SUCCESS') {
           alert('상품이 장바구니에 담겼습니다.');
         } else if (result.result === 'SUCCESS_UPDATE') {
-          alert('이미 장바구니에 담겨 있습니다.');
+          alert('상품이 장바구니에 또 담겼습니다.');
         }
       });
   };
