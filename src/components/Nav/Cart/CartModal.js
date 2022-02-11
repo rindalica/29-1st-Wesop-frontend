@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './CartModal.scss';
 import CartProduct from './CartProduct';
+import { LOGIN_URL } from '../../../config';
 
 function CartModal({ cartModal }) {
   const [cartData, setCartData] = useState([]);
   const getCartList = () => {
-    // sessionStorage.setItem(
-    //   'ACCESS_TOKEN',
-    //   'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.WgDrUj6df_iJkOoZ5e_j9x9p-GPwuPq41HTQQ_jlNX8'
-    // );
-    fetch('http://10.58.1.245:8000/carts', {
+    // eslint-disable-next-line no-template-curly-in-string
+    fetch('${LOGIN_URL}:8000/carts', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -19,16 +17,9 @@ function CartModal({ cartModal }) {
       .then(res => res.json())
       .then(data => {
         setCartData(data.products);
-        console.log(data);
       });
   };
-  // useEffect(() => {
-  //   fetch('/data/CartData.json')
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setCartData(data);
-  //     });
-  // }, []);
+
   return (
     <div className={cartModal}>
       <div className="cartProducts">
@@ -42,17 +33,17 @@ function CartModal({ cartModal }) {
         </div>
         <ul>
           {cartData.map(product => {
-            function onDelete() {
-              setCartData(
-                cartData.filter(it => it.option_id !== product.option_id)
-              );
-            }
+            // function onDelete() {
+            //   setCartData(
+            //     cartData.filter(it => it.option_id !== product.option_id)
+            //   );
+            // }
             return (
               <CartProduct
                 key={product.option_id}
                 productName={product.name}
                 size={product.size}
-                onClick={onDelete}
+                // onClick={onDelete}
                 option={product.option}
                 price={product.price}
               />
