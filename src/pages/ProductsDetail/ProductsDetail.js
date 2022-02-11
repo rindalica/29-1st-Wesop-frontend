@@ -14,9 +14,12 @@ function ProductsDetail() {
   const params = useParams();
 
   useEffect(() => {
-    fetch(`${BASE_URL}/skin/products/${params.productsId}`)
+    fetch(`${BASE_URL}/skin/products/${params.productId}`)
       .then(res => res.json())
-      .then(result => setProduct(result.message));
+      .then(result => {
+        setProduct(result.message);
+        console.log(result.message);
+      });
   }, [params.productsId]);
 
   useEffect(() => {
