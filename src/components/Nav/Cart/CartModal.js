@@ -45,9 +45,9 @@ function CartModal({ cartModal }) {
             function onDelete() {
               setCartData(
                 cartData.filter(it => {
-                  console.log(product.id);
-                  if (it.id !== product.id) {
-                    return product.id;
+                  console.log(product.option_id);
+                  if (it.option_id !== product.option_id) {
+                    return product.option_id;
                   }
                 })
               );
@@ -55,7 +55,7 @@ function CartModal({ cartModal }) {
             return (
               <CartProduct
                 key={product.option_id}
-                productName={product.productName}
+                productName={product.name}
                 size={product.size}
                 onClick={onDelete}
                 option={product.option}
