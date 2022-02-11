@@ -6,7 +6,6 @@ import Quote from './Quote/Quote';
 import { PROMOTIONS, STORE_LOCATOR } from './mainData';
 import { api } from '../../config';
 import './Main.scss';
-
 const Main = () => {
   const [carouselData, setCarouselData] = useState(null);
 

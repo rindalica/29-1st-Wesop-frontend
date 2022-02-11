@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CategoryModal from './NavModal/CategoryModal';
 import LoginModal from '../LoginModal/LoginModal';
+import CartModal from './Cart/CartModal';
 import './Nav.scss';
 
 function Nav() {
@@ -9,6 +10,7 @@ function Nav() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [categoryImg, setCategoryImg] = useState([]);
   const [categoryLists, setCategoryLists] = useState([]);
+  const [cartModal, setCartModal] = useState(false);
 
   useEffect(() => {
     fetch('/data/NavData.json')
@@ -31,9 +33,15 @@ function Nav() {
     setIsLoginOpen(true);
   };
 
+  const openCartModal = () => {
+    setCartModal(!cartModal);
+  };
+
   return (
     <>
       <LoginModal isLoginOpen={isLoginOpen} setIsLoginOpen={setIsLoginOpen} />
+
+      <CartModal cartModal={cartModal ? 'cartModal' : 'hidden'} />
       <div className="Nav">
         <div className={navColor ? 'categoryNavModal' : 'categoryNav'}>
           <nav>
@@ -72,7 +80,11 @@ function Nav() {
                 </button>
               </li>
               <li className="cartMenu">
-                <button className="cartBtn" type="button">
+                <button
+                  className="cartBtn"
+                  type="button"
+                  onClick={openCartModal}
+                >
                   카트
                 </button>
               </li>

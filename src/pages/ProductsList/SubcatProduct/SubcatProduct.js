@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BASE_URL } from '../../../config';
+import { LOGIN_URL } from '../../../config';
 
 function SubcatProduct({ name, id, detail, skinType, keyIngredient, image }) {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ function SubcatProduct({ name, id, detail, skinType, keyIngredient, image }) {
   };
 
   const cartAdd = e => {
-    fetch(`http://18.222.129.30:8000/carts/add`, {
+    fetch(`${LOGIN_URL}/carts/add`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
