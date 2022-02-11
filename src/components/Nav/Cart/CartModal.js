@@ -5,10 +5,10 @@ import CartProduct from './CartProduct';
 function CartModal({ cartModal }) {
   const [cartData, setCartData] = useState([]);
   const getCartList = () => {
-    sessionStorage.setItem(
-      'ACCESS_TOKEN',
-      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.WgDrUj6df_iJkOoZ5e_j9x9p-GPwuPq41HTQQ_jlNX8'
-    );
+    // sessionStorage.setItem(
+    //   'ACCESS_TOKEN',
+    //   'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.WgDrUj6df_iJkOoZ5e_j9x9p-GPwuPq41HTQQ_jlNX8'
+    // );
     fetch('http://10.58.1.245:8000/carts', {
       method: 'GET',
       headers: {
@@ -44,12 +44,7 @@ function CartModal({ cartModal }) {
           {cartData.map(product => {
             function onDelete() {
               setCartData(
-                cartData.filter(it => {
-                  console.log(product.option_id);
-                  if (it.option_id !== product.option_id) {
-                    return product.option_id;
-                  }
-                })
+                cartData.filter(it => it.option_id !== product.option_id)
               );
             }
             return (
