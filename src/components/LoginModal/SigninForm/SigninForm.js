@@ -10,6 +10,7 @@ const SigninForm = ({
   goToForgotPassword,
   inputState,
   handleInput,
+  goToForm,
 }) => {
   const [errorState, setErrorState] = useState({
     isError: false,
@@ -36,6 +37,7 @@ const SigninForm = ({
       });
       sessionStorage.setItem('ACCESS_TOKEN', json.ACCESS_TOKEN);
       setIsLoginOpen(false);
+      goToForm('isLogin');
     } else if (response.status === 401) {
       setErrorState({
         isError: true,
@@ -46,6 +48,11 @@ const SigninForm = ({
       setErrorState({
         isError: true,
         errorMessage: '존재하지 않는 계정입니다.',
+      });
+    } else {
+      setErrorState({
+        isError: true,
+        errorMessage: '잘못된 이메일 또는 패스워드입니다.',
       });
     }
   };

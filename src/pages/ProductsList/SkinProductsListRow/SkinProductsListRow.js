@@ -79,8 +79,6 @@ function SkinProductsListRow({
                 image={product.product_image_url}
               />
             ))}
-
-          {/* 카테고리가 같은 제품끼리 어떻게 한 줄로 묶지? */}
         </div>
         <button
           className="navigation next"
