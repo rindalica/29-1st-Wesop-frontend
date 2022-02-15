@@ -68,9 +68,8 @@ SASS
 #### 정지민: Nav, 장바구니
 
 <br>
-## \* User Flow
 
-![](/public/images/userflow.png)
+## \* User Flow ![](/public/images/userflow.png)
 
 ### 1. 메인 페이지
 
